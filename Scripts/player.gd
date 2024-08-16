@@ -5,6 +5,8 @@ extends CharacterBody2D
 var direction = Vector2.ZERO
 var animatedDirection: String = "Down"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var got_hit: Timer = $Hitbox/GotHit
+@onready var knife: Area2D = $Weapon/Knife
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,3 +42,15 @@ func _physics_process(_delta):
 func swingWeapon():
 	if Input.is_action_just_pressed("attack"):
 		animation_player.play("attack" + animatedDirection)
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	knife.set_deferred("monitorable", false)
+	speed = 25
+	got_hit.start()
+	knife.hide()
+	
+func _on_got_hit_timeout() -> void:
+	speed = 100
+	knife.show()
+	knife.set_deferred("monitorable", true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce25avsx51frr"]
+[gd_scene load_steps=16 format=3 uid="uid://ce25avsx51frr"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
@@ -193,6 +193,9 @@ _data = {
 "attackup": SubResource("Animation_1ar5j")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rsv01"]
+radius = 4.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_6slxj")
 
@@ -217,3 +220,17 @@ libraries = {
 "": SubResource("AnimationLibrary_3swbi")
 }
 autoplay = "attackleft"
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_rsv01")
+
+[node name="GotHit" type="Timer" parent="Hitbox"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Hitbox/GotHit" to="." method="_on_got_hit_timeout"]
