@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce25avsx51frr"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
+[ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivmbp"]
+atlas = ExtResource("2_8xqms")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itt8y"]
+atlas = ExtResource("2_8xqms")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0h5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivmbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itt8y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7otw3"]
+radius = 4.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6slxj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_l0h5b")
+autoplay = "default"
+frame_progress = 0.330892
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7otw3")
