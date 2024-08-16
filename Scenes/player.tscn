@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce25avsx51frr"]
+[gd_scene load_steps=8 format=3 uid="uid://csav56ab8g0ds"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbetl"]
+atlas = ExtResource("2_8xqms")
+region = Rect2(0, 0, 12, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivmbp"]
 atlas = ExtResource("2_8xqms")
@@ -15,13 +19,21 @@ region = Rect2(12, 0, 12, 12)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qbetl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ivmbp")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_itt8y")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Run",
 "speed": 6.0
 }]
 
@@ -34,8 +46,8 @@ script = ExtResource("1_6slxj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_l0h5b")
-autoplay = "default"
-frame_progress = 0.456057
+animation = &"Idle"
+autoplay = "Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7otw3")

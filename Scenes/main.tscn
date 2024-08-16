@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://c3kaa6aa1ab74"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="2_7n5fe"]
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="2_g6vwo"]
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_g6vwo"]
 [ext_resource type="PackedScene" path="res://Scenes/cow.tscn" id="3_cu0n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
@@ -74,10 +74,15 @@ tile_map_data = PackedByteArray("AADz//f/AAABAAAAAADz//j/AAABAAAAAADz//n/AAABAAA
 tile_set = SubResource("TileSet_ql21g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+position = Vector2(26, -12)
+zoom = Vector2(7, 7)
+position_smoothing_speed = 2.0
 
 [node name="Player" parent="." instance=ExtResource("2_g6vwo")]
 position = Vector2(26, -12)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="Cows" type="Node" parent="."]
 
