@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	if panel_open and close_timer == null:
 		close_timer = Timer.new()
 		add_child(close_timer)
-		close_timer.wait_time = 1.0
+		close_timer.wait_time = 8.0
 		close_timer.one_shot = true
 		close_timer.start()
 		close_timer.timeout.connect(_close_panel)
