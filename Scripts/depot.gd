@@ -19,7 +19,7 @@ func _ready():
 func _on_interact():
 	print("Received ", type)
 	
-	# Loads in inventory resource and item .tres file
+	## Loads in inventory resource and item .tres file
 	var inventoryResource: InventoryResource = load("res://InventoryThings/playerInventory.tres")
 	var stringNameOfType = Resource_Name.type.keys()[type].to_lower()
 	var fullPath = "res://InventoryThings/" + stringNameOfType + ".tres"

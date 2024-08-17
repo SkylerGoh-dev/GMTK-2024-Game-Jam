@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dj1lj5m1re638"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i8q42"]
-[ext_resource type="FontFile" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
 [ext_resource type="Shader" path="res://Shaders/pause_menu.gdshader" id="2_rytvc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lih84"]
@@ -27,6 +27,7 @@ offset_bottom = 40.0
 
 [node name="PauseMenu" type="PanelContainer" parent="Control"]
 process_mode = 3
+layout_mode = 0
 offset_left = 328.0
 offset_top = 76.0
 offset_right = 822.0

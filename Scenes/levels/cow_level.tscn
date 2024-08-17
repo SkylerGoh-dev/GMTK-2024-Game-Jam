@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://ci8ybnaspr0nc"]
+[gd_scene load_steps=8 format=4 uid="uid://ci8ybnaspr0nc"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_8njxf"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_a17ww"]
-[ext_resource type="PackedScene" path="res://Scenes/cow.tscn" id="3_7k53c"]
+[ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="3_7k53c"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="4_wh7cr"]
+[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="5_6tt41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ud8qv"]
 texture = ExtResource("1_8njxf")
@@ -113,3 +115,26 @@ target = NodePath("../../Player")
 [node name="Cow7" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
 position = Vector2(47, -51)
 target = NodePath("../../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("4_wh7cr")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("5_6tt41")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -39.0
+offset_right = 64.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(64.5, 39)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
+[connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
