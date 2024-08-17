@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdvc6ur3666qx"]
+[gd_scene load_steps=16 format=3 uid="uid://ce25avsx51frr"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
-[ext_resource type="PackedScene" path="res://Scenes/knife.tscn" id="3_wqi5o"]
+[ext_resource type="PackedScene" uid="uid://bpmo6bnngyj0c" path="res://Scenes/knife.tscn" id="3_wqi5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbetl"]
 atlas = ExtResource("2_8xqms")
