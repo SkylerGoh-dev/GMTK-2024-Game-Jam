@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var charge: Timer = $Charge
 @onready var attack_time: Timer = $AttackTime
 
-var speed = 10
+var speed = 50
 var direction = Vector2.ZERO
 var randie = randf_range(-0.3, 0.3)
 
@@ -35,7 +35,7 @@ func _on_attack_time_timeout() -> void:
 	direction[0] += randie
 	direction[1] += randie
 	charge.start()
-	speed = 100
+	speed = 150
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	queue_free()

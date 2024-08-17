@@ -218,7 +218,6 @@ rotation = 2.0944
 
 [node name="Knife" parent="Weapon" instance=ExtResource("3_wqi5o")]
 position = Vector2(4.76837e-07, 4.76837e-07)
-collision_mask = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
