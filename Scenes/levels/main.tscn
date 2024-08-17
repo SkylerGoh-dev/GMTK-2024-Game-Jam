@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c3kaa6aa1ab74"]
+[gd_scene load_steps=12 format=4 uid="uid://c3kaa6aa1ab74"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_hi67j"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="1_lnpqg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfwcsq233ssle" path="res://Scenes/crates/orange_crate.tscn" id="4_djbgj"]
 [ext_resource type="PackedScene" uid="uid://it7mjbu0q7km" path="res://Scenes/crates/pears_crate.tscn" id="5_rvj1o"]
 [ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/crates/corn_crate.tscn" id="6_o453m"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="9_8sgrk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
 texture = ExtResource("1_hi67j")
@@ -101,21 +102,6 @@ zoom = Vector2(7, 7)
 position_smoothing_speed = 2.0
 script = ExtResource("2_v0eii")
 
-[node name="Inventory" parent="Camera2D" instance=ExtResource("1_lnpqg")]
-z_index = 10
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = -39.0
-offset_right = 39.0
-offset_bottom = 39.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_mqfi8")]
 position = Vector2(-161, 91)
 
@@ -151,5 +137,24 @@ position = Vector2(-64, 91)
 [node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("6_o453m")]
 position = Vector2(-64, 75)
 
-[connection signal="closed" from="Camera2D/Inventory" to="Camera2D" method="_on_inventory_closed"]
-[connection signal="opened" from="Camera2D/Inventory" to="Camera2D" method="_on_inventory_opened"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("9_8sgrk")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("1_lnpqg")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -39.0
+offset_right = 39.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(39, 39)
+
+[connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
+[connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
