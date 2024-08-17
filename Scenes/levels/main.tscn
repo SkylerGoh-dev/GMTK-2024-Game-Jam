@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="16_ttw3h"]
 [ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="17_vyopx"]
 [ext_resource type="PackedScene" uid="uid://b2rwqt7igjwte" path="res://Scenes/duct_tape.tscn" id="18_1kax2"]
-[ext_resource type="PackedScene" path="res://Scenes/Store-furniture/shelves.tscn" id="19_wnrcj"]
+[ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="19_wnrcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
 texture = ExtResource("1_hi67j")
@@ -159,14 +159,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
+offset_left = -64.5
 offset_top = -39.0
-offset_right = 39.0
+offset_right = 64.5
 offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(8, 8)
-pivot_offset = Vector2(39, 39)
+pivot_offset = Vector2(64.5, 39)
 
 [node name="Freezers" type="Node2D" parent="."]
 
