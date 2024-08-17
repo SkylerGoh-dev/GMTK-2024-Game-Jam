@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="15_pfhs1"]
 [ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="16_ttw3h"]
 [ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="17_vyopx"]
-[ext_resource type="PackedScene" path="res://Scenes/duct_tape.tscn" id="18_1kax2"]
-[ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="19_wnrcj"]
+[ext_resource type="PackedScene" uid="uid://b2rwqt7igjwte" path="res://Scenes/duct_tape.tscn" id="18_1kax2"]
+[ext_resource type="PackedScene" path="res://Scenes/Store-furniture/shelves.tscn" id="19_wnrcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
 texture = ExtResource("1_hi67j")

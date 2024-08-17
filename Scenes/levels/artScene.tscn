@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_eb1gs"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_aua72"]
-[ext_resource type="PackedScene" path="res://Scenes/cow.tscn" id="3_y58co"]
+[ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="3_y58co"]
 [ext_resource type="Texture2D" uid="uid://b2jo2vftfrlsl" path="res://Sprites/tiles/Shelves.png" id="4_si120"]
 [ext_resource type="Texture2D" uid="uid://bul16xwa7inp6" path="res://Sprites/tiles/New Piskel.png" id="5_oyh20"]
 
