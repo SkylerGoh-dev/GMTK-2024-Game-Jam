@@ -51,6 +51,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventoryResource)
 	else:
+		#$Weapon/Knife.hide()
 		knife.set_deferred("monitorable", false)
 		speed = 25
 		got_hit.start()
@@ -58,8 +59,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	
 func _on_got_hit_timeout() -> void:
 	speed = 100
-	knife.show()
 	knife.set_deferred("monitorable", true)
+	knife.show()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/cow_level.tscn")

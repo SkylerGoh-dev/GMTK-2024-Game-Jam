@@ -35,8 +35,7 @@ func _on_attack_time_timeout() -> void:
 	direction[0] += randie
 	direction[1] += randie
 	charge.start()
-	speed = 200
-
+	speed = 100
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	queue_free()
