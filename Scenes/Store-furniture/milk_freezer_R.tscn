@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://nnch1w3qubp5"]
+
+[ext_resource type="Script" path="res://Scripts/depot.gd" id="1_gbr7p"]
+[ext_resource type="Texture2D" uid="uid://dtui5fe0hxr1a" path="res://Sprites/Freezer.png" id="2_y7v0n"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="3_208td"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55noc"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd461"]
+size = Vector2(16, 16)
+
+[node name="Milk_Freezer_R" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_gbr7p")
+type = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y7v0n")
+region_enabled = true
+region_rect = Rect2(16, 32, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_55noc")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_208td")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_pd461")

@@ -6,5 +6,9 @@ enum type {
 	ORANGE,
 	PEAR,
 	CORN,
+	CHEESE,
+	MILK,
+	BUTTER,
+	DRINK,
 	NONE,
 }
