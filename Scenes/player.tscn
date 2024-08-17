@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce25avsx51frr"]
+[gd_scene load_steps=7 format=3 uid="uid://dsev3h5il5ykj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
