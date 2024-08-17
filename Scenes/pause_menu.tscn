@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj1lj5m1re638"]
+[gd_scene load_steps=5 format=3 uid="uid://dj1lj5m1re638"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i8q42"]
 [ext_resource type="FontFile" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
+[ext_resource type="Shader" path="res://Shaders/pause_menu.gdshader" id="2_rytvc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lih84"]
+shader = ExtResource("2_rytvc")
+shader_parameter/amount = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_i8q42")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lih84")
+offset_left = -105.0
+offset_top = -75.0
+offset_right = 1245.0
+offset_bottom = 719.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
