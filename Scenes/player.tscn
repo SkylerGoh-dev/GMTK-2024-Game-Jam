@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdvc6ur3666qx"]
+[gd_scene load_steps=16 format=3 uid="uid://csav56ab8g0ds"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
@@ -197,9 +197,11 @@ _data = {
 radius = 4.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_6slxj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_l0h5b")
 animation = &"Idle"
