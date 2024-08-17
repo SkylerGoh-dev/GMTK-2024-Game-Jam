@@ -19,3 +19,9 @@ func insert(item: InventoryItem):
 			slots[i].amount = 1
 			updated.emit()
 			return
+
+func clearAll():
+	for slot in slots:
+		slot.item = null
+		slot.amount = 0
+	updated.emit()

@@ -29,8 +29,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 layout_mode = 0
+offset_left = -8.0
 offset_top = 3.0
-offset_right = 20.0
+offset_right = 33.0
 offset_bottom = 19.0
 scale = Vector2(0.4, 0.4)
 theme_override_colors/font_color = Color(1, 1, 1, 1)

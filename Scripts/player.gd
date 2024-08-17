@@ -16,6 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	reset_inventory()
 	pass
 
 func _physics_process(_delta):
@@ -60,6 +61,12 @@ func _on_got_hit_timeout() -> void:
 	knife.show()
 	knife.set_deferred("monitorable", true)
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/cow_level.tscn")
+
+#func _on_timer_timeout() -> void:
+	#get_tree().change_scene_to_file("res://Scenes/levels/cow_level.tscn")
+
+func reset_inventory():
+	if Input.is_action_just_pressed("reset inventory"):
+		inventoryResource.clearAll()

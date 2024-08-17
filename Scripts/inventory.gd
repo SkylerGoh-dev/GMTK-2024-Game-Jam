@@ -13,9 +13,7 @@ func _ready():
 	update()
 
 func update():
-	print(inventoryResource.slots)
 	for i in range(min(inventoryResource.slots.size(), slots.size())):
-		print(inventoryResource)
 		slots[i].update(inventoryResource.slots[i])
 
 func open():
