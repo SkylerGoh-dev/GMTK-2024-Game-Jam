@@ -47,10 +47,13 @@ func swingWeapon():
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	knife.set_deferred("monitorable", false)
-	speed = 25
-	got_hit.start()
-	knife.hide()
+	if area.has_method("collect"):
+		area.collect(inventoryResource)
+	else:
+		knife.set_deferred("monitorable", false)
+		speed = 25
+		got_hit.start()
+		knife.hide()
 	
 func _on_got_hit_timeout() -> void:
 	speed = 100

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c3kaa6aa1ab74"]
+[gd_scene load_steps=21 format=4 uid="uid://c3kaa6aa1ab74"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_hi67j"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="1_lnpqg"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="15_pfhs1"]
 [ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="16_ttw3h"]
 [ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="17_vyopx"]
+[ext_resource type="PackedScene" uid="uid://b2rwqt7igjwte" path="res://Scenes/duct_tape.tscn" id="18_1kax2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
 texture = ExtResource("1_hi67j")
@@ -190,6 +191,9 @@ position = Vector2(-32, -141)
 
 [node name="Milk_Freezer_R" parent="Freezers" instance=ExtResource("17_vyopx")]
 position = Vector2(-16, -141)
+
+[node name="DuctTape" parent="." instance=ExtResource("18_1kax2")]
+position = Vector2(-112, 11)
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
