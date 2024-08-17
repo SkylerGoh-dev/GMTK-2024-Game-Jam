@@ -14,7 +14,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
-	print(velocity)
 	if ground:
 		velocity.x = move_toward(velocity.x, 0, friction)
 		
@@ -33,10 +32,10 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_mouse_entered() -> void:
 	clickable = true
-	scale = Vector2(1.2, 1.2)
+	scale = Vector2(1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 func _on_area_2d_mouse_exited() -> void:
 	clickable = false
-	scale = Vector2(1, 1)
+	scale = Vector2(0.7, 0.7)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

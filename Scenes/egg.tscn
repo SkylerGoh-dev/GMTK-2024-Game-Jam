@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://tfiehvy33xi6"]
+[gd_scene load_steps=5 format=3 uid="uid://dsfloh4crp5ss"]
 
 [ext_resource type="Script" path="res://Scripts/egg.gd" id="1_iem40"]
-[ext_resource type="Texture2D" uid="uid://bwnojbvhhfi6w" path="res://Sprites/Egg.png" id="2_2wxuu"]
+[ext_resource type="Texture2D" uid="uid://buin02oeeqajr" path="res://Sprites/Egg.png" id="2_2wxuu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwod"]
 radius = 2.0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwskecom1crd6"]
+[gd_scene load_steps=11 format=3 uid="uid://cro6ljth8h6vm"]
 
 [ext_resource type="Script" path="res://Scripts/chicken.gd" id="1_1x3ld"]
-[ext_resource type="Texture2D" uid="uid://imwk8qe5d18u" path="res://Sprites/Chicken.png" id="2_v5gef"]
+[ext_resource type="Texture2D" uid="uid://by5bqb45hxuq8" path="res://Sprites/Chicken.png" id="2_v5gef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdn12"]
 atlas = ExtResource("2_v5gef")
@@ -71,8 +71,7 @@ script = ExtResource("1_1x3ld")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -8)
 sprite_frames = SubResource("SpriteFrames_f8krk")
-animation = &"angry"
-frame_progress = 0.214774
+animation = &"walk"
 
 [node name="Rest" type="Timer" parent="."]
 wait_time = 0.05

@@ -7,12 +7,14 @@ var direction = Vector2.ZERO
 var hotspot = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 var draggable = false
+@export var clickable = false
+@export var game_field: NodePath
 
 var previous_mouse_position : Vector2
-var shake_threshold : float = 20.0
+@export var shake_threshold : float = 40.0
 var shake_detected : bool = false
 var direction_changes : int = 0
-var max_direction_changes : int = 10
+var max_direction_changes : int = 20
 
 @onready var sprite = $AnimatedSprite2D
 @onready var rest_timer = $Rest
@@ -96,7 +98,7 @@ func spawn_egg():
 	egg.scale = Vector2(0.7,0.7)
 	egg.global_position = egg_spawner.global_position
 	egg.velocity.x = velocity.x / 10
-	get_tree().get_root().get_node("Chicken_test").call_deferred("add_child", egg)
+	get_parent().call_deferred("add_child", egg)
 
 func _on_rest_timeout() -> void:
 	roam()

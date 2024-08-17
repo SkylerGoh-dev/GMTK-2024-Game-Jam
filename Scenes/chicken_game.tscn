@@ -1,24 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://w86opkvw8le6"]
+[gd_scene load_steps=3 format=3 uid="uid://dljoyvxbmyb7b"]
 
-[ext_resource type="Texture2D" uid="uid://bie3btjlg41dj" path="res://Sprites/grassy_background.png" id="1_7fivd"]
-[ext_resource type="PackedScene" uid="uid://bwskecom1crd6" path="res://Scenes/chicken.tscn" id="2_1ysnb"]
+[ext_resource type="Texture2D" uid="uid://cpuiwyarvscfc" path="res://Sprites/grassy_background.png" id="1_7fivd"]
+[ext_resource type="PackedScene" uid="uid://cro6ljth8h6vm" path="res://Scenes/chicken.tscn" id="2_1ysnb"]
 
 [node name="ChickenGame" type="CanvasLayer"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7fivd")
-
-[node name="Chicken" parent="." instance=ExtResource("2_1ysnb")]
-position = Vector2(-8, 5)
-
-[node name="Chicken2" parent="." instance=ExtResource("2_1ysnb")]
-position = Vector2(-46, 18)
-
-[node name="Chicken3" parent="." instance=ExtResource("2_1ysnb")]
-position = Vector2(37, 33)
-
-[node name="Chicken4" parent="." instance=ExtResource("2_1ysnb")]
-position = Vector2(17, -15)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -27,14 +15,42 @@ collision_layer = 2
 position = Vector2(-64, -64)
 polygon = PackedVector2Array(1, 128, 128, 128, 127, 6, 2, 6, 1, 140, -11, 140, -9, -16, 140, -17, 141, 142, 1, 140)
 
+[node name="Chicken" parent="." instance=ExtResource("2_1ysnb")]
+position = Vector2(-8, 5)
+clickable = true
+game_field = NodePath("..")
+
+[node name="Chicken2" parent="." instance=ExtResource("2_1ysnb")]
+position = Vector2(-46, 18)
+clickable = true
+game_field = NodePath("..")
+
+[node name="Chicken3" parent="." instance=ExtResource("2_1ysnb")]
+position = Vector2(37, 33)
+clickable = true
+game_field = NodePath("..")
+
+[node name="Chicken4" parent="." instance=ExtResource("2_1ysnb")]
+position = Vector2(17, -15)
+clickable = true
+game_field = NodePath("..")
+
 [node name="Chicken5" parent="." instance=ExtResource("2_1ysnb")]
 position = Vector2(-10, 34)
+clickable = true
+game_field = NodePath("..")
 
 [node name="Chicken6" parent="." instance=ExtResource("2_1ysnb")]
 position = Vector2(-36, -14)
+clickable = true
+game_field = NodePath("..")
 
 [node name="Chicken7" parent="." instance=ExtResource("2_1ysnb")]
 position = Vector2(27, 13)
+clickable = true
+game_field = NodePath("..")
 
 [node name="Chicken8" parent="." instance=ExtResource("2_1ysnb")]
 position = Vector2(-3, -29)
+clickable = true
+game_field = NodePath("..")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqr0h30j5wu04"]
+[gd_scene load_steps=3 format=3 uid="uid://1muqhaaccvco"]
 
-[ext_resource type="Texture2D" uid="uid://bie3btjlg41dj" path="res://Sprites/grassy_background.png" id="1_p4wf2"]
-[ext_resource type="PackedScene" uid="uid://bwskecom1crd6" path="res://Scenes/chicken.tscn" id="1_wvlxk"]
+[ext_resource type="Texture2D" uid="uid://cpuiwyarvscfc" path="res://Sprites/grassy_background.png" id="1_p4wf2"]
+[ext_resource type="PackedScene" uid="uid://cro6ljth8h6vm" path="res://Scenes/chicken.tscn" id="1_wvlxk"]
 
 [node name="Chicken_test" type="Node2D"]
 
