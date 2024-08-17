@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://c3kaa6aa1ab74"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="2_7n5fe"]
-[ext_resource type="PackedScene" uid="uid://ce25avsx51frr" path="res://Scenes/player.tscn" id="2_g6vwo"]
-[ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="3_cu0n7"]
+[ext_resource type="PackedScene" uid="uid://cdvc6ur3666qx" path="res://Scenes/player.tscn" id="2_g6vwo"]
+[ext_resource type="PackedScene" path="res://Scenes/cow.tscn" id="3_cu0n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
 texture = ExtResource("2_7n5fe")
