@@ -4,6 +4,7 @@ extends StaticBody2D
 @export var type: Resource_Name.type 
 @onready var interaction_area: Interaction_Area = $Interaction_Area
 @export var item_needed: bool
+@export var item_amount: int = 1
 const ITEM_INDICATOR = preload("res://Scenes/Item_Indicator.tscn")
 const indicator_offset :int = 8
 
@@ -15,6 +16,8 @@ func _ready():
 		instance.global_position = instance.global_position - Vector2(0,indicator_offset)
 		instance.play("default")
 		add_child(instance)
+		#register item is needed for week
+		Gameplay_Manager._register_item(type,item_amount)
 
 func _on_interact():
 	print("Received ", type)

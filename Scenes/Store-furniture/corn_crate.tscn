@@ -13,7 +13,7 @@ radius = 16.0
 [node name="corn_crate" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource("1_rla1t")
-type = 2
+type = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cfere")

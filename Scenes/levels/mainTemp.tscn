@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://jys3bpbglook"]
+[gd_scene load_steps=22 format=4 uid="uid://jys3bpbglook"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_jbp2l"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_inkgy"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="15_y5yuj"]
 [ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="16_y3i6k"]
 [ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="17_klkjx"]
-[ext_resource type="PackedScene" path="res://Scenes/duct_tape.tscn" id="18_dcbwb"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="19_mpfpl"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="20_7mbmd"]
 
@@ -98,7 +97,7 @@ terrain_set_0/terrain_0/name = "Floor and Walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_8tsxp")
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Map" type="TileMapLayer" parent="."]
@@ -131,12 +130,15 @@ item_needed = true
 
 [node name="apple_crate2" parent="Produce_Crates" instance=ExtResource("4_qyvgy")]
 position = Vector2(-128, 75)
+item_needed = true
 
 [node name="orange_crate" parent="Produce_Crates" instance=ExtResource("5_0vu06")]
 position = Vector2(-112, 75)
+item_needed = true
 
 [node name="orange_crate2" parent="Produce_Crates" instance=ExtResource("5_0vu06")]
 position = Vector2(-112, 91)
+item_needed = true
 
 [node name="pears_crate" parent="Produce_Crates" instance=ExtResource("6_noml5")]
 position = Vector2(-80, 75)
@@ -146,6 +148,8 @@ position = Vector2(-80, 91)
 
 [node name="corn_crate" parent="Produce_Crates" instance=ExtResource("7_ipmqq")]
 position = Vector2(-64, 91)
+item_needed = true
+item_amount = 10
 
 [node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("7_ipmqq")]
 position = Vector2(-64, 75)
@@ -155,6 +159,7 @@ process_mode = 3
 script = ExtResource("8_pomxd")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("9_pvoo7")]
+custom_minimum_size = Vector2(78, 78)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -195,24 +200,11 @@ position = Vector2(-32, -141)
 [node name="Milk_Freezer_R" parent="Freezers" instance=ExtResource("17_klkjx")]
 position = Vector2(-16, -141)
 
-[node name="DuctTape" parent="." instance=ExtResource("18_dcbwb")]
-position = Vector2(-112, 11)
-
-[node name="DuctTape2" parent="." instance=ExtResource("18_dcbwb")]
-position = Vector2(-149, -5)
-
-[node name="DuctTape3" parent="." instance=ExtResource("18_dcbwb")]
-position = Vector2(-149, 30)
-
-[node name="DuctTape4" parent="." instance=ExtResource("18_dcbwb")]
-position = Vector2(-135, 14)
-
 [node name="shelves" parent="." instance=ExtResource("19_mpfpl")]
 position = Vector2(-48, 19)
 
 [node name="shelves2" parent="." instance=ExtResource("19_mpfpl")]
 position = Vector2(-48, -29)
-item_needed = true
 
 [node name="NPC clerk" parent="." instance=ExtResource("20_7mbmd")]
 position = Vector2(-169, 0)
