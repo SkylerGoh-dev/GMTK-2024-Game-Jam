@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2rwqt7igjwte"]
 
 [ext_resource type="Texture2D" uid="uid://b4ysusvxgu6dk" path="res://Sprites/Duct_Tape.png" id="1_1ooie"]
-[ext_resource type="Script" path="res://Scenes/duct_tape.gd" id="1_58ocs"]
+[ext_resource type="Script" path="res://Scripts/duct_tape.gd" id="1_58ocs"]
 [ext_resource type="Resource" uid="uid://iw341t5xfuay" path="res://InventoryThings/ducttape.tres" id="2_5vwm2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8crw"]
