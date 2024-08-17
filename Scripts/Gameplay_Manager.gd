@@ -14,7 +14,7 @@ func _process(_delta) -> void:
 
 func create_pause():
 	pause_menu = preload("res://Scenes/pause_menu.tscn").instantiate()
-	get_tree().get_root().get_node("Main").add_child(pause_menu)
+	get_tree().get_root().add_child(pause_menu)
 	pause_menu.show()
 	get_tree().paused = true
 
