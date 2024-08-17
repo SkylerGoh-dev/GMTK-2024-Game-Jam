@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryResource" load_steps=4 format=3 uid="uid://bae8gman4gv7x"]
+
+[ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_bubq4"]
+[ext_resource type="Resource" uid="uid://iw341t5xfuay" path="res://InventoryThings/ducttape.tres" id="2_gtbmg"]
+[ext_resource type="Script" path="res://InventoryThings/inventory_resource.gd" id="3_xuxvx"]
+
+[resource]
+script = ExtResource("3_xuxvx")
+items = Array[ExtResource("1_bubq4")]([ExtResource("2_gtbmg"), ExtResource("2_gtbmg"), ExtResource("2_gtbmg"), null, null, ExtResource("2_gtbmg"), ExtResource("2_gtbmg"), null, ExtResource("2_gtbmg")])

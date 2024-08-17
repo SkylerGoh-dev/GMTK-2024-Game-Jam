@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://csav56ab8g0ds"]
+[gd_scene load_steps=17 format=3 uid="uid://csav56ab8g0ds"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
+[ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="2_oaci5"]
 [ext_resource type="PackedScene" uid="uid://bpmo6bnngyj0c" path="res://Scenes/knife.tscn" id="3_wqi5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbetl"]
@@ -199,6 +200,7 @@ radius = 4.0
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 5
 script = ExtResource("1_6slxj")
+inventoryResource = ExtResource("2_oaci5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1

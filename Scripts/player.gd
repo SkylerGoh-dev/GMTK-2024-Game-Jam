@@ -8,6 +8,8 @@ var animatedDirection: String = "Down"
 @onready var got_hit: Timer = $Hitbox/GotHit
 @onready var knife: Area2D = $Weapon/Knife
 
+@export var inventoryResource: InventoryResource
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
