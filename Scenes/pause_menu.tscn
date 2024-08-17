@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj1lj5m1re638"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i8q42"]
+[ext_resource type="FontFile" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_i8q42")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseMenu" type="PanelContainer" parent="Control"]
+process_mode = 3
+offset_left = 328.0
+offset_top = 76.0
+offset_right = 822.0
+offset_bottom = 564.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PauseMenu"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Resume" type="Button" parent="Control/PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gf6dw")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Control/PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gf6dw")
+text = "Restart"
+
+[node name="Quit" type="Button" parent="Control/PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gf6dw")
+text = "Quit"
+
+[connection signal="pressed" from="Control/PauseMenu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/PauseMenu/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
