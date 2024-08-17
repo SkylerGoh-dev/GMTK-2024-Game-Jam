@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk1h6f04vgse4"]
+
+[ext_resource type="Script" path="res://Scenes/npc_clerk.gd" id="1_huhjx"]
+[ext_resource type="Texture2D" uid="uid://byv5nsn8c1rx6" path="res://Sprites/Store NPC.png" id="1_ksj58"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="2_5boqs"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="4_0lwjv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
+radius = 32.0
+
+[node name="NPC clerk" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_huhjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ksj58")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+script = ExtResource("2_5boqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 212.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_0lwjv")
+text = "Fuck you kid!!!"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
