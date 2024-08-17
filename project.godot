@@ -21,6 +21,11 @@ Interaction_Manager="*res://Scripts/Interaction_Manager.gd"
 Gameplay_Manager="*res://Scripts/Gameplay_Manager.gd"
 Resource_Name="*res://Scripts/Resource_Name.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [global_group]
 
 player=""

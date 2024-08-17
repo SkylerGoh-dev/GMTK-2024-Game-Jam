@@ -125,37 +125,27 @@ position = Vector2(32, 0)
 
 [node name="apple_crate" parent="Produce_Crates" instance=ExtResource("3_1qewl")]
 position = Vector2(-128, 91)
-type = null
-inventoryResource = null
 
 [node name="apple_crate2" parent="Produce_Crates" instance=ExtResource("3_1qewl")]
 position = Vector2(-128, 75)
-type = null
-inventoryResource = null
 
 [node name="orange_crate" parent="Produce_Crates" instance=ExtResource("4_djbgj")]
 position = Vector2(-112, 75)
-inventoryResource = null
 
 [node name="orange_crate2" parent="Produce_Crates" instance=ExtResource("4_djbgj")]
 position = Vector2(-112, 91)
-inventoryResource = null
 
 [node name="pears_crate" parent="Produce_Crates" instance=ExtResource("5_rvj1o")]
 position = Vector2(-80, 75)
-inventoryResource = null
 
 [node name="pears_crate2" parent="Produce_Crates" instance=ExtResource("5_rvj1o")]
 position = Vector2(-80, 91)
-inventoryResource = null
 
 [node name="corn_crate" parent="Produce_Crates" instance=ExtResource("6_o453m")]
 position = Vector2(-64, 91)
-inventoryResource = null
 
 [node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("6_o453m")]
 position = Vector2(-64, 75)
-inventoryResource = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -167,48 +157,40 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
+offset_left = -64.5
 offset_top = -39.0
-offset_right = 39.0
+offset_right = 64.5
 offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(8, 8)
-pivot_offset = Vector2(39, 39)
+pivot_offset = Vector2(64.5, 39)
 
 [node name="Freezers" type="Node2D" parent="."]
 
 [node name="Butter_Freezer_L" parent="Freezers" instance=ExtResource("10_rk6dk")]
 position = Vector2(-128, -141)
-inventoryResource = null
 
 [node name="Butter_Freezer_R" parent="Freezers" instance=ExtResource("11_8jb2s")]
 position = Vector2(-112, -141)
-inventoryResource = null
 
 [node name="Cheese_Freezer_L" parent="Freezers" instance=ExtResource("12_jwrhm")]
 position = Vector2(-96, -141)
-inventoryResource = null
 
 [node name="Cheese_Freezer_R" parent="Freezers" instance=ExtResource("13_3hxal")]
 position = Vector2(-80, -141)
-inventoryResource = null
 
 [node name="Drink_Freezer_L" parent="Freezers" instance=ExtResource("14_nsugl")]
 position = Vector2(-64, -141)
-inventoryResource = null
 
 [node name="Drink_Freezer_R" parent="Freezers" instance=ExtResource("15_pfhs1")]
 position = Vector2(-48, -141)
-inventoryResource = null
 
 [node name="Milk_Freezer_L" parent="Freezers" instance=ExtResource("16_ttw3h")]
 position = Vector2(-32, -141)
-inventoryResource = null
 
 [node name="Milk_Freezer_R" parent="Freezers" instance=ExtResource("17_vyopx")]
 position = Vector2(-16, -141)
-inventoryResource = null
 
 [node name="DuctTape" parent="." instance=ExtResource("18_1kax2")]
 position = Vector2(-112, 11)

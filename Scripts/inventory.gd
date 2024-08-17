@@ -13,8 +13,10 @@ func _ready():
 	update()
 
 func update():
-	for i in range(min(inventoryResource.items.size(), slots.size())):
-		slots[i].update(inventoryResource.items[i])
+	print(inventoryResource.slots)
+	for i in range(min(inventoryResource.slots.size(), slots.size())):
+		print(inventoryResource)
+		slots[i].update(inventoryResource.slots[i])
 
 func open():
 	visible = true
