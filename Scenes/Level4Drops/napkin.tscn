@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbh5snqhkk737"]
 
 [ext_resource type="Script" path="res://Scripts/depot.gd" id="1_impvx"]
-[ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="2_opqlb"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_mgp1b"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="3_qr7gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_547tp"]
@@ -13,12 +13,12 @@ radius = 16.0
 [node name="napkin" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource("1_impvx")
-type = 11
+type = 21
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_opqlb")
+texture = ExtResource("2_mgp1b")
 region_enabled = true
-region_rect = Rect2(16, 0, 16, 16)
+region_rect = Rect2(32, 16, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1

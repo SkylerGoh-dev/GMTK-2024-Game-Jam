@@ -23,5 +23,6 @@ enum type {
 	FISH,
 	SHOVEL,
 	DUCTTAPE,
+	NAPKIN,
 	NONE,
 }
