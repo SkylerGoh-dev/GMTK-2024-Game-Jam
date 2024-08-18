@@ -5,6 +5,7 @@ var level_path : String
 @onready var dialog: Label = $CanvasLayer/Dialog
 
 func _ready() -> void:
+	dialog.text = Gameplay_Manager.get_dialog()
 	level_path = Gameplay_Manager.next_level_path()
 	load_done = false
 	ResourceLoader.load_threaded_request(level_path)
