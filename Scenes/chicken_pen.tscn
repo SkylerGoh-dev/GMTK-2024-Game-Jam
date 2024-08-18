@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b8wn6t7igc7d6"]
+[gd_scene load_steps=10 format=4 uid="uid://b8wn6t7igc7d6"]
 
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="1_a8spy"]
 [ext_resource type="Texture2D" uid="uid://dlil4ph63apux" path="res://Sprites/Outside_Tiles.png" id="2_44tq3"]
@@ -111,17 +111,13 @@ texture = ExtResource("2_44tq3")
 5:3/0 = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(7, 0.5, 2.75, 0.375, -0.5, 3.25, 0.375, 7, 8, 8)
 1:4/0 = 0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(7, 0.5, 2.75, 0.375, -0.5, 3.25, 0.375, 7, 8, 8)
 2:4/0 = 0
 3:4/0 = 0
 4:4/0 = 0
 5:4/0 = 0
 0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(7, 0.5, 2.75, 0.375, -0.5, 3.25, 0.375, 7, 8, 8)
 1:5/0 = 0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(7, 0.5, 2.75, 0.375, -0.5, 3.25, 0.375, 7, 8, 8)
 2:5/0 = 0
 3:5/0 = 0
 4:5/0 = 0
@@ -131,37 +127,13 @@ texture = ExtResource("2_44tq3")
 0:7/0 = 0
 1:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ak1q"]
-texture = ExtResource("3_pb6go")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-0:4/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_28rs8"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_7sdf5")
-sources/2 = SubResource("TileSetAtlasSource_2ak1q")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v64ml"]
 texture = ExtResource("3_pb6go")
@@ -192,8 +164,8 @@ texture = ExtResource("3_pb6go")
 0:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qerlh"]
-physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 12
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_v64ml")
 
 [node name="ChickenPen" type="Node2D"]

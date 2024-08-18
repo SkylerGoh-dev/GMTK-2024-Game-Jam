@@ -7,6 +7,7 @@ var direction = Vector2.ZERO
 var hotspot = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 var draggable = false
+var laid_egg = false
 @export var clickable = false
 @export var roam_dist = 64
 
@@ -42,22 +43,24 @@ func _physics_process(delta: float) -> void:
 			velocity = direction * DRAG_SPEED
 			sprite.play("angry")
 			
+			if movement.length() > shake_threshold:
+				var angle = movement.angle()
+				var previous_movement = previous_mouse_position - get_global_mouse_position()
+				
+				if direction_changes == 0 or sign(angle) != sign(previous_movement.angle()):
+					direction_changes += 1
+					
+					if laid_egg and not animation.is_playing() and Input.is_action_pressed("press"):
+						animation.play("fade_out")
+				
+				if direction_changes == max_direction_changes:
+					spawn_egg()
+					await get_tree().create_timer(1.0).timeout
+					laid_egg = true
+					
 		if Input.is_action_just_released("press"):
 			Interaction_Manager.is_dragging = false
 			unhand_me()
-		
-		if movement.length() > shake_threshold:
-			var angle = movement.angle()
-			var previous_movement = previous_mouse_position - get_global_mouse_position()
-			
-			if direction_changes == 0 or sign(angle) != sign(previous_movement.angle()):
-				direction_changes += 1
-				
-				if direction_changes > max_direction_changes + 10 and not animation.is_playing() and Input.is_action_pressed("press"):
-					animation.play("fade_out")
-			
-			if direction_changes == max_direction_changes:
-				spawn_egg()
 	
 	else:
 		direction = position.direction_to(hotspot)

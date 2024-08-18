@@ -11,11 +11,6 @@
 script/source = "extends Camera2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	Gameplay_Manager._register_item(13,2)
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position = Interaction_Manager.player.global_position
@@ -25,7 +20,6 @@ func _process(delta: float) -> void:
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("1_1lixb")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_c5ivn")]
@@ -58,10 +52,13 @@ script = SubResource("GDScript_oio37")
 position = Vector2(240, 0)
 chicken_game = NodePath("../CanvasLayer/ChickenGame")
 
+[node name="Chicken3" parent="ChickenPen/Chickens" index="2"]
+position = Vector2(-59, 22)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(230, -15)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(2, -4, 230, -5, 229, 156, 203, 156, 204, 15, -1, 15)

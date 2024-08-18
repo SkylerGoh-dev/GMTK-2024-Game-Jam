@@ -15,6 +15,7 @@ func unregister_area(area: Interaction_Area):
 	print("clear", area)
 	if index != -1:
 		active_areas.remove_at(index)
+	print(active_areas)
 
 # Actively sort interaction areas by distance
 func _process(_delta):
