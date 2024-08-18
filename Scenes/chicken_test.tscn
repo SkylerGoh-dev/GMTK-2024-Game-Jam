@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://1muqhaaccvco"]
+[gd_scene load_steps=4 format=3 uid="uid://br4n0cwytsvtq"]
 
-[ext_resource type="Texture2D" uid="uid://cpuiwyarvscfc" path="res://Sprites/grassy_background.png" id="1_p4wf2"]
-[ext_resource type="PackedScene" uid="uid://cro6ljth8h6vm" path="res://Scenes/chicken.tscn" id="1_wvlxk"]
+[ext_resource type="PackedScene" uid="uid://b8wn6t7igc7d6" path="res://Scenes/chicken_pen.tscn" id="1_at68s"]
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_xf7km"]
+
+[sub_resource type="GDScript" id="GDScript_oio37"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	global_position = Interaction_Manager.player.global_position
+"
 
 [node name="Chicken_test" type="Node2D"]
 
@@ -9,40 +23,18 @@
 position = Vector2(1, 1)
 zoom = Vector2(5, 5)
 position_smoothing_speed = 2.0
+script = SubResource("GDScript_oio37")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_p4wf2")
-
-[node name="Chicken" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(-8, 5)
-
-[node name="Chicken2" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(-46, 18)
-
-[node name="Chicken3" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(37, 33)
-
-[node name="Chicken4" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(17, -15)
+[node name="ChickenPen" parent="." instance=ExtResource("1_at68s")]
+position = Vector2(240, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
+position = Vector2(230, -15)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-64, -64)
-polygon = PackedVector2Array(1, 128, 128, 128, 127, 6, 2, 6, 1, 140, -11, 140, -9, -16, 140, -17, 141, 142, 1, 140)
+polygon = PackedVector2Array(2, -4, 230, -5, 229, 156, 203, 156, 204, 15, -1, 15)
 
-[node name="Chicken5" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(-10, 34)
-
-[node name="Chicken6" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(-36, -14)
-
-[node name="Chicken7" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(27, 13)
-
-[node name="Chicken8" parent="." instance=ExtResource("1_wvlxk")]
-position = Vector2(-3, -29)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(64, 0)
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_xf7km")]
+position = Vector2(124, 86)

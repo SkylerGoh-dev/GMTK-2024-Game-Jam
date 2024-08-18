@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 10
-var direction: Vector2
 var gravity = 9.8
 var friction = 1
 var ground = false
 var clickable = false
+var falling = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,8 +12,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
+	velocity.y += gravity
+	if velocity.y > 0 and not falling:
+		$Timer.start()
+		falling = true
+	
 	if ground:
+		velocity.x = move_toward(velocity.x, 0, 2 * friction)
+	else:
 		velocity.x = move_toward(velocity.x, 0, friction)
 		
 	if clickable:
@@ -28,7 +33,6 @@ func _on_timer_timeout() -> void:
 	gravity = 0
 	velocity.y = 0
 	ground = true
-
 
 func _on_area_2d_mouse_entered() -> void:
 	clickable = true

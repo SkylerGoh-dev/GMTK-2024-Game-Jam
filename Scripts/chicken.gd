@@ -8,7 +8,7 @@ var hotspot = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 var draggable = false
 @export var clickable = false
-@export var game_field: NodePath
+@export var roam_dist = 64
 
 var previous_mouse_position : Vector2
 @export var shake_threshold : float = 40.0
@@ -20,6 +20,7 @@ var max_direction_changes : int = 20
 @onready var rest_timer = $Rest
 @onready var walk_timer = $Walk
 @onready var egg_spawner = $EggSpawner
+@onready var animation = $AnimationPlayer
 
 #@export var roam_dist = 8
 
@@ -27,7 +28,6 @@ func _ready():
 	pass
 
 func _physics_process(delta: float) -> void:
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if draggable:
@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 			direction = curr_mouse_pos - global_position
 			velocity = direction * DRAG_SPEED
 			sprite.play("angry")
+			
 		if Input.is_action_just_released("press"):
 			Interaction_Manager.is_dragging = false
 			unhand_me()
@@ -51,11 +52,14 @@ func _physics_process(delta: float) -> void:
 			
 			if direction_changes == 0 or sign(angle) != sign(previous_movement.angle()):
 				direction_changes += 1
-				print("direction changed: ", direction_changes)
+				
+				if direction_changes > max_direction_changes and not animation.is_playing() and Input.is_action_pressed("press"):
+					animation.play("fade_out")
 			
 			if direction_changes == max_direction_changes:
 				print("shook")
 				spawn_egg()
+	
 	else:
 		direction = position.direction_to(hotspot)
 		if direction and abs(position - hotspot) > Vector2(2, 2):
@@ -69,10 +73,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func get_new_pos():
-	var neg_x = -64 - position.x
-	var pos_x = 64 - position.x
-	var neg_y = -64 - position.y
-	var pos_y = 64 - position.y
+	var neg_x = -roam_dist - position.x
+	var pos_x = roam_dist - position.x
+	var neg_y = -roam_dist - position.y
+	var pos_y = roam_dist - position.y
 	hotspot.x = rng.randf_range(neg_x, pos_x) + position.x
 	hotspot.y = rng.randf_range(neg_y, pos_y) + position.y
 
@@ -96,8 +100,8 @@ func unhand_me():
 func spawn_egg():
 	var egg = preload("res://Scenes/egg.tscn").instantiate()
 	egg.scale = Vector2(0.7,0.7)
-	egg.global_position = egg_spawner.global_position
-	egg.velocity.x = velocity.x / 10
+	egg.position = position + egg_spawner.position
+	egg.velocity = velocity / 7.5
 	get_parent().call_deferred("add_child", egg)
 
 func _on_rest_timeout() -> void:
@@ -107,7 +111,7 @@ func _on_walk_timeout() -> void:
 	rest()
 
 func _on_area_2d_mouse_entered() -> void:
-	if not Interaction_Manager.is_dragging:
+	if not Interaction_Manager.is_dragging and clickable:
 		draggable = true
 		scale = Vector2(1.2, 1.2)
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)

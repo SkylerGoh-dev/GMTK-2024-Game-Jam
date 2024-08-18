@@ -1,6 +1,7 @@
 extends Node
 
 var pause_menu
+var panel_open: bool = false
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
