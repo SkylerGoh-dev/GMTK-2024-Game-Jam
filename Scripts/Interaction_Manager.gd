@@ -4,6 +4,7 @@ extends Node2D
 
 var active_areas: Array = []
 var can_interact: bool = true
+var is_dragging: bool = false
 
 func register_area(area: Interaction_Area):
 	active_areas.push_back(area)
