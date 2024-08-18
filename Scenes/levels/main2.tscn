@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://jys3bpbglook"]
+[gd_scene load_steps=24 format=4 uid="uid://jys3bpbglook"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_jbp2l"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_inkgy"]
+[ext_resource type="Texture2D" uid="uid://bquvivmpoaooy" path="res://Sprites/Outside_Tiles.png" id="2_wrjpj"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="3_ffd2r"]
 [ext_resource type="PackedScene" uid="uid://bwo6hdwlwtkt0" path="res://Scenes/Store-furniture/apple_crate.tscn" id="4_qyvgy"]
 [ext_resource type="PackedScene" uid="uid://dfwcsq233ssle" path="res://Scenes/Store-furniture/orange_crate.tscn" id="5_0vu06"]
@@ -90,12 +91,56 @@ texture = ExtResource("1_jbp2l")
 0:4/0/terrain_set = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yummv"]
+texture = ExtResource("2_wrjpj")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_ql21g"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Floor and Walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_8tsxp")
+sources/1 = SubResource("TileSetAtlasSource_yummv")
 
 [node name="Main2" type="Node2D"]
 y_sort_enabled = true

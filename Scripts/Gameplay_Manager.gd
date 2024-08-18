@@ -6,7 +6,7 @@ var pause_menu
 @export var current_week: int = 1
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
-
+var scene_changing: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -47,6 +47,25 @@ func are_items_colected():
 			return false
 	return true
 
+func end_week():
+	if are_items_colected():
+		current_week+= 1
+		clear_needed_items()
+		go_to_scene_transition()
+
 func clear_needed_items() ->void:
 	scene_items.clear()
 	completed_items.clear()
+
+func next_level_path() -> String:
+	#scene_changing = false
+	#return "res://Scenes/levels/main" + str(current_week) + ".tscn"
+	return "res://Scenes/levels/main.tscn"
+
+func go_to_scene_transition():
+	get_tree().change_scene_to_file("res://Scenes/scene_transition.tscn")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_right"):
+		end_week()
+		
