@@ -12,7 +12,8 @@ var animatedDirection: String = "Down"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Interaction_Manager.player = self
+	print(Interaction_Manager.player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -51,6 +52,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventoryResource)
 	else:
+
 		#$Weapon/Knife.hide()
 		knife.set_deferred("monitorable", false)
 		speed = 25

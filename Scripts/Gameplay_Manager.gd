@@ -1,6 +1,5 @@
 extends Node
 
-
 var pause_menu
 
 # Gameplay Flags
