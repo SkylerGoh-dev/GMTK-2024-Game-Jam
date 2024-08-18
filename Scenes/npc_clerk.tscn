@@ -61,6 +61,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Item_Indicator" parent="." instance=ExtResource("6_rxwm1")]
+visible = false
 position = Vector2(0, -17)
 scale = Vector2(0.8, 0.8)
 frame_progress = 0.256015

@@ -1,6 +1,8 @@
 class_name Depot
 extends StaticBody2D
 
+signal type_done
+
 @export var type: Resource_Name.type 
 @onready var interaction_area: Interaction_Area = $Interaction_Area
 @export var item_needed: bool
@@ -31,3 +33,9 @@ func _on_interact():
 		
 		if Gameplay_Manager.item_finished(stringNameOfType):
 			indicator.hide()
+			item_needed = false
+			type_done.emit(type)
+			
+func hide_indicator():
+	if indicator:
+		indicator.hide()

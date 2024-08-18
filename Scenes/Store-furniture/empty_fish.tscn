@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dipbe2j67foqi"]
+
+[ext_resource type="Texture2D" uid="uid://dksrunbrv5b1i" path="res://Sprites/Fish.png" id="1_ufvag"]
+
+[node name="empty_fish" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ufvag")
+region_enabled = true
+region_rect = Rect2(48, 32, 48, 32)
