@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bscbhheprbir4"]
+
+[ext_resource type="Script" path="res://Scripts/egg.gd" id="1_iem40"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_qhdgu"]
+[ext_resource type="Resource" uid="uid://cim8aigiwtqox" path="res://InventoryThings/egg.tres" id="2_s6bpi"]
+[ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="3_hxr2k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwod"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_na2oj"]
+radius = 4.0
+height = 12.0
+
+[node name="Egg" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_iem40")
+itemResource = ExtResource("2_s6bpi")
+inventoryResource = ExtResource("3_hxr2k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_qhdgu")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_txwod")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_na2oj")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://br4n0cwytsvtq"]
+
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_1lixb"]
+[ext_resource type="PackedScene" uid="uid://b8wn6t7igc7d6" path="res://Scenes/chicken_pen.tscn" id="1_at68s"]
+[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_c5ivn"]
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_xf7km"]
+[ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="3_5kwks"]
+[ext_resource type="PackedScene" uid="uid://csok1g3nwjo8n" path="res://Scenes/chicken_game.tscn" id="4_ae6rr"]
+
+[sub_resource type="GDScript" id="GDScript_oio37"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Gameplay_Manager._register_item(13,2)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	global_position = Interaction_Manager.player.global_position
+"
+
+[node name="Chicken_test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("1_1lixb")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_c5ivn")]
+custom_minimum_size = Vector2(78, 78)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -39.0
+offset_right = 64.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(64.5, 39)
+
+[node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("3_5kwks")]
+
+[node name="ChickenGame" parent="CanvasLayer" instance=ExtResource("4_ae6rr")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 1)
+zoom = Vector2(5, 5)
+position_smoothing_speed = 2.0
+script = SubResource("GDScript_oio37")
+
+[node name="ChickenPen" parent="." node_paths=PackedStringArray("chicken_game") instance=ExtResource("1_at68s")]
+position = Vector2(240, 0)
+chicken_game = NodePath("../CanvasLayer/ChickenGame")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(230, -15)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(2, -4, 230, -5, 229, 156, 203, 156, 204, 15, -1, 15)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_xf7km")]
+position = Vector2(124, 86)
+
+[connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
+[connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
+
+[editable path="ChickenPen"]
+[editable path="Player"]
+[editable path="Player/Weapon/Knife"]

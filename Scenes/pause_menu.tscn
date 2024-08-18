@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dj1lj5m1re638"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i8q42"]
-[ext_resource type="FontFile" uid="uid://c6axm4ixysabq" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
 [ext_resource type="Shader" path="res://Shaders/pause_menu.gdshader" id="2_rytvc"]
 [ext_resource type="Theme" uid="uid://j26h7k3csn3j" path="res://Shaders/pause_menu.tres" id="3_effa5"]
 

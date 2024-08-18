@@ -60,17 +60,17 @@ func update_item_completion(item: String, amount: int):
 	if scene_items[lower_item] == amount:
 		completed_items[lower_item] = true	
 		shopping_list.cross_ui_item(lower_item)
-	if are_items_colected() and npc_clerk:
+	if are_items_collected() and npc_clerk:
 		npc_clerk.show_indicator()
 
-func are_items_colected():
+func are_items_collected():
 	for item in completed_items.values():
 		if not item:
 			return false
 	return true
 
 func end_week():
-	if are_items_colected():
+	if are_items_collected():
 		if current_week+1 <= max_weeks:
 			current_week+= 1
 		clear_needed_items()

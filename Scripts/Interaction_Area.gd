@@ -13,6 +13,7 @@ func _ready() -> void:
 # When player enters the interaction area, register area to interaction manager
 # This registers interaction area, as a possible interactable when player gets close
 func _on_body_entered(body):
+	print(body.name)
 	Interaction_Manager.register_area(self)
 
 # When player exits the interaction area, unregister it

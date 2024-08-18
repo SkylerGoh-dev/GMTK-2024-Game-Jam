@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=10 format=4 uid="uid://j26h7k3csn3j"]
+[gd_resource type="Theme" load_steps=10 format=4 uid="uid://tccwucovtioo"]
 
-[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="1_xyp5i"]
+[ext_resource type="Texture2D" uid="uid://cltuikx1a4kb5" path="res://Sprites/Close_Button.png" id="1_ckmqd"]
 
 [sub_resource type="Image" id="Image_w2iio"]
 data = {
@@ -1215,31 +1215,21 @@ cache/0/14/0/glyphs/93/size = Vector2(9, 10)
 cache/0/14/0/glyphs/93/uv_rect = Rect2(134, 42, 9, 10)
 cache/0/14/0/glyphs/93/texture_idx = 0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tgdb"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q33cq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6euwj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apavi"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew26n"]
-texture = ExtResource("1_xyp5i")
-region_rect = Rect2(0, 0, 64, 32)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6hi0s"]
+texture = ExtResource("1_ckmqd")
+region_rect = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_suacg"]
-texture = ExtResource("1_xyp5i")
-region_rect = Rect2(0, 32, 64, 32)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6h5r"]
+texture = ExtResource("1_ckmqd")
+region_rect = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0opc1"]
-texture = ExtResource("1_xyp5i")
-region_rect = Rect2(0, 64, 64, 32)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v05uc"]
+texture = ExtResource("1_ckmqd")
+region_rect = Rect2(0, 16, 16, 16)
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -1261,8 +1251,8 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/fonts/font = SubResource("FontFile_t63ei")
-Button/styles/disabled = SubResource("StyleBoxFlat_3tgdb")
-Button/styles/focus = SubResource("StyleBoxEmpty_6euwj")
-Button/styles/hover = SubResource("StyleBoxTexture_ew26n")
-Button/styles/normal = SubResource("StyleBoxTexture_suacg")
-Button/styles/pressed = SubResource("StyleBoxTexture_0opc1")
+Button/styles/disabled = SubResource("StyleBoxEmpty_q33cq")
+Button/styles/focus = SubResource("StyleBoxEmpty_apavi")
+Button/styles/hover = SubResource("StyleBoxTexture_6hi0s")
+Button/styles/normal = SubResource("StyleBoxTexture_l6h5r")
+Button/styles/pressed = SubResource("StyleBoxTexture_v05uc")
