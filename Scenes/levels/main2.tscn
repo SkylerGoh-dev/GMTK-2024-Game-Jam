@@ -218,29 +218,6 @@ position = Vector2(-64, 91)
 [node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("7_ipmqq")]
 position = Vector2(-64, 75)
 
-<<<<<<< HEAD
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("8_pomxd")
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("9_pvoo7")]
-custom_minimum_size = Vector2(78, 78)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.5
-offset_top = -39.0
-offset_right = 64.5
-offset_bottom = 39.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(8, 8)
-pivot_offset = Vector2(64.5, 39)
-
-=======
->>>>>>> d5a3e02eef09200194a6dd941582687be9753a7b
 [node name="Freezers" type="Node2D" parent="."]
 position = Vector2(-24, -3)
 script = ExtResource("6_856fx")
