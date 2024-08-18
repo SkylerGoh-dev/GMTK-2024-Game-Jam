@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://c3kaa6aa1ab74"]
+[gd_scene load_steps=30 format=4 uid="uid://c3kaa6aa1ab74"]
 
 [ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_easjp"]
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_hi67j"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="11_8jb2s"]
 [ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="12_jwrhm"]
 [ext_resource type="PackedScene" uid="uid://usoy1x8bcdpl" path="res://Scenes/Store-furniture/cheese_freezer_R.tscn" id="13_3hxal"]
+[ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="13_3prdt"]
 [ext_resource type="PackedScene" uid="uid://biqibrr1uopdf" path="res://Scenes/Store-furniture/drink_freezer_L.tscn" id="14_nsugl"]
 [ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="15_pfhs1"]
 [ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="16_ttw3h"]
@@ -131,6 +132,28 @@ sources/1 = SubResource("TileSetAtlasSource_pavw2")
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("9_8sgrk")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("1_lnpqg")]
+custom_minimum_size = Vector2(78, 78)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -39.0
+offset_right = 64.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(64.5, 39)
+
+[node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("13_3prdt")]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAA=")
@@ -190,26 +213,6 @@ position = Vector2(-64, 91)
 
 [node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("6_o453m")]
 position = Vector2(-64, 75)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("9_8sgrk")
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("1_lnpqg")]
-custom_minimum_size = Vector2(78, 78)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.5
-offset_top = -39.0
-offset_right = 64.5
-offset_bottom = 39.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(8, 8)
-pivot_offset = Vector2(64.5, 39)
 
 [node name="Freezers" type="Node2D" parent="."]
 position = Vector2(-24, -3)
