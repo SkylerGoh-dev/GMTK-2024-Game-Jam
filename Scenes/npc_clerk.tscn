@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk1h6f04vgse4"]
+
+[ext_resource type="Script" path="res://Scripts/npc_clerk.gd" id="1_huhjx"]
+[ext_resource type="Texture2D" uid="uid://byv5nsn8c1rx6" path="res://Sprites/Store NPC.png" id="1_ksj58"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="2_5boqs"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="4_0lwjv"]
+[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="4_yy3yj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
+radius = 32.0
+
+[node name="NPC clerk" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_huhjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ksj58")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+script = ExtResource("2_5boqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="."]
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("4_yy3yj")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_0lwjv")
+text = "I'm the npc clerk  bl bla bla s d fkdafja;sdl "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

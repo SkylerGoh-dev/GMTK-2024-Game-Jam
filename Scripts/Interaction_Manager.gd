@@ -7,6 +7,7 @@ var can_interact: bool = true
 
 func register_area(area: Interaction_Area):
 	active_areas.push_back(area)
+	print(area)
 	
 func unregister_area(area: Interaction_Area):
 	var index = active_areas.find(area)
@@ -15,7 +16,7 @@ func unregister_area(area: Interaction_Area):
 
 # Actively sort interaction areas by distance
 func _process(_delta):
-	if active_areas.size() > 1 and can_interact:
+	if active_areas.size() > 0 and can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		
 func _sort_by_distance_to_player(area1: Area2D, area2: Area2D):
