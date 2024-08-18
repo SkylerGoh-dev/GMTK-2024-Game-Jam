@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://brohxksac1v51"]
+
+[ext_resource type="Script" path="res://Scripts/Exits.gd" id="1_hm6wc"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="2_mi4ic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oe4f"]
+size = Vector2(16, 16)
+
+[node name="Exits" type="Node2D"]
+script = ExtResource("1_hm6wc")
+
+[node name="Interaction_Area" parent="." instance=ExtResource("2_mi4ic")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("RectangleShape2D_7oe4f")

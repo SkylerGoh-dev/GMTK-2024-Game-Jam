@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk1h6f04vgse4"]
+[gd_scene load_steps=9 format=3 uid="uid://dk1h6f04vgse4"]
 
 [ext_resource type="Script" path="res://Scripts/npc_clerk.gd" id="1_huhjx"]
 [ext_resource type="Texture2D" uid="uid://byv5nsn8c1rx6" path="res://Sprites/Store NPC.png" id="1_ksj58"]
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="2_5boqs"]
 [ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="4_0lwjv"]
 [ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="4_yy3yj"]
+[ext_resource type="PackedScene" uid="uid://cqcux08ittdg5" path="res://Scenes/Item_Indicator.tscn" id="6_rxwm1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
-radius = 32.0
+radius = 40.0
 
 [node name="NPC clerk" type="StaticBody2D"]
 z_index = 1
@@ -58,3 +59,8 @@ text = "I'm the npc clerk  bl bla bla s d fkdafja;sdl "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Item_Indicator" parent="." instance=ExtResource("6_rxwm1")]
+position = Vector2(0, -17)
+scale = Vector2(0.8, 0.8)
+frame_progress = 0.256015
