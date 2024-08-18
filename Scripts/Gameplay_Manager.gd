@@ -51,11 +51,8 @@ func _register_item(item: Resource_Name.type, amount: int):
 		scene_items[resource_name] = amount
 		completed_items[resource_name] = false
 		shopping_list.add_ui_item(resource_name,amount)
-	print(scene_items)
-	print(completed_items)
 	
 func update_item_completion(item: String, amount: int):
-	print("trying to update", item, "with amount: ", amount)
 	var lower_item = item.to_lower()
 	if lower_item not in scene_items.keys():
 		return
@@ -102,6 +99,8 @@ func get_shopping_list_dialog() -> String:
 	if current_week-1 < grandma_dialog.size():
 		return grandma_dialog[current_week-1]
 	return ""
+func get_current_week() -> int:
+	return current_week
 		
 func item_finished(item: String) -> bool:
 	if item in completed_items.keys():

@@ -16,10 +16,10 @@ func _input(event):
 	if event.is_action_pressed("inventory"):
 		if inventory.isOpen:
 			inventory.close()
-			Gameplay_Manager.shopping_list.hide()
+			Gameplay_Manager.shopping_list.show()
 		else:
 			inventory.open()
-			Gameplay_Manager.shopping_list.show()
+			Gameplay_Manager.shopping_list.hide()
 
 func _on_inventory_closed() -> void:
 	get_tree().paused = false

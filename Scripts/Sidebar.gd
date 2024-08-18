@@ -2,7 +2,6 @@ class_name side_bar
 extends PanelContainer
 
 @onready var main_menu = $MarginContainer/Menu/InnerMenu
-@onready var menu_parent = $MarginContainer/Menu/InnerMenu/VBoxContainer/VBoxContainer/MarginContainer
 @onready var list_menu : GridContainer = $MarginContainer/Menu/InnerMenu/VBoxContainer2/VBoxContainer/MarginContainer/listMenu
 @onready var week: Label = $MarginContainer/Menu/InnerMenu/VBoxContainer2/Week
 @onready var explanation: Label = $MarginContainer/Menu/InnerMenu/VBoxContainer2/VBoxContainer/Explanation
@@ -22,6 +21,7 @@ func _ready():
 	arrow_down.visible = true
 	Gameplay_Manager.shopping_list = self
 	explanation.text = Gameplay_Manager.get_shopping_list_dialog()
+	week.text = "Week " + str(Gameplay_Manager.get_current_week())
 
 func _set_menu(menu):
 	var wasClosed = menu.visible == false
@@ -60,16 +60,13 @@ func cross_ui_item(item: String):
 	item_node.h_separator.show()
 
 func resize_menu():
-	if explanation.size.y > 150:
-		if total_items >= 2 and total_items < 6:
-			inner_menu.custom_minimum_size = Vector2i(0,400)
-		elif total_items >= 6:
-			inner_menu.custom_minimum_size = Vector2i(0,500)
-	elif explanation.size.y > 70:
-		if total_items >= 6:
-			inner_menu.custom_minimum_size = Vector2i(0,400)
+	print(total_items)
+	if total_items > 2 and total_items < 6:
+		inner_menu.custom_minimum_size = Vector2i(0,350)
+	elif total_items >= 6 and total_items < 9:
+		inner_menu.custom_minimum_size = Vector2i(0,400)
 	else:
-		inner_menu.custom_minimum_size = Vector2i(0,300)
+		inner_menu.custom_minimum_size = Vector2i(0,250)
 	print(inner_menu.custom_minimum_size)
 
 func clear_list():

@@ -234,11 +234,9 @@ item_amount = 2
 
 [node name="Cheese_Freezer_L" parent="Freezers" instance=ExtResource("12_88146")]
 position = Vector2(-96, -141)
-item_needed = true
 
 [node name="Cheese_Freezer_R" parent="Freezers" instance=ExtResource("13_ryagg")]
 position = Vector2(-80, -141)
-item_needed = true
 
 [node name="Drink_Freezer_L" parent="Freezers" instance=ExtResource("14_bnmm7")]
 position = Vector2(-64, -141)
@@ -259,7 +257,6 @@ script = ExtResource("6_856fx")
 [node name="shelves1" parent="shelves" instance=ExtResource("19_mpfpl")]
 position = Vector2(-48, -29)
 type = 14
-item_needed = true
 
 [node name="shelves2" parent="shelves" instance=ExtResource("19_mpfpl")]
 position = Vector2(-48, -77)
@@ -269,7 +266,6 @@ item_needed = true
 [node name="shelves3" parent="shelves" instance=ExtResource("19_mpfpl")]
 position = Vector2(-96, -77)
 type = 13
-item_needed = true
 
 [node name="shelves4" parent="shelves" instance=ExtResource("19_mpfpl")]
 position = Vector2(-96, -29)
