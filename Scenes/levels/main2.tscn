@@ -190,21 +190,17 @@ script = ExtResource("6_856fx")
 
 [node name="apple_crate" parent="Produce_Crates" instance=ExtResource("4_qyvgy")]
 position = Vector2(-128, 91)
-item_needed = true
 item_amount = 3
 
 [node name="apple_crate2" parent="Produce_Crates" instance=ExtResource("4_qyvgy")]
 position = Vector2(-128, 75)
-item_needed = true
 item_amount = 3
 
 [node name="orange_crate" parent="Produce_Crates" instance=ExtResource("5_0vu06")]
 position = Vector2(-112, 75)
-item_needed = true
 
 [node name="orange_crate2" parent="Produce_Crates" instance=ExtResource("5_0vu06")]
 position = Vector2(-112, 91)
-item_needed = true
 
 [node name="pears_crate" parent="Produce_Crates" instance=ExtResource("6_noml5")]
 position = Vector2(-80, 75)
