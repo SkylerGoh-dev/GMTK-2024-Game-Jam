@@ -1,28 +1,73 @@
 extends CharacterBody2D
 
+@export var speed : int = 100
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+var direction = Vector2.ZERO
+var animatedDirection: String = "Down"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var got_hit: Timer = $Hitbox/GotHit
+@onready var knife: Area2D = $Weapon/Knife
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var inventoryResource: InventoryResource
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Interaction_Manager.player = self
+	print(Interaction_Manager.player)
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	reset_inventory()
+	pass
 
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+func _physics_process(_delta):
+	direction = Input.get_vector("left", "right", "up", "down")
+	velocity = direction * speed
+	
+	if velocity.length() != 0:
+		animatedDirection = "down"
+		if velocity.x < 0: animatedDirection = "left"
+		elif velocity.x > 0: animatedDirection = "right"
+		elif velocity.y < 0: animatedDirection = "up"
+			
+	if velocity.x > 0:
+		sprite.flip_h = false
+	elif velocity.x < 0:
+		sprite.flip_h = true
+		
+	if velocity == Vector2.ZERO:
+		sprite.play("Idle")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		sprite.play("Run")
+		
 	move_and_slide()
+	swingWeapon()
+
+func swingWeapon():
+	if Input.is_action_just_pressed("attack"):
+		animation_player.play("attack" + animatedDirection)
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.has_method("collect"):
+		area.collect(inventoryResource)
+	else:
+		knife.set_deferred("monitorable", false)
+		speed = 25
+		got_hit.start()
+		knife.hide()
+	
+func _on_got_hit_timeout() -> void:
+	speed = 100
+	knife.show()
+	knife.set_deferred("monitorable", true)
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://Scenes/cow_level.tscn")
+
+#func _on_timer_timeout() -> void:
+	#get_tree().change_scene_to_file("res://Scenes/levels/cow_level.tscn")
+
+func reset_inventory():
+	if Input.is_action_just_pressed("reset inventory"):
+		inventoryResource.clearAll()
