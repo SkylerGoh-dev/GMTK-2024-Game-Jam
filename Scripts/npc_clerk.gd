@@ -12,7 +12,6 @@ var dialog: Array = [
 	"Thank you, come again! \n Please exit to your left or right",
 	"I'm the npc clerk",
 	"fuck off kid",
-	""
 ]
 
 # Called when the node enters the scene tree for the first time.

@@ -9,3 +9,4 @@ func hide_indicator_for_type(type: Resource_Name.type):
 	for depots: Depot in self.get_children():
 		if depots.type == type:
 			depots.hide_indicator()
+			depots.item_needed = false
