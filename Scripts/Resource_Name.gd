@@ -22,6 +22,6 @@ enum type {
 	CHAINSAW,
 	FISH,
 	SHOVEL,
-	DUCKTAPE,
+	DUCTTAPE,
 	NONE,
 }

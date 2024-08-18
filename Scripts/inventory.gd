@@ -9,6 +9,7 @@ var isOpen: bool = false
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
 func _ready():
+	Gameplay_Manager.inventoryResource = inventoryResource
 	inventoryResource.updated.connect(update)
 	update()
 
