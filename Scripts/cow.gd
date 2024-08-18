@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var target: CharacterBody2D
 @onready var charge: Timer = $Charge
 @onready var attack_time: Timer = $AttackTime
+@onready var beef = preload("res://Scenes/beef.tscn")
 
 var speed = 50
 var direction = Vector2.ZERO
@@ -38,4 +39,7 @@ func _on_attack_time_timeout() -> void:
 	speed = 150
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
+	var beefInstance = beef.instantiate()
+	beefInstance.global_position = global_position
+	get_parent().add_child(beefInstance)
 	queue_free()

@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://baclfcpi5l8qq"]
+
+[ext_resource type="Texture2D" uid="uid://cufwt5th68ioo" path="res://Sprites/Food_Items.png" id="1_evd0w"]
+[ext_resource type="Script" path="res://Scripts/beef.gd" id="1_m32cr"]
+[ext_resource type="Resource" uid="uid://b2ksat1utp3iw" path="res://InventoryThings/beef.tres" id="2_wfw44"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wromx"]
+radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tf2r"]
+atlas = ExtResource("1_evd0w")
+region = Rect2(0, 32, 16, 16)
+
+[node name="Beef" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_m32cr")
+itemResource = ExtResource("2_wfw44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_wromx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2tf2r")
