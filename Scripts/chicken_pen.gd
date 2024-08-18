@@ -11,4 +11,5 @@ func _ready() -> void:
 
 func _on_interact():
 	chicken_game.set_deferred("visible", true)
+	chicken_game.walls.set_deferred("disabled", false)
 	panel_open = true
