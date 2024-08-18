@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbh5snqhkk737"]
+
+[ext_resource type="Script" path="res://Scripts/depot.gd" id="1_impvx"]
+[ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="2_opqlb"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="3_qr7gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_547tp"]
+size = Vector2(16, 10.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0ifi"]
+radius = 16.0
+
+[node name="napkin" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_impvx")
+type = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_opqlb")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_547tp")
+
+[node name="Interaction_Area" parent="." instance=ExtResource("3_qr7gh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_r0ifi")
