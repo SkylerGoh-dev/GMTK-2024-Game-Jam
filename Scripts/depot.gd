@@ -29,7 +29,10 @@ func _on_interact():
 		var stringNameOfType = Resource_Name.type.keys()[type].to_lower()
 		var fullPath = "res://InventoryThings/" + stringNameOfType + ".tres"
 		var itemResource: InventoryItem = load(fullPath)
-		inventoryResource.insert(itemResource)
+		if itemResource:
+			inventoryResource.insert(itemResource)
+		else:
+			printerr("No Item resource for", stringNameOfType)
 		
 		if Gameplay_Manager.item_finished(stringNameOfType):
 			indicator.hide()

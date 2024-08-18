@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsqfs781mmy0s"
-path="res://.godot/imported/Task_List.png-2370b015f8fdc97a51251e61527a2c94.ctex"
+uid="uid://b3tovgjgsiuy0"
+path="res://.godot/imported/item_sprites_small.png-81ea735f8837c0547ccbf2c6945146b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/shopping list/Task_List.png"
-dest_files=["res://.godot/imported/Task_List.png-2370b015f8fdc97a51251e61527a2c94.ctex"]
+source_file="res://Sprites/item_sprites_small.png"
+dest_files=["res://.godot/imported/item_sprites_small.png-81ea735f8837c0547ccbf2c6945146b3.ctex"]
 
 [params]
 
