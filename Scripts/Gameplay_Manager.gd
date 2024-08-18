@@ -10,6 +10,9 @@ var scene_changing: bool = false
 var max_weeks: int = 2
 var inventoryResource: InventoryResource 
 
+#reference
+var npc_clerk : clerk
+
 # Scene Transition dialog
 var dialog = [
 	"Grandma Seems off"
@@ -46,10 +49,12 @@ func _register_item(item: Resource_Name.type, amount: int):
 	
 func update_item_completion(item: String, amount: int):
 	print("trying to update", item, "with amount: ", amount)
+	if item.to_lower() not in scene_items.keys():
+		return
 	if scene_items[item.to_lower()] == amount:
 		completed_items[item.to_lower()] = true	
-	print(completed_items)
-	print(are_items_colected())
+	if are_items_colected() and npc_clerk:
+		npc_clerk.show_indicator()
 
 func are_items_colected():
 	for item in completed_items.values():
@@ -80,8 +85,7 @@ func go_to_scene_transition():
 func get_dialog() -> String:
 	return dialog[current_week-2]
 
-#for testing remove later
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_right"):
-		end_week()
-		
+func item_finished(item: String) -> bool:
+	if item in completed_items.keys():
+		return completed_items[item]
+	return false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl2fhw0g5wcq7"]
 
 [ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="1_3flc3"]
-[ext_resource type="Script" path="res://Scenes/scene_transition.gd" id="1_7vr6v"]
+[ext_resource type="Script" path="res://Scripts/scene_transition.gd" id="1_7vr6v"]
 
 [node name="Transition_scene" type="Node2D"]
 script = ExtResource("1_7vr6v")
