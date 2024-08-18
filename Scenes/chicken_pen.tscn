@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://b8wn6t7igc7d6"]
 
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="1_a8spy"]
-[ext_resource type="Texture2D" uid="uid://c7f0c3gasnfv8" path="res://Sprites/Outside_Tiles.png" id="2_44tq3"]
+[ext_resource type="Texture2D" uid="uid://dlil4ph63apux" path="res://Sprites/Outside_Tiles.png" id="2_44tq3"]
 [ext_resource type="Texture2D" uid="uid://sjp2f77jg2mj" path="res://Sprites/Outside_Tiles16_1.png" id="3_pb6go"]
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="4_j6pjg"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction_Area.tscn" id="5_ewlhj"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="5_ewlhj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sdf5"]
 texture = ExtResource("2_44tq3")

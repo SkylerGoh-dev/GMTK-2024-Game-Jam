@@ -8,9 +8,11 @@ var is_dragging: bool = false
 
 func register_area(area: Interaction_Area):
 	active_areas.push_back(area)
+	print("add", area)
 	
 func unregister_area(area: Interaction_Area):
 	var index = active_areas.find(area)
+	print("clear", area)
 	if index != -1:
 		active_areas.remove_at(index)
 

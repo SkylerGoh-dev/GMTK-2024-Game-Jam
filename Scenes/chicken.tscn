@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/chicken.gd" id="1_1x3ld"]
 [ext_resource type="Texture2D" uid="uid://by5bqb45hxuq8" path="res://Sprites/Chicken.png" id="2_v5gef"]
-[ext_resource type="FontFile" uid="uid://c7o2hj1ath85u" path="res://Fonts/PeaberryMono.ttf" id="3_prnvg"]
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="3_prnvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdn12"]
 atlas = ExtResource("2_v5gef")
@@ -64,21 +64,6 @@ height = 6.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a07w5"]
 radius = 6.0
 
-[sub_resource type="Animation" id="Animation_dniix"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_j3o7e"]
 length = 0.001
 tracks/0/type = "value"
@@ -92,6 +77,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dniix"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oskqw"]

@@ -53,11 +53,10 @@ func _physics_process(delta: float) -> void:
 			if direction_changes == 0 or sign(angle) != sign(previous_movement.angle()):
 				direction_changes += 1
 				
-				if direction_changes > max_direction_changes and not animation.is_playing() and Input.is_action_pressed("press"):
+				if direction_changes > max_direction_changes + 10 and not animation.is_playing() and Input.is_action_pressed("press"):
 					animation.play("fade_out")
 			
 			if direction_changes == max_direction_changes:
-				print("shook")
 				spawn_egg()
 	
 	else:

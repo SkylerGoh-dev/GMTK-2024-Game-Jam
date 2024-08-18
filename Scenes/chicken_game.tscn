@@ -5,9 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="2_1ysnb"]
 [ext_resource type="Theme" uid="uid://tccwucovtioo" path="res://Shaders/close_button.tres" id="3_wro8v"]
 
-[node name="ChickenGame" type="CanvasLayer"]
-offset = Vector2(576, 324)
-transform = Transform2D(1, 0, 0, 1, 576, 324)
+[node name="ChickenGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
 script = ExtResource("1_roq6h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -58,6 +62,7 @@ position = Vector2(2.33333, -32.3333)
 clickable = true
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 212.0
 offset_top = -275.0
 offset_right = 228.0

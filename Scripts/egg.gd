@@ -6,6 +6,9 @@ var ground = false
 var clickable = false
 var falling = false
 
+@export var itemResource: InventoryItem
+@export var inventoryResource: InventoryResource
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -24,10 +27,13 @@ func _physics_process(delta: float) -> void:
 		
 	if clickable:
 		if Input.is_action_just_pressed("press"):
-			print("bye")
-			queue_free()
+			collect(inventoryResource)
+	
 	move_and_slide()
 
+func collect(inventoryResource: InventoryResource):
+	inventoryResource.insert(itemResource)
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	gravity = 0
