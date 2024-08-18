@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://baclfcpi5l8qq"]
 
-[ext_resource type="Texture2D" uid="uid://cufwt5th68ioo" path="res://Sprites/Food_Items.png" id="1_evd0w"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="1_evd0w"]
 [ext_resource type="Script" path="res://Scripts/beef.gd" id="1_m32cr"]
 [ext_resource type="Resource" uid="uid://b2ksat1utp3iw" path="res://InventoryThings/beef.tres" id="2_wfw44"]
 
