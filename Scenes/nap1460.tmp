@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://xstxntxti1qs"]
+
+[ext_resource type="Texture2D" uid="uid://cpuiwyarvscfc" path="res://Sprites/grassy_background.png" id="1_i2fw5"]
+[ext_resource type="PackedScene" uid="uid://bao68tfpgr2oy" path="res://Scenes/napkin_box.tscn" id="2_akjkp"]
+[ext_resource type="Script" path="res://Scripts/napkin_box.gd" id="3_m1dcl"]
+
+[node name="Napkin_Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 1)
+zoom = Vector2(5, 5)
+position_smoothing_speed = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i2fw5")
+
+[node name="Napkin Box" parent="." instance=ExtResource("2_akjkp")]
+script = ExtResource("3_m1dcl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-64, -64)
+polygon = PackedVector2Array(1, 128, 128, 128, 127, 6, 2, 6, 1, 140, -11, 140, -9, -16, 140, -17, 141, 142, 1, 140)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(64, 0)

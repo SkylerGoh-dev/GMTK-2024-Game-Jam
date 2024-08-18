@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2dmlf10kpx1s"]
+
+[ext_resource type="Script" path="res://Scripts/napkin.gd" id="1_epa7c"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_315ox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f47cv"]
+atlas = ExtResource("2_315ox")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwod"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nir1i"]
+size = Vector2(16, 11)
+
+[node name="Napkin" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_epa7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_f47cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_txwod")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_nir1i")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

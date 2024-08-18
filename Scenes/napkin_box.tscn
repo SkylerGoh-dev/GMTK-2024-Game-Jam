@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://bao68tfpgr2oy"]
+
+[ext_resource type="Script" path="res://Scripts/napkin_box.gd" id="1_5oxdf"]
+[ext_resource type="Texture2D" uid="uid://by5bqb45hxuq8" path="res://Sprites/Chicken.png" id="2_ehgbr"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_fsasw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh5t3"]
+atlas = ExtResource("2_fsasw")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdn12"]
+atlas = ExtResource("2_ehgbr")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqr18"]
+atlas = ExtResource("2_ehgbr")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s26cs"]
+atlas = ExtResource("2_ehgbr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uep8l"]
+atlas = ExtResource("2_ehgbr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwi1f"]
+atlas = ExtResource("2_ehgbr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8krk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdn12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqr18")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s26cs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uep8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwi1f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77bnc"]
+radius = 1.0
+height = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tysgj"]
+size = Vector2(14, 9)
+
+[node name="Napkin Box" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_mask = 2
+script = ExtResource("1_5oxdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_uh5t3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(3, -8)
+sprite_frames = SubResource("SpriteFrames_f8krk")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.420448, -0.578115)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_77bnc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_tysgj")
+
+[node name="NapkinSpawner" type="Node2D" parent="."]
+position = Vector2(0, -3)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
