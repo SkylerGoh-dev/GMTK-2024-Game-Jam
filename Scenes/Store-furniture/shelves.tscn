@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfju6d4d041nd"]
+
+[ext_resource type="Script" path="res://Scripts/shelves.gd" id="1_0mmoy"]
+[ext_resource type="Texture2D" uid="uid://dtvwx6c70rpp7" path="res://Sprites/ShelvesNew.png" id="1_g3yec"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="3_kk4vc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6bm0"]
+size = Vector2(16, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlyo7"]
+size = Vector2(32, 32)
+
+[node name="shelves" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_0mmoy")
+
+[node name="top_half" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -8)
+texture = ExtResource("1_g3yec")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="bottom_half" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 8)
+texture = ExtResource("1_g3yec")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_y6bm0")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_kk4vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("RectangleShape2D_dlyo7")

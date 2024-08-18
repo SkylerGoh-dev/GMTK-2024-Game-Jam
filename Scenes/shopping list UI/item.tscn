@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw6k4blb5swua"]
+
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="1_y6kru"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_yfxxa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7tjqa"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8w8je"]
+color = Color(0.144063, 0.144063, 0.144063, 1)
+thickness = 3
+
+[node name="Item" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7tjqa")
+script = ExtResource("1_yfxxa")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+visible = false
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8w8je")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.627451, 0.509804, 1)
+theme_override_fonts/font = ExtResource("1_y6kru")
+text = "4/10 butter_knife"
+vertical_alignment = 1
+autowrap_mode = 2

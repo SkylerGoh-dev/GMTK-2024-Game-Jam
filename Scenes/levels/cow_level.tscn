@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://lklmwfxdwgi"]
+[gd_scene load_steps=10 format=4 uid="uid://ci8ybnaspr0nc"]
 
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_8njxf"]
-[ext_resource type="PackedScene" uid="uid://ce25avsx51frr" path="res://Scenes/player.tscn" id="2_a17ww"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_23bak"]
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_a17ww"]
 [ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="3_7k53c"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="4_wh7cr"]
+[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="5_6tt41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ud8qv"]
 texture = ExtResource("1_8njxf")
@@ -60,11 +63,20 @@ texture = ExtResource("1_8njxf")
 0:4/0 = 0
 0:4/0/terrain_set = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2xmm"]
+texture = ExtResource("2_23bak")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_wf2af"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Floor and Walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_ud8qv")
+sources/1 = SubResource("TileSetAtlasSource_n2xmm")
 
 [node name="CowLevel" type="Node2D"]
 
@@ -87,29 +99,56 @@ remote_path = NodePath("../../Camera2D")
 [node name="Cows" type="Node" parent="."]
 
 [node name="Cow" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(-58, -43)
+position = Vector2(-144, -100)
 target = NodePath("../../Player")
 
 [node name="Cow2" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(77, 21)
+position = Vector2(176, 107)
 target = NodePath("../../Player")
 
 [node name="Cow3" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(105, -6)
+position = Vector2(15, 108)
 target = NodePath("../../Player")
 
 [node name="Cow4" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(116, -49)
+position = Vector2(191, 0)
 target = NodePath("../../Player")
 
 [node name="Cow5" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(-2, -73)
+position = Vector2(15, -117)
 target = NodePath("../../Player")
 
 [node name="Cow6" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(-69, 16)
+position = Vector2(-144, 91)
 target = NodePath("../../Player")
 
 [node name="Cow7" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
-position = Vector2(47, -51)
+position = Vector2(207, -117)
 target = NodePath("../../Player")
+
+[node name="Cow8" parent="Cows" node_paths=PackedStringArray("target") instance=ExtResource("3_7k53c")]
+position = Vector2(-142, 1)
+target = NodePath("../../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("4_wh7cr")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("5_6tt41")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -39.0
+offset_right = 64.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(64.5, 39)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
+[connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

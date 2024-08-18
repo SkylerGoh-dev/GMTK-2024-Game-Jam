@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://52gv20g4lkh4"]
+
+[ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_i6hpy"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_k8ifs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vla84"]
+atlas = ExtResource("2_k8ifs")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_i6hpy")
+name = "Butter"
+texture = SubResource("AtlasTexture_vla84")

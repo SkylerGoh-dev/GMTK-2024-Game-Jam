@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqcux08ittdg5"]
+
+[ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="1_32nw8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wff7p"]
+atlas = ExtResource("1_32nw8")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udojy"]
+atlas = ExtResource("1_32nw8")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mtdf"]
+atlas = ExtResource("1_32nw8")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5113"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wff7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udojy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mtdf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Item_Indicator" type="AnimatedSprite2D"]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_r5113")
+frame_progress = 0.740018

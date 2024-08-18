@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgyc0q0khi5wi"]
+
+[ext_resource type="Script" path="res://Scripts/depot.gd" id="1_xxo7p"]
+[ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="2_rjyfp"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="3_11rb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_547tp"]
+size = Vector2(16, 10.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0ifi"]
+radius = 16.0
+
+[node name="teapot" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_xxo7p")
+type = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("2_rjyfp")
+region_enabled = true
+region_rect = Rect2(1, 19, 13, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_547tp")
+
+[node name="Interaction_Area" parent="." instance=ExtResource("3_11rb2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_r0ifi")

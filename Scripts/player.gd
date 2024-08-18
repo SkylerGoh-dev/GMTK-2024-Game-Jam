@@ -8,12 +8,16 @@ var animatedDirection: String = "Down"
 @onready var got_hit: Timer = $Hitbox/GotHit
 @onready var knife: Area2D = $Weapon/Knife
 
+@export var inventoryResource: InventoryResource
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Interaction_Manager.player = self
+	print(Interaction_Manager.player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	reset_inventory()
 	pass
 
 func _physics_process(_delta):
@@ -45,16 +49,27 @@ func swingWeapon():
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	knife.set_deferred("monitorable", false)
-	speed = 25
-	got_hit.start()
-	knife.hide()
+	if area.has_method("collect"):
+		area.collect(inventoryResource)
+	else:
+
+		#$Weapon/Knife.hide()
+		knife.set_deferred("monitorable", false)
+		speed = 25
+		got_hit.start()
+		knife.hide()
 	
 func _on_got_hit_timeout() -> void:
 	speed = 100
-	knife.show()
 	knife.set_deferred("monitorable", true)
-
+	knife.show()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/cow_level.tscn")
+
+#func _on_timer_timeout() -> void:
+	#get_tree().change_scene_to_file("res://Scenes/levels/cow_level.tscn")
+
+func reset_inventory():
+	if Input.is_action_just_pressed("reset inventory"):
+		inventoryResource.clearAll()

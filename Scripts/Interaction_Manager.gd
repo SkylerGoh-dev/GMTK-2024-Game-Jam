@@ -31,3 +31,6 @@ func _input(event):
 			can_interact = false
 			await active_areas[0].interact.call()
 			can_interact = true
+
+func clear_areas():
+	active_areas.clear()

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdn38j2skbm4j"]
+
+[ext_resource type="Texture2D" uid="uid://dtui5fe0hxr1a" path="res://Sprites/Freezer.png" id="1_rhqyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55noc"]
+size = Vector2(16, 32)
+
+[node name="Empty_Freezer" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rhqyr")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_55noc")
