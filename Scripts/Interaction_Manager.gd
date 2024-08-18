@@ -7,6 +7,7 @@ var can_interact: bool = true
 
 func register_area(area: Interaction_Area):
 	active_areas.push_back(area)
+	print(area)
 	
 func unregister_area(area: Interaction_Area):
 	var index = active_areas.find(area)
@@ -30,3 +31,6 @@ func _input(event):
 			can_interact = false
 			await active_areas[0].interact.call()
 			can_interact = true
+
+func clear_areas():
+	active_areas.clear()

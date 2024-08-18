@@ -5,6 +5,11 @@ extends Area2D
 var interact: Callable = func():
 	pass
 
+func _ready() -> void:
+	if not is_connected("body_entered", _on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not is_connected("body_exited", _on_body_exited):
+		body_exited.connect(_on_body_exited)
 # When player enters the interaction area, register area to interaction manager
 # This registers interaction area, as a possible interactable when player gets close
 func _on_body_entered(body):

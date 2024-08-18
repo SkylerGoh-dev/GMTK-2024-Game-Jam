@@ -1,46 +1,56 @@
-[gd_scene load_steps=9 format=3 uid="uid://dumdj7r6esx7l"]
 
-[ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="1_dhh5x"]
+[gd_scene load_steps=10 format=3 uid="uid://d2261f15mn4w6"]
+
+
 [ext_resource type="Script" path="res://Scripts/cow.gd" id="1_twjj3"]
+[ext_resource type="Texture2D" uid="uid://bkka6b8jwwx4r" path="res://Sprites/Cow.png" id="2_bhsnc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yjvqc"]
-atlas = ExtResource("1_dhh5x")
-region = Rect2(0, 0, 12, 12)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu0fu"]
+atlas = ExtResource("2_bhsnc")
+region = Rect2(0, 32, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8xq4"]
-atlas = ExtResource("1_dhh5x")
-region = Rect2(12, 0, 12, 12)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sysmb"]
+atlas = ExtResource("2_bhsnc")
+region = Rect2(0, 48, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_03r5s"]
-atlas = ExtResource("1_dhh5x")
-region = Rect2(0, 12, 12, 12)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5251j"]
+atlas = ExtResource("2_bhsnc")
+region = Rect2(0, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5kgdm"]
-atlas = ExtResource("1_dhh5x")
-region = Rect2(12, 12, 12, 12)
+[sub_resource type="AtlasTexture" id="AtlasTexture_keqgf"]
+atlas = ExtResource("2_bhsnc")
+region = Rect2(0, 16, 32, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sfb3v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yjvqc")
+"texture": SubResource("AtlasTexture_wu0fu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n8xq4")
+"texture": SubResource("AtlasTexture_sysmb")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5251j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_03r5s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5kgdm")
+"texture": SubResource("AtlasTexture_keqgf")
 }],
 "loop": true,
 "name": &"default",
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yndcj"]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40yvf"]
+size = Vector2(25, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yybkt"]
+size = Vector2(25, 13)
 
 [node name="Cow" type="CharacterBody2D"]
 position = Vector2(60, -55)
@@ -50,10 +60,11 @@ script = ExtResource("1_twjj3")
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_sfb3v")
 autoplay = "default"
-frame_progress = 0.0111093
+frame_progress = 0.138147
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_yndcj")
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_40yvf")
 
 [node name="Charge" type="Timer" parent="."]
 one_shot = true
@@ -62,5 +73,14 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_yybkt")
+
 [connection signal="timeout" from="Charge" to="." method="_on_charge_timeout"]
 [connection signal="timeout" from="AttackTime" to="." method="_on_attack_time_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

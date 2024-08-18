@@ -3,4 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="1_vuusr"]
 
 [node name="Interaction_Area" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_vuusr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

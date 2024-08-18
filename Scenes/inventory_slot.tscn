@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx6k147r6uxa5"]
+
+[ext_resource type="Texture2D" uid="uid://uqdhprm56ga8" path="res://Sprites/inventorySlot.png" id="1_ebyad"]
+[ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_fpk85"]
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="3_1nox2"]
+
+[node name="InventorySlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_fpk85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ebyad")
+centered = false
+vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 3.0
+offset_right = 33.0
+offset_bottom = 19.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1nox2")
+text = "99"
+horizontal_alignment = 2

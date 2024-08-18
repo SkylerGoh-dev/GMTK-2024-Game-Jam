@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqgjengup7fy3"]
+
+[ext_resource type="Texture2D" uid="uid://dksrunbrv5b1i" path="res://Sprites/Fish.png" id="1_f0c8q"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="3_ln3fn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2iip"]
+size = Vector2(50, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xte1"]
+size = Vector2(48, 24)
+
+[node name="Nemo_crate" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f0c8q")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 32)
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_ln3fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_e2iip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_6xte1")

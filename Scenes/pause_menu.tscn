@@ -1,0 +1,110 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj1lj5m1re638"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i8q42"]
+[ext_resource type="FontFile" uid="uid://c6axm4ixysabq" path="res://Fonts/PeaberryMono.ttf" id="2_gf6dw"]
+[ext_resource type="Shader" path="res://Shaders/pause_menu.gdshader" id="2_rytvc"]
+[ext_resource type="Theme" uid="uid://j26h7k3csn3j" path="res://Shaders/pause_menu.tres" id="3_effa5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lih84"]
+shader = ExtResource("2_rytvc")
+shader_parameter/amount = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_i8q42")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lih84")
+offset_left = -105.0
+offset_top = -75.0
+offset_right = 1245.0
+offset_bottom = 719.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseMenu" type="PanelContainer" parent="Control"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 328.0
+offset_top = 76.0
+offset_right = 822.0
+offset_bottom = 564.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 328.0
+offset_top = 76.0
+offset_right = 822.0
+offset_bottom = 564.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Resume" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_effa5")
+theme_override_fonts/font = ExtResource("2_gf6dw")
+keep_pressed_outside = true
+
+[node name="ResumeLabel" type="Label" parent="Control/VBoxContainer/Resume"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -15.0
+offset_right = 370.0
+offset_bottom = 80.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_gf6dw")
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_effa5")
+theme_override_fonts/font = ExtResource("2_gf6dw")
+
+[node name="RestartLabel" type="Label" parent="Control/VBoxContainer/Restart"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -15.0
+offset_right = 370.0
+offset_bottom = 80.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_gf6dw")
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_effa5")
+theme_override_fonts/font = ExtResource("2_gf6dw")
+
+[node name="QuitLabel" type="Label" parent="Control/VBoxContainer/Quit"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -15.0
+offset_right = 370.0
+offset_bottom = 80.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_gf6dw")
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Control/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_up" from="Control/VBoxContainer/Resume" to="." method="_on_resume_button_up"]
+[connection signal="pressed" from="Control/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="button_down" from="Control/VBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_up" from="Control/VBoxContainer/Restart" to="." method="_on_restart_button_up"]
+[connection signal="pressed" from="Control/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="button_down" from="Control/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="Control/VBoxContainer/Quit" to="." method="_on_quit_button_up"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
