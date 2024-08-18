@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://jj0aaoyhoj00"]
+
+[ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_k5qxm"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_7a1om"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oddb"]
+atlas = ExtResource("2_7a1om")
+region = Rect2(32, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_k5qxm")
+name = "Napkin"
+texture = SubResource("AtlasTexture_3oddb")
