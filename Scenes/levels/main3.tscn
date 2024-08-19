@@ -1,4 +1,6 @@
-[gd_scene load_steps=28 format=4 uid="uid://cjo06lovs8bss"]
+
+[gd_scene load_steps=26 format=4 uid="uid://dtrwyh5l3hrof"]
+
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -9,12 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="6_wawov"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_0gkfl"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_38gya"]
-[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
+[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="12_bv7lk"]
 [ext_resource type="Script" path="res://Scripts/ropeMain3.gd" id="13_cvikw"]
-[ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="13_xtfbb"]
-[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+
+[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="16_3ccf7"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
@@ -153,8 +156,6 @@ sources/2 = SubResource("TileSetAtlasSource_q7fqx")
 atlas = ExtResource("12_bv7lk")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcbv"]
-
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
@@ -182,7 +183,7 @@ pivot_offset = Vector2(64.5, 39)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
-tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAD1/wcAAQAAAAEAAAD1/wYAAQAAAAAAAAD2/wUAAQAAAAAAAGD3/wUAAQAAAAEAAGD4/wcAAQAAAAEAAAD4/wYAAQAAAAAAAAD9/wcAAQAAAAEAAAD9/wYAAQAAAAAAAAD//wUAAQAAAAEAAGD+/wUAAQAAAAAAAGD//wAAAQAAAAEAAGD+/wAAAQAAAAAAAGD9////AQAAAAEAAAD9//7/AQAAAAAAAAD///3/AQAAAAEAAGD+//3/AQAAAAAAAGD///j/AQAAAAEAAAD///f/AQAAAAAAAAD8//f/AQAAAAAAAAD8//j/AQAAAAEAAAD9//n/AQAAAAAAAGD+//n/AQAAAAEAAGD6//f/AQAAAAAAAAD6//j/AQAAAAEAAAD3//f/AQAAAAAAAAD3//j/AQAAAAEAAAD4//n/AQAAAAAAAGD5//n/AQAAAAEAAGD1//f/AQAAAAAAAAD1//j/AQAAAAEAAADz//n/AQAAAAAAAGD0//n/AQAAAAEAAGA=")
+tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAD1/wcAAQAAAAEAAAD1/wYAAQAAAAAAAAD2/wUAAQAAAAAAAGD3/wUAAQAAAAEAAGD4/wcAAQAAAAEAAAD4/wYAAQAAAAAAAAD9/wcAAQAAAAEAAAD9/wYAAQAAAAAAAAD//wUAAQAAAAEAAGD+/wUAAQAAAAAAAGD//wAAAQAAAAEAAGD+/wAAAQAAAAAAAGD///3/AQAAAAEAAGD+//3/AQAAAAAAAGD///j/AQAAAAEAAAD///f/AQAAAAAAAAD8//f/AQAAAAAAAAD8//j/AQAAAAEAAAD9//n/AQAAAAAAAGD+//n/AQAAAAEAAGD6//f/AQAAAAAAAAD6//j/AQAAAAEAAAD3//f/AQAAAAAAAAD3//j/AQAAAAEAAAD4//n/AQAAAAAAAGD5//n/AQAAAAEAAGD1//f/AQAAAAAAAAD1//j/AQAAAAEAAADz//n/AQAAAAAAAGD0//n/AQAAAAEAAGD5//3/AQAAAAEAAGD5/wAAAQAAAAEAAGD3//7/AQAAAAAAAAD3////AQAAAAEAAAD4//3/AQAAAAAAAGD4/wAAAQAAAAAAAGD6//7/AQAAAAAAAAD6////AQAAAAEAAAD9//7/AQAAAAAAAAD9////AQAAAAEAAAA=")
 tile_set = SubResource("TileSet_bs6ou")
 
 [node name="Map" type="TileMapLayer" parent="."]
@@ -213,7 +214,7 @@ script = ExtResource("11_udw6o")
 
 [node name="rope" type="Sprite2D" parent="Player"]
 visible = false
-z_index = 2
+z_index = 1
 position = Vector2(1.50765, 2.89873)
 rotation = 1.81414
 scale = Vector2(0.283521, 0.283521)
@@ -226,8 +227,10 @@ remote_path = NodePath("../../Camera2D")
 [node name="Clerk" type="Node2D" parent="."]
 
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("23_7wrdx")]
-visible = false
 position = Vector2(-200, -8)
+dialog = ["Thank you, come again! 
+ Please exit to your left or right", "Oh no! Our shelves got knocked over and trapped toast behind them.", "Please pickup a rope and grab them!", "Use your left mouse button to use the rope!"]
+dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
 
@@ -243,34 +246,33 @@ position = Vector2(-204, -88)
 [node name="Exits4" parent="Exits_Group" instance=ExtResource("24_7ncuv")]
 position = Vector2(-204, -102)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-script = ExtResource("13_xtfbb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-39, -22)
-shape = SubResource("RectangleShape2D_ahcbv")
-
 [node name="toast" parent="." instance=ExtResource("14_jutif")]
 position = Vector2(-16, 112)
+item_amount = 7
 
 [node name="toast2" parent="." instance=ExtResource("14_jutif")]
 position = Vector2(-112, -128)
+item_amount = 7
 
 [node name="toast3" parent="." instance=ExtResource("14_jutif")]
 position = Vector2(-145, 114)
+item_amount = 7
 
 [node name="toast4" parent="." instance=ExtResource("14_jutif")]
 position = Vector2(-192, -128)
+item_amount = 7
 
 [node name="toast5" parent="." instance=ExtResource("14_jutif")]
 position = Vector2(-31, -128)
+item_amount = 7
 
 [node name="toast6" parent="." instance=ExtResource("14_jutif")]
-position = Vector2(-16, -16)
+position = Vector2(-16, -15)
+item_amount = 7
 
 [node name="toast7" parent="." instance=ExtResource("14_jutif")]
-position = Vector2(-200, -7)
+position = Vector2(-112, -15)
+item_amount = 7
 
 [node name="shelves" parent="." instance=ExtResource("16_3ccf7")]
 position = Vector2(-200, 30)
@@ -284,7 +286,6 @@ item_needed = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
-[connection signal="hooked" from="Player/Pivot/ropeLine" to="StaticBody2D" method="_on_rope_line_hooked"]
 [connection signal="hooked" from="Player/Pivot/ropeLine" to="toast" method="_on_rope_line_hooked"]
 [connection signal="hooked" from="Player/Pivot/ropeLine" to="toast2" method="_on_rope_line_hooked"]
 [connection signal="hooked" from="Player/Pivot/ropeLine" to="toast3" method="_on_rope_line_hooked"]
