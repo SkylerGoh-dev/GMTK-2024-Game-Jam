@@ -19,8 +19,14 @@ func _on_resume_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	resume()
+	var items = Gameplay_Manager.scene_items
 	get_tree().reload_current_scene()
 	Interaction_Manager.clear_areas()
+	Gameplay_Manager.clear_needed_items()
+	for item in items:
+		var upperItem = item.to_upper()
+		var key = Resource_Name.type[upperItem]
+		await Gameplay_Manager._register_item(key, items[item])
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
