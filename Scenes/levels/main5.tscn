@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://c0gbwlfprsq6q"]
+[gd_scene load_steps=48 format=4 uid="uid://b1hpnsckxjhw5"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_uihsr"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_yq134"]
@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://usoy1x8bcdpl" path="res://Scenes/Store-furniture/cheese_freezer_R.tscn" id="28_fppx2"]
 [ext_resource type="PackedScene" uid="uid://biqibrr1uopdf" path="res://Scenes/Store-furniture/drink_freezer_L.tscn" id="29_37xxo"]
 [ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="30_uu1k6"]
-[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="31_1h5f3"]
+[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="31_1h5f3"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="31_p11v0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]

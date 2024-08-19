@@ -13,12 +13,13 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
-	if event.is_action_pressed("inventory"):
+	if event.is_action_pressed("inventory") or event.is_action_pressed("esc"):
 		if inventory.isOpen:
 			inventory.close()
 			Gameplay_Manager.shopping_list.show()
-		else:
+		elif event.is_action_pressed("inventory"):
 			inventory.open()
+			Gameplay_Manager.inventory_open = true
 			Gameplay_Manager.shopping_list.hide()
 
 func _on_inventory_closed() -> void:

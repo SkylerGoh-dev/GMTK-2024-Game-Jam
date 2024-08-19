@@ -60,14 +60,14 @@ func cross_ui_item(item: String):
 	item_node.h_separator.show()
 
 func resize_menu():
-	#print(total_items)
+	print(total_items)
 	if total_items > 2 and total_items < 6:
 		inner_menu.custom_minimum_size = Vector2i(0,350)
 	elif total_items >= 6 and total_items < 9:
 		inner_menu.custom_minimum_size = Vector2i(0,400)
 	else:
 		inner_menu.custom_minimum_size = Vector2i(0,250)
-	#print(inner_menu.custom_minimum_size)
+	print(inner_menu.custom_minimum_size)
 
 func clear_list():
 	total_items = 0

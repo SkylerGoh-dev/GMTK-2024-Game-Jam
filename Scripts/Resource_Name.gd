@@ -25,5 +25,6 @@ enum type {
 	DUCTTAPE,
 	NAPKIN,
 	TOAST,
+	MANURE,
 	NONE,
 }
