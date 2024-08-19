@@ -13,13 +13,14 @@ func _ready() -> void:
 # When player enters the interaction area, register area to interaction manager
 # This registers interaction area, as a possible interactable when player gets close
 func _on_body_entered(body):
-	print(body.name)
-	Interaction_Manager.register_area(self)
+	if body.has_method("swingWeapon"):
+		Interaction_Manager.register_area(self)
 
 # When player exits the interaction area, unregister it
 # Does not allow player to interact if not in area
 func _on_body_exited(body):
-	Interaction_Manager.unregister_area(self)
+	if body.has_method("swingWeapon"):
+		Interaction_Manager.unregister_area(self)
 
 func collectHooked(hookedObject):
 	await get_tree().create_timer(0.75).timeout
