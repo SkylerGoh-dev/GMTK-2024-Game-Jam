@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://c68r71qj0r6rs"]
+
+[ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_jr30j"]
+[ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="2_e1xqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsjmr"]
+atlas = ExtResource("2_e1xqt")
+region = Rect2(16, 64, 16, 16)
+
+[resource]
+script = ExtResource("1_jr30j")
+name = "Manure"
+texture = SubResource("AtlasTexture_tsjmr")

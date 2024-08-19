@@ -9,6 +9,7 @@ var completed_items: Dictionary = {}
 var scene_changing: bool = false
 var max_weeks: int = 8
 var inventoryResource: InventoryResource 
+var inventory_open : bool = false
 
 #reference
 var npc_clerk : clerk = null
@@ -49,13 +50,18 @@ func _ready():
 		current_week = current_scene_num
 		
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("esc") and !get_tree().paused:
+	if Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") == null and not inventory_open:
 		create_pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().paused:
-		create_resume()
+		
+	elif Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") != null:
+		if not inventory_open:
+			create_resume()
+		else:
+			inventory_open = false
 
 func create_pause():
 	pause_menu = preload("res://Scenes/pause_menu.tscn").instantiate()
+	pause_menu.name = "Pause_Menu"
 	get_tree().get_root().add_child(pause_menu)
 	pause_menu.show()
 	get_tree().paused = true

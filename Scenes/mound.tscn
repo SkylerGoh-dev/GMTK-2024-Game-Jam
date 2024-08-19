@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1sfe57lxfkrx"]
+
+[ext_resource type="Script" path="res://Scripts/mound.gd" id="1_fuvuv"]
+[ext_resource type="Texture2D" uid="uid://bhqoyagrapy84" path="res://Sprites/hole.png" id="2_ngeje"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="3_njsn3"]
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="4_ps57m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mlip"]
+atlas = ExtResource("2_ngeje")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvvu5"]
+atlas = ExtResource("2_ngeje")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ly6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mlip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvvu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_406dc"]
+radius = 3.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tlo5t"]
+radius = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_48iai"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_3ocbk"]
+resource_name = "emit_text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 39]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r23j2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pouqr"]
+_data = {
+"RESET": SubResource("Animation_r23j2"),
+"emit_text": SubResource("Animation_3ocbk")
+}
+
+[node name="mound" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_fuvuv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_3ly6t")
+frame_progress = 0.93897
+
+[node name="MoundCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_406dc")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+script = ExtResource("3_njsn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_tlo5t")
+
+[node name="HoleCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_48iai")
+disabled = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = -50.0
+offset_top = -32.0
+offset_right = 150.0
+offset_bottom = 3.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ps57m")
+text = "Hmm. I need a shovel
+to dig this mound."
+horizontal_alignment = 1
+visible_characters = 1
+visible_ratio = 0.025641
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pouqr")
+}
+
+[connection signal="body_exited" from="Interaction_Area" to="." method="_on_interaction_area_body_exited"]

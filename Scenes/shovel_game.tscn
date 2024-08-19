@@ -1,6 +1,234 @@
-[gd_resource type="Theme" load_steps=10 format=4 uid="uid://j26h7k3csn3j"]
+[gd_scene load_steps=30 format=4 uid="uid://4gkk62lwxj3f"]
 
-[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="1_xyp5i"]
+[ext_resource type="Script" path="res://Scripts/shovel_game.gd" id="1_1a6m3"]
+[ext_resource type="Texture2D" uid="uid://dhxh8u3vaperl" path="res://Sprites/dig_bg.png" id="2_8tcl3"]
+[ext_resource type="Resource" uid="uid://c68r71qj0r6rs" path="res://InventoryThings/manure.tres" id="2_wklek"]
+[ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="3_1uysj"]
+[ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="3_pxumd"]
+[ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="4_t7nlw"]
+[ext_resource type="Script" path="res://Scripts/manure.gd" id="7_10vc7"]
+[ext_resource type="Texture2D" uid="uid://cltuikx1a4kb5" path="res://Sprites/Close_Button.png" id="8_jkpmx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adpyb"]
+atlas = ExtResource("2_8tcl3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kil1i"]
+atlas = ExtResource("2_8tcl3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq4op"]
+atlas = ExtResource("2_8tcl3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl6rq"]
+atlas = ExtResource("2_8tcl3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h03s4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kil1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq4op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl6rq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_56xjn"]
+resource_name = "dig"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shovel:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.733333, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, -0.523599, 0.0, 0.0, -0.785398, -1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.733333, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-30, 3), Vector2(-35, -3), Vector2(-45, -15), Vector2(-34, -5), Vector2(-34, 0.999999), Vector2(-30, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_6m145"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shovel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arrow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -45)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Manure:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 25)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Manure:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0krxd"]
+resource_name = "charge"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -45), Vector2(32, -45)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Shovel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5708, 0.785398]
+}
+
+[sub_resource type="Animation" id="Animation_3f4af"]
+resource_name = "reveal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manure:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 25), Vector2(29, -16), Vector2(40, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Manure:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1.75, 1.75)]
+}
+
+[sub_resource type="Animation" id="Animation_dff0k"]
+resource_name = "fail"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shovel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-30, 3), Vector2(-16, -17), Vector2(5, -31), Vector2(15, -23), Vector2(23, -23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, 1.309, 3.66519, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dd4lq"]
+_data = {
+"RESET": SubResource("Animation_6m145"),
+"charge": SubResource("Animation_0krxd"),
+"dig": SubResource("Animation_56xjn"),
+"fail": SubResource("Animation_dff0k"),
+"reveal": SubResource("Animation_3f4af")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hegjr"]
+size = Vector2(14, 14)
 
 [sub_resource type="Image" id="Image_w2iio"]
 data = {
@@ -1215,33 +1443,23 @@ cache/0/14/0/glyphs/93/size = Vector2(9, 10)
 cache/0/14/0/glyphs/93/uv_rect = Rect2(134, 42, 9, 10)
 cache/0/14/0/glyphs/93/texture_idx = 0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tgdb"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q33cq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6euwj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apavi"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew26n"]
-texture = ExtResource("1_xyp5i")
-region_rect = Rect2(0, 0, 64, 32)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6hi0s"]
+texture = ExtResource("8_jkpmx")
+region_rect = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_suacg"]
-texture = ExtResource("1_xyp5i")
-region_rect = Rect2(0, 32, 64, 32)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6h5r"]
+texture = ExtResource("8_jkpmx")
+region_rect = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0opc1"]
-texture = ExtResource("1_xyp5i")
-region_rect = Rect2(0, 64, 64, 32)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v05uc"]
+texture = ExtResource("8_jkpmx")
+region_rect = Rect2(0, 16, 16, 16)
 
-[resource]
+[sub_resource type="Theme" id="Theme_18fgi"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -1261,8 +1479,114 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/fonts/font = SubResource("FontFile_t63ei")
-Button/styles/disabled = SubResource("StyleBoxFlat_3tgdb")
-Button/styles/focus = SubResource("StyleBoxEmpty_6euwj")
-Button/styles/hover = SubResource("StyleBoxTexture_ew26n")
-Button/styles/normal = SubResource("StyleBoxTexture_suacg")
-Button/styles/pressed = SubResource("StyleBoxTexture_0opc1")
+Button/styles/disabled = SubResource("StyleBoxEmpty_q33cq")
+Button/styles/focus = SubResource("StyleBoxEmpty_apavi")
+Button/styles/hover = SubResource("StyleBoxTexture_6hi0s")
+Button/styles/normal = SubResource("StyleBoxTexture_l6h5r")
+Button/styles/pressed = SubResource("StyleBoxTexture_v05uc")
+
+[node name="Shovel_Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+script = ExtResource("1_1a6m3")
+itemResource = ExtResource("2_wklek")
+inventoryResource = ExtResource("3_pxumd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_h03s4")
+frame = 3
+frame_progress = 1.0
+
+[node name="Shovel" type="Sprite2D" parent="."]
+position = Vector2(-30, 3)
+rotation = -1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("3_1uysj")
+centered = false
+region_enabled = true
+region_rect = Rect2(17, 50, 14, 14)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dd4lq")
+}
+
+[node name="Border" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = -34.0
+offset_top = -55.0
+offset_right = 34.0
+offset_bottom = -45.0
+color = Color(0.0901961, 0.0745098, 0.121569, 1)
+
+[node name="Progress" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 6)
+layout_mode = 0
+offset_left = -32.0
+offset_top = -53.0
+offset_right = 32.0
+offset_bottom = -47.0
+theme_override_constants/separation = 0
+
+[node name="Under" type="ColorRect" parent="Progress"]
+custom_minimum_size = Vector2(30, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.843137, 0, 1)
+
+[node name="Good" type="ColorRect" parent="Progress"]
+custom_minimum_size = Vector2(12, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.196078, 0.803922, 0.196078, 1)
+
+[node name="Over" type="ColorRect" parent="Progress"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.270588, 0, 1)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(-32, -45)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_t7nlw")
+region_enabled = true
+region_rect = Rect2(24, 48, 24, 24)
+
+[node name="Manure" type="Node2D" parent="."]
+position = Vector2(4, 25)
+script = ExtResource("7_10vc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Manure"]
+texture = ExtResource("3_1uysj")
+region_enabled = true
+region_rect = Rect2(17, 66, 13, 14)
+
+[node name="Area2D" type="Area2D" parent="Manure"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manure/Area2D"]
+shape = SubResource("RectangleShape2D_hegjr")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 40.0
+offset_top = -75.0
+offset_right = 56.0
+offset_bottom = -59.0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_18fgi")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="input_event" from="Manure/Area2D" to="Manure" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Manure/Area2D" to="Manure" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Manure/Area2D" to="Manure" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
