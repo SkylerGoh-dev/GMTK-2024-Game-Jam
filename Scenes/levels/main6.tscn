@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://cako7jvyt06yo"]
+[gd_scene load_steps=47 format=4 uid="uid://r6o6cjbio5jc"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_p76s7"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_2a3jg"]
@@ -32,6 +32,8 @@
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="30_p130x"]
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_o2ygb"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_c55gs"]
+[ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_b8u0b"]
+[ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="34_8rhhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("5_8sc1s")
@@ -83,7 +85,7 @@ texture = ExtResource("6_t6oiu")
 3:3/0 = 0
 4:3/0 = 0
 0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.25, -0.125, -3.75, 0.5, -8, 2, -8, 4.625, -4.625, 6.375, -1.375, 6.5, 4.5, 6.625, 8, 4.875, 8, 1.75, 4.25, 0.5)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.125, -0.625, 4.25, -0.375, 4.5, 8, -5.875, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufl42"]
 texture = ExtResource("7_sxqfk")
@@ -503,7 +505,7 @@ position = Vector2(-100, -407)
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("27_k3r6v")]
 position = Vector2(-200, -8)
 dialog = ["Thank you, come again! 
- Please exit to your left or right", "Lil Bro! We ran out of beef, but I don't want to deal with those cows anymore.", "You can do it for me right?", "It's dangerous to go alone. Take this", "Press K to attack!"]
+ Please exit to your left", "Lil Bro! We ran out of beef, but I don't want to deal with those cows anymore.", "You can do it for me right?", "It's dangerous to go alone. Take this", "Press K to attack!"]
 dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
@@ -574,6 +576,34 @@ roam_dist = 96
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
 disabled = true
+
+[node name="item crate" parent="." instance=ExtResource("33_b8u0b")]
+position = Vector2(-451, -503)
+type = 14
+item_needed = true
+item_amount = 4
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Cow" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+position = Vector2(230, -184)
+target = NodePath("../../Player")
+
+[node name="Cow2" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+position = Vector2(327, -138)
+target = NodePath("../../Player")
+
+[node name="Cow3" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+position = Vector2(341, -201)
+target = NodePath("../../Player")
+
+[node name="Cow4" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+position = Vector2(240, -226)
+target = NodePath("../../Player")
+
+[node name="Cow5" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+position = Vector2(364, -238)
+target = NodePath("../../Player")
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

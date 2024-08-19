@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bxvafccnfu68x"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bxvafccnfu68x"]
 
 [ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_imgqj"]
-[ext_resource type="Texture2D" uid="uid://b4ysusvxgu6dk" path="res://Sprites/Duct_Tape.png" id="2_d4obs"]
+[ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="2_l8e17"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts3rg"]
+atlas = ExtResource("2_l8e17")
+region = Rect2(0, 80, 16, 16)
 
 [resource]
 script = ExtResource("1_imgqj")
 name = "Pear"
-texture = ExtResource("2_d4obs")
+texture = SubResource("AtlasTexture_ts3rg")

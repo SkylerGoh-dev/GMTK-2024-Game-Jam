@@ -1,6 +1,8 @@
 extends Sprite2D
 
 @onready var ray_cast: RayCast2D = $RayCast2D
+@onready var inventoryResource: InventoryResource = preload("res://InventoryThings/playerInventory.tres")
+var hasRope = false
 var distance: float = 75.0
 
 signal hooked(hookedobject, hooked_position)
@@ -14,9 +16,11 @@ func interpolate(length, duration = 0.2):
 
 func _input(event):
 	if event.is_action_pressed("press"):
-		interpolate(await check_collision(), 0.2)
-		await get_tree().create_timer(0.2).timeout
-		reverse_interpolate()
+		checkForRope()
+		if hasRope == true:
+			interpolate(await check_collision(), 0.2)
+			await get_tree().create_timer(0.2).timeout
+			reverse_interpolate()
 		
 func reverse_interpolate():
 	interpolate(0, 0.75)
@@ -32,3 +36,9 @@ func check_collision():
 	else:
 		distance = 75.0
 	return distance
+
+func checkForRope():
+	for slot in inventoryResource.slots:
+		if slot.item:
+			if slot.item.name == "Rope":
+				hasRope = true

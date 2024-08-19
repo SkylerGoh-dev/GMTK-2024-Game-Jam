@@ -84,7 +84,7 @@ texture = ExtResource("5_j5blc")
 3:3/0 = 0
 4:3/0 = 0
 0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.125, 0.25, -3.625, 0.125, -8, 1.625, -8, 4.5, -6.625, 5.875, -5.375, 8, -1.125, 8, 4.625, 8, 8, 4.375, 8, 0.75)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5, 1.125, 2.5, 0.625, 5, 8, -4.375, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufl42"]
 texture = ExtResource("7_0gma0")
@@ -550,7 +550,7 @@ position = Vector2(-100, -407)
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("22_2t0ee")]
 position = Vector2(-200, -8)
 dialog = ["Thank you, come again! 
- Please exit to your left or right", "Oh! you need eggs. They are in the back."]
+ Please exit to your left", "Oh! you need eggs. They are in the back."]
 dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]

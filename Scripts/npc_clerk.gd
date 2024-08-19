@@ -9,7 +9,7 @@ var close_timer: Timer
 @onready var item_indicator: AnimatedSprite2D = $Item_Indicator
 
 @export var dialog: Array = [
-	"Thank you, come again! \n Please exit to your left or right",
+	"Thank you, come again! \n Please exit to your left",
 ]
 
 @export var dialog_indicator: bool 
@@ -44,9 +44,9 @@ func _on_interact():
 		if current_dialog >= dialog.size():
 			item_indicator.hide()
 			# hard code event omegalul
-			if get_tree().current_scene.name == "Main6":
-				print("Hi")
+			if get_tree().current_scene.name == "Main6" or get_tree().current_scene.name == "Main8" :
 				Interaction_Manager.player.knife.show()
+				Interaction_Manager.player.set_knife_disabled(false)
 	elif dialog.size() > 1:
 		open_panel()
 		panel.get_child(0).text = dialog[dialog.size()-1]

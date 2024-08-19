@@ -65,9 +65,10 @@ func resize_menu():
 		inner_menu.custom_minimum_size = Vector2i(0,350)
 	elif total_items >= 6 and total_items < 9:
 		inner_menu.custom_minimum_size = Vector2i(0,400)
+	elif total_items >= 9:
+		inner_menu.custom_minimum_size = Vector2i(0,550)
 	else:
 		inner_menu.custom_minimum_size = Vector2i(0,250)
-	print(inner_menu.custom_minimum_size)
 
 func clear_list():
 	total_items = 0

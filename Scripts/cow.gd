@@ -47,6 +47,8 @@ func _on_attack_time_timeout() -> void:
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	var beefInstance = beef.instantiate()
+	print(global_position)
 	beefInstance.global_position = global_position
+	print("beef position", beefInstance.global_position)
 	get_parent().add_child(beefInstance)
 	queue_free()

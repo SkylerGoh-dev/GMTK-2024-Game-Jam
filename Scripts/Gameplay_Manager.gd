@@ -7,7 +7,7 @@ var pause_menu
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
-var max_weeks: int = 6
+var max_weeks: int = 8
 var inventoryResource: InventoryResource 
 var inventory_open : bool = false
 
@@ -23,7 +23,9 @@ var transition_dialog : Array = [
 	"That picnic with grandma was a blast! But, I wonder where those oleanders I got Grandma went. 
 	We drank delicious green tea instead.",
 	"I cleaned the entire kitchen! Grandma was so proud when she finished cleaning the the basement.",
-	" Hmm… dinner with Grandma was nice as usual, but the beef tasted a little funny this time.",
+	"Hmm… dinner with Grandma was nice as usual, but the beef tasted a little funny this time.",	
+	"I tripped on a dirt pile in the backyard. Grandma looked really worried, but I’ll show her how healthy I still am!",
+	"I was sad we were moving, but the road trip was Grandma was fun!"
 ]
 # Shopping List explanation
 var grandma_dialog = [
@@ -34,6 +36,8 @@ var grandma_dialog = [
 	"Let’s go on a picnic today! Grab those pretty Oleanders, eggs, and your favorite food to eat.",
 	"Grandma needs to restock on new cleaning supplies.",
 	"Grab all the meat you can get from the store <3",
+	"Grandma is spending a lot of time in the garden. Can you grab some extra tools?",
+	"Grab everything we are moving",
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -94,7 +98,7 @@ func are_items_collected():
 
 func end_week():
 	if are_items_collected():
-		if current_week+1 <= max_weeks:
+		if current_week < max_weeks:
 			current_week+= 1
 		clear_needed_items()
 		go_to_scene_transition()
@@ -114,6 +118,8 @@ func go_to_scene_transition():
 	get_tree().change_scene_to_file("res://Scenes/scene_transition.tscn")
 
 func get_transition_dialog() -> String:
+	if current_week == max_weeks:
+		return transition_dialog[current_week-1]
 	if current_week-2 < transition_dialog.size():
 		return transition_dialog[current_week-2]
 	return ""

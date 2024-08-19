@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://r8pyxf5od4oy"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://r8pyxf5od4oy"]
 
 [ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_apads"]
-[ext_resource type="Texture2D" uid="uid://b4ysusvxgu6dk" path="res://Sprites/Duct_Tape.png" id="2_eqexk"]
+[ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="2_vhrxl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jcy6"]
+atlas = ExtResource("2_vhrxl")
+region = Rect2(80, 64, 16, 16)
 
 [resource]
 script = ExtResource("1_apads")
 name = "Orange"
-texture = ExtResource("2_eqexk")
+texture = SubResource("AtlasTexture_5jcy6")

@@ -8,14 +8,13 @@ var is_dragging: bool = false
 
 func register_area(area: Interaction_Area):
 	active_areas.push_back(area)
-	#print("add", area)
+	print("add", area.get_parent().name)
 	
 func unregister_area(area: Interaction_Area):
 	var index = active_areas.find(area)
-	#print("clear", area)
+	print("clear", area.get_parent().name)
 	if index != -1:
 		active_areas.remove_at(index)
-	#print(active_areas)
 
 # Actively sort interaction areas by distance
 func _process(_delta):
@@ -31,9 +30,11 @@ func _sort_by_distance_to_player(area1: Area2D, area2: Area2D):
 func _input(event):
 	if event.is_action_pressed("interact") and can_interact:
 		if active_areas.size() > 0:
-			can_interact = false
-			await active_areas[0].interact.call()
-			can_interact = true
+			print("Interacting with ", active_areas[0].get_parent().name)
+			if(active_areas[0].get_parent().name.contains("toast") == false):
+				can_interact = false
+				await active_areas[0].interact.call()
+				can_interact = true
 
 func clear_areas():
 	active_areas.clear()
