@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dtrwyh5l3hrof"]
+[gd_scene load_steps=28 format=4 uid="uid://dtrwyh5l3hrof"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_38gya"]
 [ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="12_bv7lk"]
+[ext_resource type="Script" path="res://Scripts/ropeMain3.gd" id="13_cvikw"]
 [ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="13_xtfbb"]
 [ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="16_3ccf7"]
@@ -147,6 +149,10 @@ sources/0 = SubResource("TileSetAtlasSource_8tsxp")
 sources/1 = SubResource("TileSetAtlasSource_pavw2")
 sources/2 = SubResource("TileSetAtlasSource_q7fqx")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uauu8"]
+atlas = ExtResource("12_bv7lk")
+region = Rect2(16, 16, 16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcbv"]
 
 [node name="Main" type="Node2D"]
@@ -204,6 +210,15 @@ position = Vector2(0, 2)
 script = ExtResource("11_udw6o")
 
 [node name="ropeLine" parent="Player/Pivot" instance=ExtResource("11_7t4sd")]
+
+[node name="rope" type="Sprite2D" parent="Player"]
+visible = false
+z_index = 2
+position = Vector2(1.50765, 2.89873)
+rotation = 1.81414
+scale = Vector2(0.283521, 0.283521)
+texture = SubResource("AtlasTexture_uauu8")
+script = ExtResource("13_cvikw")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
