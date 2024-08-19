@@ -13,7 +13,6 @@ var animatedDirection: String = "Down"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Interaction_Manager.player = self
-	print(Interaction_Manager.player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
