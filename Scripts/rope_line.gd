@@ -3,7 +3,7 @@ extends Sprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 var distance: float = 75.0
 
-signal hooked(hooked_position)
+signal hooked(hookedobject, hooked_position)
 
 func interpolate(length, duration = 0.2):
 	var tween_offset = get_tree().create_tween()
@@ -27,7 +27,8 @@ func check_collision():
 	if ray_cast.is_colliding():
 		collision_point = ray_cast.get_collision_point()
 		distance = (global_position - collision_point).length()
-		hooked.emit(get_parent().global_position)
+		hooked.emit(ray_cast.get_collider().get_instance_id(), get_parent().global_position)
+		#print("toast:", ray_cast.get_collider())
 	else:
 		distance = 75.0
 	return distance

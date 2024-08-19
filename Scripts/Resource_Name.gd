@@ -24,5 +24,6 @@ enum type {
 	SHOVEL,
 	DUCTTAPE,
 	NAPKIN,
+	TOAST,
 	NONE,
 }

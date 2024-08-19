@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="1_evd0w"]
 [ext_resource type="Script" path="res://Scripts/beef.gd" id="1_m32cr"]
-[ext_resource type="Resource" uid="uid://b2ksat1utp3iw" path="res://InventoryThings/beef.tres" id="2_wfw44"]
+[ext_resource type="Resource" uid="uid://u0iwgwqq2xbj" path="res://InventoryThings/beef.tres" id="2_wfw44"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wromx"]
 radius = 2.0
