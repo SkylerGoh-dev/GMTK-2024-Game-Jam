@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0w6bf1ahgjrn"]
+
+[ext_resource type="Script" path="res://Scripts/trash_bag.gd" id="1_lk1b2"]
+[ext_resource type="Texture2D" uid="uid://bic7mrxh6qdye" path="res://Sprites/MiscItemsSpirt.png" id="2_h48o1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urch2"]
+atlas = ExtResource("2_h48o1")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwod"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mw8s"]
+radius = 8.01561
+
+[node name="Trash Bag" type="CharacterBody2D"]
+scale = Vector2(3.04527, 3.04527)
+collision_mask = 2
+script = ExtResource("1_lk1b2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_urch2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_txwod")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_7mw8s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

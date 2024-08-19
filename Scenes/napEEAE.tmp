@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://xstxntxti1qs"]
+
+[ext_resource type="Texture2D" uid="uid://cpuiwyarvscfc" path="res://Sprites/grassy_background.png" id="1_i2fw5"]
+[ext_resource type="PackedScene" uid="uid://bao68tfpgr2oy" path="res://Scenes/napkin_box.tscn" id="2_akjkp"]
+[ext_resource type="Texture2D" uid="uid://b2jo2vftfrlsl" path="res://Sprites/tiles/Shelves.png" id="2_no14v"]
+[ext_resource type="Texture2D" uid="uid://b4ysusvxgu6dk" path="res://Sprites/Duct_Tape.png" id="4_pe4xj"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="5_5lgd8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxsj8"]
+atlas = ExtResource("2_no14v")
+region = Rect2(5, 0, 0, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl1w1"]
+atlas = ExtResource("5_5lgd8")
+region = Rect2(16, 16, 16, 16)
+
+[node name="Napkin_Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 1)
+zoom = Vector2(5, 5)
+position_smoothing_speed = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i2fw5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 12)
+scale = Vector2(3.875, 1)
+texture = SubResource("AtlasTexture_yxsj8")
+
+[node name="Napkin Box" parent="." instance=ExtResource("2_akjkp")]
+clickable = null
+game_field = null
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-64, -64)
+polygon = PackedVector2Array(1, 128, 128, 128, 127, 6, 2, 6, 1, 140, -11, 140, -9, -16, 140, -17, 141, 142, 1, 140)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(28, 3)
+scale = Vector2(0.875, 0.790323)
+texture = ExtResource("4_pe4xj")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-28, 11)
+scale = Vector2(0.875, 0.790323)
+texture = SubResource("AtlasTexture_nl1w1")

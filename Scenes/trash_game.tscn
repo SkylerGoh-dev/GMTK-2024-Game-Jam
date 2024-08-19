@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://xstxntxti1qs"]
+[gd_scene load_steps=3 format=3 uid="uid://c1b7ud7ejxeq2"]
 
-[ext_resource type="Texture2D" uid="uid://bf3cviynnnt6c" path="res://Sprites/clerk_counter_panel_2.png" id="1_p3a2h"]
-[ext_resource type="PackedScene" uid="uid://bao68tfpgr2oy" path="res://Scenes/napkin_box.tscn" id="2_akjkp"]
+[ext_resource type="Texture2D" uid="uid://dapgcxdoapmmh" path="res://Sprites/dirty_wall.png" id="1_3crad"]
+[ext_resource type="PackedScene" uid="uid://bkphd68lwwlgu" path="res://Scenes/trash_can.tscn" id="3_3c72r"]
 
-[node name="Napkin_Game" type="Node2D"]
+[node name="Trash_Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 1)
@@ -11,13 +11,13 @@ zoom = Vector2(5, 5)
 position_smoothing_speed = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.749998, 2.75)
-scale = Vector2(3.95312, 3.85937)
-texture = ExtResource("1_p3a2h")
+position = Vector2(0, 1)
+scale = Vector2(4.28, 4.28)
+texture = ExtResource("1_3crad")
 
-[node name="Napkin Box" parent="." instance=ExtResource("2_akjkp")]
-position = Vector2(0, -28)
-scale = Vector2(1.96, 1.96)
+[node name="Napkin Box" parent="." instance=ExtResource("3_3c72r")]
+position = Vector2(0, 10)
+scale = Vector2(2.90597, 2.90597)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2

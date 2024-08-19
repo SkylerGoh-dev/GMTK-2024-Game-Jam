@@ -1,25 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2dmlf10kpx1s"]
+[gd_scene load_steps=9 format=3 uid="uid://c2dmlf10kpx1s"]
 
 [ext_resource type="Script" path="res://Scripts/napkin.gd" id="1_epa7c"]
-[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_315ox"]
+[ext_resource type="Texture2D" uid="uid://byjrgdbknu8xk" path="res://Sprites/Tissue_1.png" id="2_uoiyo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f47cv"]
-atlas = ExtResource("2_315ox")
-region = Rect2(32, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8evu"]
+atlas = ExtResource("2_uoiyo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37vkg"]
+atlas = ExtResource("2_uoiyo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0dx2"]
+atlas = ExtResource("2_uoiyo")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g501k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8evu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37vkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0dx2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwod"]
 radius = 2.0
 height = 8.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nir1i"]
-size = Vector2(16, 11)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mw8s"]
+radius = 16.0078
 
 [node name="Napkin" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_epa7c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_f47cv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g501k")
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
@@ -29,8 +57,8 @@ shape = SubResource("CapsuleShape2D_txwod")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_nir1i")
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_7mw8s")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
