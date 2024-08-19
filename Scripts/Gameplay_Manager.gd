@@ -14,13 +14,25 @@ var inventoryResource: InventoryResource
 var npc_clerk : clerk = null
 var shopping_list: side_bar = null
 # Scene Transition dialog
-var transition_dialog = [
-	"Grandma Seems off"
+var transition_dialog : Array = [
+	"Grandma made lasagna for dinner. It was super delicious!", 
+	"This week’s list was a bit long but it was fun making a fruit cake with Grandma!",
+	"That toaster was hard to bring back. It seemed Grandma needed the rope for something 
+	important in the basement. When she got back, she brought ice cream!",
+	"That picnic with grandma was a blast! But, I wonder where those oleanders I got Grandma went. 
+	We drank delicious green tea instead.",
+	"I cleaned the entire kitchen! Grandma was so proud when she finished cleaning the the basement.",
+	" Hmm… dinner with Grandma was nice as usual, but the beef tasted a little funny this time.",	
 ]
 # Shopping List explanation
 var grandma_dialog = [
 	"Grandma ran out of Cheese. Can you please pick some up?",
-	"I’ve lost my butter knife, and really want to butter up my bread. Could you buy me one from the store?",
+	"Grandma misplaced her kitchen knife. Please get me one from the store along with some fruits, and napkins.",
+	"Oh no sweetie! The toaster fell into the bath. Could you be a dear and buy me a new one? 
+	And get me some spare rope for outside while you’re there!",
+	"Let’s go on a picnic today! Grab those pretty Oleanders, eggs, and your favorite food to eat.",
+	"Grandma needs to restock on new cleaning supplies.",
+	"Grab all the meat you can get from the store <3",
 ]
 
 # Called when the node enters the scene tree for the first time.

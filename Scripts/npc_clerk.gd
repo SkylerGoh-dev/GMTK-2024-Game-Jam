@@ -35,7 +35,7 @@ func _on_interact():
 		var tween = get_tree().create_tween()
 		tween.tween_property(panel,"scale",Vector2(1,1),0.5).set_trans(Tween.TRANS_SPRING)
 		panel_open = true
-	if Gameplay_Manager.are_items_colected():
+	if Gameplay_Manager.are_items_collected():
 		panel.get_child(0).text = dialog[0]
 		item_indicator.hide()
 	elif current_dialog < dialog.size():

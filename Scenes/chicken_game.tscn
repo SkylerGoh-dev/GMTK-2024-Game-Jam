@@ -14,25 +14,22 @@ offset_right = 576.0
 offset_bottom = 324.0
 script = ExtResource("1_roq6h")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(-248, -249, -252, 253, 254, 258, 251, -251)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
 texture = ExtResource("1_7fivd")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-6, -10)
-scale = Vector2(4, 4)
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-64, -64)
-polygon = PackedVector2Array(3, 128, 128, 128, 128, 12, 3, 12, 3, 140, -9, 140, -9, -6, 140, -6, 140, 140, 3, 140)
 
 [node name="Chickens" type="Node2D" parent="."]
 scale = Vector2(4, 4)
 
 [node name="Chicken" parent="Chickens" instance=ExtResource("2_1ysnb")]
-position = Vector2(-2.66667, 1.66666)
+position = Vector2(-38.25, -40)
 clickable = true
 
 [node name="Chicken2" parent="Chickens" instance=ExtResource("2_1ysnb")]
@@ -48,7 +45,7 @@ position = Vector2(22.3333, -18.3333)
 clickable = true
 
 [node name="Chicken5" parent="Chickens" instance=ExtResource("2_1ysnb")]
-position = Vector2(-4.66667, 30.6667)
+position = Vector2(16.25, 50.25)
 clickable = true
 
 [node name="Chicken6" parent="Chickens" instance=ExtResource("2_1ysnb")]

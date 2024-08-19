@@ -213,6 +213,7 @@ autoplay = "Run"
 shape = SubResource("CircleShape2D_7otw3")
 
 [node name="Weapon" type="Node2D" parent="."]
+visible = false
 position = Vector2(3, 3)
 rotation = 2.0944
 
