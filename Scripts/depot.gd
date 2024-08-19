@@ -42,3 +42,14 @@ func _on_interact():
 func hide_indicator():
 	if indicator:
 		indicator.hide()
+
+func _on_rope_line_hooked(hookedObject, hooked_position: Variant) -> void:
+	if(get_instance_id() == hookedObject):
+		await get_tree().create_timer(0.2).timeout
+		var tween = get_tree().create_tween()	
+		#print(get_instance_id())
+		tween.tween_property(self, "position", hooked_position, 0.75)
+		var grabbed = await interaction_area.collectHooked(hookedObject)
+		if grabbed == true:
+			_on_interact()
+			queue_free()

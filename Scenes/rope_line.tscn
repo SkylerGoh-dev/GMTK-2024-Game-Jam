@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://buntlrcjr4v2l"]
+
+[ext_resource type="Texture2D" uid="uid://b3a0ega1gyiif" path="res://Sprites/ropeLine.png" id="1_qd7bd"]
+[ext_resource type="Script" path="res://Scripts/rope_line.gd" id="2_5dte0"]
+
+[node name="ropeLine" type="Sprite2D"]
+texture_repeat = 2
+rotation = -1.5708
+texture = ExtResource("1_qd7bd")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 0)
+script = ExtResource("2_5dte0")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 75)

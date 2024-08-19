@@ -1,32 +1,22 @@
-[gd_scene load_steps=30 format=4 uid="uid://c3kaa6aa1ab74"]
+[gd_scene load_steps=21 format=4 uid="uid://dtrwyh5l3hrof"]
 
-[ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_easjp"]
-[ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_hi67j"]
-[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="1_lnpqg"]
-[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="2_mqfi8"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_v0eii"]
-[ext_resource type="PackedScene" uid="uid://bwo6hdwlwtkt0" path="res://Scenes/Store-furniture/apple_crate.tscn" id="3_1qewl"]
-[ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="3_yl5t7"]
-[ext_resource type="PackedScene" uid="uid://dfwcsq233ssle" path="res://Scenes/Store-furniture/orange_crate.tscn" id="4_djbgj"]
-[ext_resource type="PackedScene" uid="uid://it7mjbu0q7km" path="res://Scenes/Store-furniture/pears_crate.tscn" id="5_rvj1o"]
-[ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="6_o453m"]
-[ext_resource type="Script" path="res://Scripts/ItemGroup.gd" id="6_um4nk"]
-[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="9_8sgrk"]
-[ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="10_rk6dk"]
-[ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="11_8jb2s"]
-[ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="12_jwrhm"]
-[ext_resource type="PackedScene" uid="uid://usoy1x8bcdpl" path="res://Scenes/Store-furniture/cheese_freezer_R.tscn" id="13_3hxal"]
-[ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="13_3prdt"]
-[ext_resource type="PackedScene" uid="uid://biqibrr1uopdf" path="res://Scenes/Store-furniture/drink_freezer_L.tscn" id="14_nsugl"]
-[ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="15_pfhs1"]
-[ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="16_ttw3h"]
-[ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="17_vyopx"]
-[ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="19_wnrcj"]
-[ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="20_fjoh0"]
-[ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="22_i0x17"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
+[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
+[ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="3_hdjbx"]
+[ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="4_1y1b1"]
+[ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="5_f7ndn"]
+[ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="6_wawov"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_0gkfl"]
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_38gya"]
+[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
+[ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
+[ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="13_xtfbb"]
+[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+[ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
+[ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
-texture = ExtResource("1_easjp")
+texture = ExtResource("4_1y1b1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.375, 8, -3.375, 8, 8, -8, 8)
 1:0/0 = 0
@@ -41,7 +31,7 @@ physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_h13jq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
-texture = ExtResource("1_hi67j")
+texture = ExtResource("5_f7ndn")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -111,7 +101,7 @@ texture = ExtResource("1_hi67j")
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pavw2"]
-texture = ExtResource("3_yl5t7")
+texture = ExtResource("6_wawov")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -129,14 +119,16 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_8tsxp")
 sources/1 = SubResource("TileSetAtlasSource_pavw2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcbv"]
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("9_8sgrk")
+script = ExtResource("1_lx14h")
 
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("1_lnpqg")]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_sfwif")]
 custom_minimum_size = Vector2(78, 78)
 anchors_preset = 8
 anchor_left = 0.5
@@ -152,7 +144,7 @@ grow_vertical = 2
 scale = Vector2(8, 8)
 pivot_offset = Vector2(64.5, 39)
 
-[node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("13_3prdt")]
+[node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("3_hdjbx")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
@@ -166,7 +158,7 @@ tile_set = SubResource("TileSet_ql21g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
-position = Vector2(-161, 91)
+position = Vector2(-192, 94)
 zoom = Vector2(4, 4)
 limit_left = -350
 limit_top = -200
@@ -174,113 +166,75 @@ limit_right = 250
 limit_bottom = 250
 position_smoothing_speed = 2.0
 editor_draw_limits = true
-script = ExtResource("2_v0eii")
+script = ExtResource("7_0gkfl")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_mqfi8")]
-position = Vector2(-161, 91)
+[node name="Player" parent="." groups=["player"] instance=ExtResource("8_38gya")]
+position = Vector2(-192, 94)
+
+[node name="Pivot" type="Node2D" parent="Player"]
+position = Vector2(0, 2)
+script = ExtResource("11_udw6o")
+
+[node name="ropeLine" parent="Player/Pivot" instance=ExtResource("11_7t4sd")]
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="Produce_Crates" type="Node2D" parent="."]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-9, -3)
-script = ExtResource("6_um4nk")
-
-[node name="apple_crate" parent="Produce_Crates" instance=ExtResource("3_1qewl")]
-position = Vector2(-128, 91)
-item_amount = 3
-
-[node name="apple_crate2" parent="Produce_Crates" instance=ExtResource("3_1qewl")]
-position = Vector2(-128, 75)
-item_amount = 3
-
-[node name="orange_crate" parent="Produce_Crates" instance=ExtResource("4_djbgj")]
-position = Vector2(-112, 75)
-
-[node name="orange_crate2" parent="Produce_Crates" instance=ExtResource("4_djbgj")]
-position = Vector2(-112, 91)
-
-[node name="pears_crate" parent="Produce_Crates" instance=ExtResource("5_rvj1o")]
-position = Vector2(-80, 75)
-
-[node name="pears_crate2" parent="Produce_Crates" instance=ExtResource("5_rvj1o")]
-position = Vector2(-80, 91)
-
-[node name="corn_crate" parent="Produce_Crates" instance=ExtResource("6_o453m")]
-position = Vector2(-64, 91)
-
-[node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("6_o453m")]
-position = Vector2(-64, 75)
-
-[node name="Freezers" type="Node2D" parent="."]
-position = Vector2(-24, -3)
-script = ExtResource("6_um4nk")
-
-[node name="Butter_Freezer_L" parent="Freezers" instance=ExtResource("10_rk6dk")]
-position = Vector2(-128, -141)
-
-[node name="Butter_Freezer_R" parent="Freezers" instance=ExtResource("11_8jb2s")]
-position = Vector2(-112, -141)
-item_needed = false
-item_amount = 1
-
-[node name="Cheese_Freezer_L" parent="Freezers" instance=ExtResource("12_jwrhm")]
-position = Vector2(-96, -141)
-item_needed = true
-
-[node name="Cheese_Freezer_R" parent="Freezers" instance=ExtResource("13_3hxal")]
-position = Vector2(-80, -141)
-item_needed = true
-
-[node name="Drink_Freezer_L" parent="Freezers" instance=ExtResource("14_nsugl")]
-position = Vector2(-64, -141)
-
-[node name="Drink_Freezer_R" parent="Freezers" instance=ExtResource("15_pfhs1")]
-position = Vector2(-48, -141)
-
-[node name="Milk_Freezer_L" parent="Freezers" instance=ExtResource("16_ttw3h")]
-position = Vector2(-32, -141)
-
-[node name="Milk_Freezer_R" parent="Freezers" instance=ExtResource("17_vyopx")]
-position = Vector2(-16, -141)
-
-[node name="shelves" type="Node2D" parent="."]
-position = Vector2(-24, 45)
-script = ExtResource("6_um4nk")
-
-[node name="shelves1" parent="shelves" instance=ExtResource("19_wnrcj")]
-position = Vector2(-48, -29)
-
-[node name="shelves2" parent="shelves" instance=ExtResource("19_wnrcj")]
-position = Vector2(-48, -77)
-type = 20
-
-[node name="shelves3" parent="shelves" instance=ExtResource("19_wnrcj")]
-position = Vector2(-96, -77)
-
-[node name="shelves4" parent="shelves" instance=ExtResource("19_wnrcj")]
-position = Vector2(-96, -29)
-
 [node name="Clerk" type="Node2D" parent="."]
 
-[node name="NPC clerk" parent="Clerk" instance=ExtResource("20_fjoh0")]
+[node name="NPC clerk" parent="Clerk" instance=ExtResource("23_7wrdx")]
 position = Vector2(-200, -8)
 
 [node name="Exits_Group" type="Node2D" parent="."]
 
-[node name="Exits2" parent="Exits_Group" instance=ExtResource("22_i0x17")]
+[node name="Exits2" parent="Exits_Group" instance=ExtResource("24_7ncuv")]
 position = Vector2(-204, 103)
 
-[node name="Exits" parent="Exits_Group" instance=ExtResource("22_i0x17")]
+[node name="Exits" parent="Exits_Group" instance=ExtResource("24_7ncuv")]
 position = Vector2(-204, 90)
 
-[node name="Exits3" parent="Exits_Group" instance=ExtResource("22_i0x17")]
+[node name="Exits3" parent="Exits_Group" instance=ExtResource("24_7ncuv")]
 position = Vector2(-204, -88)
 
-[node name="Exits4" parent="Exits_Group" instance=ExtResource("22_i0x17")]
+[node name="Exits4" parent="Exits_Group" instance=ExtResource("24_7ncuv")]
 position = Vector2(-204, -102)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+script = ExtResource("13_xtfbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-39, -22)
+shape = SubResource("RectangleShape2D_ahcbv")
+
+[node name="toast" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-27, 77)
+
+[node name="toast2" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-179, -94)
+
+[node name="toast3" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-181, -30)
+
+[node name="toast4" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-109, -104)
+
+[node name="toast5" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-36, -76)
+
+[node name="toast6" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-111, -46)
+
+[node name="toast7" parent="." instance=ExtResource("14_jutif")]
+position = Vector2(-44, -6)
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="StaticBody2D" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast2" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast3" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast4" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast5" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast6" method="_on_rope_line_hooked"]
+[connection signal="hooked" from="Player/Pivot/ropeLine" to="toast7" method="_on_rope_line_hooked"]

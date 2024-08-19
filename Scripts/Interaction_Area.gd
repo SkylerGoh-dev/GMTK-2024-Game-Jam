@@ -20,3 +20,17 @@ func _on_body_entered(body):
 # Does not allow player to interact if not in area
 func _on_body_exited(body):
 	Interaction_Manager.unregister_area(self)
+
+func collectHooked(hookedObject):
+	await get_tree().create_timer(0.75).timeout
+	#print("brooo")
+	#print(get_overlapping_bodies()[1])
+	#print(hookedObject)
+	if(get_overlapping_bodies().size() > 1):
+		for body in get_overlapping_bodies():
+			if body.name == "Player":
+				return true
+		#if(get_overlapping_bodies()[1].name == "Player"):
+			###print("breh")
+			##get_parent().queue_free()
+			#return true
