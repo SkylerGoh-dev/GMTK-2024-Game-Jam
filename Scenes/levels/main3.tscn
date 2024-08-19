@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dtrwyh5l3hrof"]
+[gd_scene load_steps=25 format=4 uid="uid://dtrwyh5l3hrof"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
 [ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="13_xtfbb"]
 [ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+[ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="16_3ccf7"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
 
@@ -255,6 +256,16 @@ position = Vector2(-16, -16)
 
 [node name="toast7" parent="." instance=ExtResource("14_jutif")]
 position = Vector2(-200, -7)
+
+[node name="shelves" parent="." instance=ExtResource("16_3ccf7")]
+position = Vector2(-200, 30)
+type = 9
+item_needed = true
+
+[node name="shelves2" parent="." instance=ExtResource("16_3ccf7")]
+position = Vector2(-200, 56)
+type = 10
+item_needed = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
