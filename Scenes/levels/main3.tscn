@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=28 format=4 uid="uid://dtrwyh5l3hrof"]
-
+[gd_scene load_steps=28 format=4 uid="uid://cjo06lovs8bss"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -16,8 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="12_bv7lk"]
 [ext_resource type="Script" path="res://Scripts/ropeMain3.gd" id="13_cvikw"]
 [ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="13_xtfbb"]
-
-[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="16_3ccf7"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
