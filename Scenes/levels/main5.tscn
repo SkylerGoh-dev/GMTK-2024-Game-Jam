@@ -498,7 +498,7 @@ position = Vector2(-575, -1)
 [node name="NPC clerk" parent="Clerk2" instance=ExtResource("13_eocis")]
 position = Vector2(-200, -8)
 dialog = ["Thank you, come again! 
- Please exit to your left or right", "Hey lil bro! Looking for cleaning supplies?", "I forgot those in the back. Mind checking it out yourself", "check the back storage"]
+ Please exit to your left", "Hey lil bro! Looking for cleaning supplies?", "I forgot those in the back. Mind checking it out yourself", "check the back storage"]
 dialog_indicator = true
 
 [node name="Exits_Group2" type="Node2D" parent="."]

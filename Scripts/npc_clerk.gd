@@ -9,7 +9,7 @@ var close_timer: Timer
 @onready var item_indicator: AnimatedSprite2D = $Item_Indicator
 
 @export var dialog: Array = [
-	"Thank you, come again! \n Please exit to your left or right",
+	"Thank you, come again! \n Please exit to your left",
 ]
 
 @export var dialog_indicator: bool 

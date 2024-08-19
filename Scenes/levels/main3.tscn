@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=26 format=4 uid="uid://dtrwyh5l3hrof"]
-
+[gd_scene load_steps=26 format=4 uid="uid://cjo06lovs8bss"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -11,18 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="6_wawov"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_0gkfl"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_38gya"]
-[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
+[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="12_bv7lk"]
 [ext_resource type="Script" path="res://Scripts/ropeMain3.gd" id="13_cvikw"]
-
-[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
-
+[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="16_3ccf7"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kti70"]
 texture = ExtResource("4_1y1b1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.375, 8, -3.375, 8, 8, -8, 8)
@@ -33,7 +29,7 @@ texture = ExtResource("4_1y1b1")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0.125, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8d5y"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7w7ac"]
 texture = ExtResource("5_edi2w")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -48,10 +44,10 @@ texture = ExtResource("5_edi2w")
 
 [sub_resource type="TileSet" id="TileSet_bs6ou"]
 physics_layer_0/collision_layer = 4
-sources/0 = SubResource("TileSetAtlasSource_h13jq")
-sources/1 = SubResource("TileSetAtlasSource_j8d5y")
+sources/0 = SubResource("TileSetAtlasSource_kti70")
+sources/1 = SubResource("TileSetAtlasSource_7w7ac")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqlmd"]
 texture = ExtResource("5_f7ndn")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -121,7 +117,7 @@ texture = ExtResource("5_f7ndn")
 0:4/0/terrain_set = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pavw2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve7al"]
 texture = ExtResource("6_wawov")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -132,7 +128,7 @@ texture = ExtResource("6_wawov")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7fqx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gh8l4"]
 texture = ExtResource("5_edi2w")
 0:0/0 = 0
 1:0/0 = 0
@@ -148,15 +144,15 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Floor and Walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_8tsxp")
-sources/1 = SubResource("TileSetAtlasSource_pavw2")
-sources/2 = SubResource("TileSetAtlasSource_q7fqx")
+sources/0 = SubResource("TileSetAtlasSource_dqlmd")
+sources/1 = SubResource("TileSetAtlasSource_ve7al")
+sources/2 = SubResource("TileSetAtlasSource_gh8l4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uauu8"]
 atlas = ExtResource("12_bv7lk")
 region = Rect2(16, 16, 16, 16)
 
-[node name="Main" type="Node2D"]
+[node name="Main3" type="Node2D"]
 y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -228,8 +224,7 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("23_7wrdx")]
 position = Vector2(-200, -8)
-dialog = ["Thank you, come again! 
- Please exit to your left or right", "Oh no! Our shelves got knocked over and trapped toast behind them.", "Please pickup a rope and grab them!", "Use your left mouse button to use the rope!"]
+dialog = ["Thank you, come again! Please exit to your left", "Oh no! Our shelves got knocked over and trapped toast behind them.", "Please pickup a rope and grab them!", "Use your left mouse button to use the rope!"]
 dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
