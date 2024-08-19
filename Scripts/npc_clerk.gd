@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 	if panel_open and close_timer == null:
 		close_timer = Timer.new()
 		add_child(close_timer)
-		close_timer.wait_time = 8.0
+		close_timer.wait_time = 5.0
 		close_timer.one_shot = true
 		close_timer.start()
 		close_timer.timeout.connect(_close_panel)
@@ -33,18 +33,29 @@ func _process(_delta: float) -> void:
 func _on_interact():
 	if close_timer != null:
 		close_timer.start()
+	if Gameplay_Manager.are_items_collected():
+		open_panel()
+		panel.get_child(0).text = dialog[0]
+		item_indicator.hide()
+	elif current_dialog < dialog.size():
+		open_panel()
+		panel.get_child(0).text = dialog[current_dialog]
+		current_dialog+= 1
+		if current_dialog >= dialog.size():
+			item_indicator.hide()
+			# hard code event omegalul
+			if get_tree().current_scene.name == "Main6":
+				print("Hi")
+				Interaction_Manager.player.knife.show()
+	elif dialog.size() > 1:
+		open_panel()
+		panel.get_child(0).text = dialog[dialog.size()-1]
+
+func open_panel() -> void:
 	if not panel_open:
 		var tween = get_tree().create_tween()
 		tween.tween_property(panel,"scale",Vector2(1,1),0.5).set_trans(Tween.TRANS_SPRING)
 		panel_open = true
-	if Gameplay_Manager.are_items_collected():
-		panel.get_child(0).text = dialog[0]
-		item_indicator.hide()
-	elif current_dialog < dialog.size():
-		panel.get_child(0).text = dialog[current_dialog]
-		current_dialog+= 1
-	else:
-		panel.get_child(0).text = dialog[dialog.size()-1]
 
 func _close_panel():
 	print("hi")

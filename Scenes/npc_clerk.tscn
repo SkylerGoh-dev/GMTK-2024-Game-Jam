@@ -31,7 +31,14 @@ script = ExtResource("2_5boqs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
 shape = SubResource("CircleShape2D_ex6jv")
 
+[node name="Item_Indicator" parent="." instance=ExtResource("6_rxwm1")]
+visible = false
+position = Vector2(0, -17)
+scale = Vector2(0.8, 0.8)
+frame_progress = 0.256015
+
 [node name="panel" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -29)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_yy3yj")
@@ -55,13 +62,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_0lwjv")
-text = "I'm the npc clerk  bl bla bla s d fkdafja;sdl "
+text = "I don't get paid enough"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="Item_Indicator" parent="." instance=ExtResource("6_rxwm1")]
-visible = false
-position = Vector2(0, -17)
-scale = Vector2(0.8, 0.8)
-frame_progress = 0.256015

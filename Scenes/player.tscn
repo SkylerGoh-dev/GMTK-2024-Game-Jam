@@ -213,11 +213,11 @@ autoplay = "Run"
 shape = SubResource("CircleShape2D_7otw3")
 
 [node name="Weapon" type="Node2D" parent="."]
-visible = false
 position = Vector2(3, 3)
 rotation = 2.0944
 
 [node name="Knife" parent="Weapon" instance=ExtResource("3_wqi5o")]
+visible = false
 position = Vector2(4.76837e-07, 4.76837e-07)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -7,7 +7,7 @@ var pause_menu
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
-var max_weeks: int = 5
+var max_weeks: int = 6
 var inventoryResource: InventoryResource 
 
 #reference
@@ -38,7 +38,12 @@ var grandma_dialog = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
+	var current_scene_name :String = get_tree().current_scene.name
+	var current_scene_num : int = int(current_scene_name.substr(current_scene_name.length()-1))
+	if current_scene_num <= max_weeks and current_scene_num != current_week:
+		print("changed current week to scene week to", current_scene_num)
+		current_week = current_scene_num
+		
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
 		create_pause()
