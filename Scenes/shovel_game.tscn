@@ -1490,8 +1490,11 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(4, 4)
 script = ExtResource("1_1a6m3")
 itemResource = ExtResource("2_wklek")
 inventoryResource = ExtResource("3_pxumd")
@@ -1557,9 +1560,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_t7nlw")
 region_enabled = true
 region_rect = Rect2(24, 48, 24, 24)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
 
 [node name="Manure" type="Node2D" parent="."]
 position = Vector2(4, 25)

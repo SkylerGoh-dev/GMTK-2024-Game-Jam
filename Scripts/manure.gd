@@ -10,12 +10,11 @@ func _ready() -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if clickable and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-		queue_free()
-		#collect(inventoryResource)
+		collect(get_parent().inventoryResource)
 
-#func collect(inventoryResource: InventoryResource):
-	#inventoryResource.insert(itemResource)
-	#queue_free()
+func collect(inventoryResource: InventoryResource):
+	inventoryResource.insert(get_parent().itemResource)
+	queue_free()
 
 
 func _on_area_2d_mouse_entered() -> void:

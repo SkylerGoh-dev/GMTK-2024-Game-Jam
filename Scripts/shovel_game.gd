@@ -1,5 +1,6 @@
 extends Control
 
+
 @export var itemResource: InventoryItem
 @export var inventoryResource: InventoryResource
 
@@ -16,6 +17,8 @@ var left : int
 var right : int
 var started : bool = false
 var direction : int = 1
+var let_start : bool = true
+var done_diggin : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,11 +33,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and level < 3:
-		if not started and level == 0:
+		if not started:
 			start_game()
 		elif started and arrow.position.x > left and arrow.position.x < right:
 			successful_dig()
-			started = false
 		elif started and (arrow.position.x < left or arrow.position.x > right):
 			animation.play("fail")
 			
@@ -51,17 +53,20 @@ func start_game():
 	animation.play("charge")
 
 func reset_arrow():
-	started = false
 	arrow.position.x = -32
 	direction = 1
 
+func reset_game():
+	started = false
+	reset_arrow()
+
 func successful_dig():
-	level += 1
 	animation.play("dig")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
 		"dig":
+			level += 1
 			background.set_deferred("frame", level)
 			reset_arrow()
 			if level < 3:
@@ -79,6 +84,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 				animation.play_backwards("charge")
 		"reveal":
 			manure.clickable = true
+			done_diggin = true
 		"fail":
 			await get_tree().create_timer(1).timeout
 			reset_arrow()

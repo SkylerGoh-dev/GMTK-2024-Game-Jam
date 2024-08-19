@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://da3syx1tlj4yl"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://cm6wviardibxq"]
 
 [ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_34h1i"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="2_u4wkq"]

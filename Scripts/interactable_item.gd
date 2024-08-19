@@ -1,6 +1,7 @@
 extends Node2D
 
 signal type_done
+signal shovel
 
 @export var type: Resource_Name.type 
 @onready var interaction_area: Interaction_Area = $Interaction_Area
@@ -39,7 +40,10 @@ func _on_interact():
 			item_needed = false
 			type_done.emit(type)
 			queue_free()
-			
+		
+		if type == Resource_Name.type["SHOVEL"]:
+			shovel.emit()
+		
 func hide_indicator():
 	if indicator:
 		indicator.hide()
