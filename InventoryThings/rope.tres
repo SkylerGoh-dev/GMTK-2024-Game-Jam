@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://biqwftaef5tnk"]
 
 [ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_0rodh"]
-[ext_resource type="Texture2D" uid="uid://b4ysusvxgu6dk" path="res://Sprites/Duct_Tape.png" id="2_2dy8l"]
+[ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_q8q8l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lf28h"]
-atlas = ExtResource("2_2dy8l")
+atlas = ExtResource("2_q8q8l")
+region = Rect2(16, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_0rodh")
