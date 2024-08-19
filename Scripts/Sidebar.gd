@@ -15,10 +15,10 @@ var total_items: int = 0
 var item_list: Dictionary = {}
 
 func _ready():
-	main_menu.visible = false
-	list_menu.visible = false
-	arrow_up.visible = false
-	arrow_down.visible = true
+	main_menu.visible = true
+	list_menu.visible = true
+	arrow_up.visible = true
+	arrow_down.visible = false
 	Gameplay_Manager.shopping_list = self
 	explanation.text = Gameplay_Manager.get_shopping_list_dialog()
 	week.text = "Week " + str(Gameplay_Manager.get_current_week())

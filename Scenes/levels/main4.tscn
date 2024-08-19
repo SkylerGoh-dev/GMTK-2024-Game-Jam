@@ -462,6 +462,9 @@ position = Vector2(-100, -407)
 
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("22_2t0ee")]
 position = Vector2(-200, -8)
+dialog = ["Thank you, come again! 
+ Please exit to your left or right", "Oh! you need eggs. They are in the back."]
+dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
 position = Vector2(-100, -407)

@@ -7,7 +7,7 @@ var pause_menu
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
-var max_weeks: int = 2
+var max_weeks: int = 5
 var inventoryResource: InventoryResource 
 
 #reference

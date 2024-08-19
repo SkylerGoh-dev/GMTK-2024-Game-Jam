@@ -8,16 +8,18 @@ var panel_open: bool = false
 var close_timer: Timer
 @onready var item_indicator: AnimatedSprite2D = $Item_Indicator
 
-var dialog: Array = [
+@export var dialog: Array = [
 	"Thank you, come again! \n Please exit to your left or right",
-	"I'm the npc clerk",
-	"fuck off kid",
 ]
+
+@export var dialog_indicator: bool 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	Gameplay_Manager.npc_clerk = self
+	if dialog_indicator:
+		show_indicator()
 
 func _process(_delta: float) -> void:
 	if panel_open and close_timer == null:
@@ -41,6 +43,8 @@ func _on_interact():
 	elif current_dialog < dialog.size():
 		panel.get_child(0).text = dialog[current_dialog]
 		current_dialog+= 1
+	else:
+		panel.get_child(0).text = dialog[dialog.size()-1]
 
 func _close_panel():
 	print("hi")

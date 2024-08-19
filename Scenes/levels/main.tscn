@@ -223,8 +223,6 @@ position = Vector2(-128, -141)
 
 [node name="Butter_Freezer_R" parent="Freezers" instance=ExtResource("11_8jb2s")]
 position = Vector2(-112, -141)
-item_needed = false
-item_amount = 1
 
 [node name="Cheese_Freezer_L" parent="Freezers" instance=ExtResource("12_jwrhm")]
 position = Vector2(-96, -141)
