@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=10 format=3 uid="uid://d2261f15mn4w6"]
-
 
 [ext_resource type="Script" path="res://Scripts/cow.gd" id="1_twjj3"]
 [ext_resource type="Texture2D" uid="uid://bkka6b8jwwx4r" path="res://Sprites/Cow.png" id="2_bhsnc"]
@@ -53,7 +51,8 @@ size = Vector2(25, 13)
 size = Vector2(25, 13)
 
 [node name="Cow" type="CharacterBody2D"]
-position = Vector2(60, -55)
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_twjj3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

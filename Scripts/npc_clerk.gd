@@ -45,8 +45,8 @@ func _on_interact():
 			item_indicator.hide()
 			# hard code event omegalul
 			if get_tree().current_scene.name == "Main6":
-				print("Hi")
 				Interaction_Manager.player.knife.show()
+				Interaction_Manager.player.set_knife_disabled(false)
 	elif dialog.size() > 1:
 		open_panel()
 		panel.get_child(0).text = dialog[dialog.size()-1]

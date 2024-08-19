@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bw6k4blb5swua"]
 
 [ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="1_y6kru"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="1_yfxxa"]
+[ext_resource type="Script" path="res://item.gd" id="1_yfxxa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7tjqa"]
 
