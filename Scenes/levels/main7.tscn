@@ -1,42 +1,43 @@
-[gd_scene load_steps=47 format=4 uid="uid://r6o6cjbio5jc"]
+[gd_scene load_steps=48 format=4 uid="uid://bngh4hb7gpv5u"]
 
-[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_p76s7"]
-[ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_2a3jg"]
-[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="3_qi072"]
-[ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="5_8sc1s"]
-[ext_resource type="Texture2D" uid="uid://sjp2f77jg2mj" path="res://Sprites/Outside_Tiles16_1.png" id="6_t6oiu"]
-[ext_resource type="Texture2D" uid="uid://vqa5xc6bn5xv" path="res://Sprites/Outside_Tiles_grass_borders.png" id="7_00vn1"]
-[ext_resource type="Texture2D" uid="uid://b58uufesebgnv" path="res://Sprites/Outside_Tiles_3.png" id="7_sxqfk"]
-[ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="8_cwpxc"]
-[ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="9_l5odo"]
-[ext_resource type="Texture2D" uid="uid://dlil4ph63apux" path="res://Sprites/Outside_Tiles.png" id="10_r3wxn"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="11_tbwew"]
-[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="12_lxt0w"]
-[ext_resource type="Script" path="res://Scripts/ItemGroup.gd" id="13_g7qgv"]
-[ext_resource type="PackedScene" uid="uid://bwo6hdwlwtkt0" path="res://Scenes/Store-furniture/apple_crate.tscn" id="14_bbe7l"]
-[ext_resource type="PackedScene" uid="uid://dfwcsq233ssle" path="res://Scenes/Store-furniture/orange_crate.tscn" id="15_nxyji"]
-[ext_resource type="PackedScene" uid="uid://it7mjbu0q7km" path="res://Scenes/Store-furniture/pears_crate.tscn" id="16_25dp6"]
-[ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="17_3jnol"]
-[ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="18_yb0pq"]
-[ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="19_w0eit"]
-[ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="20_2wt60"]
-[ext_resource type="PackedScene" uid="uid://usoy1x8bcdpl" path="res://Scenes/Store-furniture/cheese_freezer_R.tscn" id="21_tho8q"]
-[ext_resource type="PackedScene" uid="uid://biqibrr1uopdf" path="res://Scenes/Store-furniture/drink_freezer_L.tscn" id="22_ryure"]
-[ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="23_sksop"]
-[ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="24_m3g0g"]
-[ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="25_t1db4"]
-[ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="26_mem58"]
-[ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="27_k3r6v"]
-[ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="28_f1ctc"]
-[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="29_hxrno"]
-[ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="30_p130x"]
-[ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_o2ygb"]
-[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_c55gs"]
-[ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_b8u0b"]
-[ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="34_8rhhg"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_40uu8"]
+[ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_tj4pk"]
+[ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="3_vd7dn"]
+[ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="4_ogii7"]
+[ext_resource type="Texture2D" uid="uid://sjp2f77jg2mj" path="res://Sprites/Outside_Tiles16_1.png" id="5_sd5b3"]
+[ext_resource type="Texture2D" uid="uid://b58uufesebgnv" path="res://Sprites/Outside_Tiles_3.png" id="6_c85sy"]
+[ext_resource type="Texture2D" uid="uid://vqa5xc6bn5xv" path="res://Sprites/Outside_Tiles_grass_borders.png" id="7_isnlv"]
+[ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="8_saec0"]
+[ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="9_a71k5"]
+[ext_resource type="Texture2D" uid="uid://dlil4ph63apux" path="res://Sprites/Outside_Tiles.png" id="10_rnmo3"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="11_p22m4"]
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="12_xe0n8"]
+[ext_resource type="Script" path="res://Scripts/ItemGroup.gd" id="13_tof74"]
+[ext_resource type="PackedScene" uid="uid://bwo6hdwlwtkt0" path="res://Scenes/Store-furniture/apple_crate.tscn" id="14_8q46y"]
+[ext_resource type="PackedScene" uid="uid://dfwcsq233ssle" path="res://Scenes/Store-furniture/orange_crate.tscn" id="15_omua5"]
+[ext_resource type="PackedScene" uid="uid://it7mjbu0q7km" path="res://Scenes/Store-furniture/pears_crate.tscn" id="16_7d5n3"]
+[ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="17_xpj1y"]
+[ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="18_l4r16"]
+[ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="19_anq6s"]
+[ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="20_mp4o5"]
+[ext_resource type="PackedScene" uid="uid://usoy1x8bcdpl" path="res://Scenes/Store-furniture/cheese_freezer_R.tscn" id="21_c2k0g"]
+[ext_resource type="PackedScene" uid="uid://biqibrr1uopdf" path="res://Scenes/Store-furniture/drink_freezer_L.tscn" id="22_k1xp1"]
+[ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="23_ijstt"]
+[ext_resource type="PackedScene" uid="uid://dgx2enlsdqqpk" path="res://Scenes/Store-furniture/milk_freezer_L.tscn" id="24_edeji"]
+[ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="25_ukioc"]
+[ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="26_d1d0y"]
+[ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="27_m0xnn"]
+[ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="28_xjwju"]
+[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="29_b3x36"]
+[ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="30_sq87g"]
+[ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_4ee2j"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_82bmo"]
+[ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_gj3l6"]
+[ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="34_or8aw"]
+[ext_resource type="PackedScene" uid="uid://cy7g4j7t4uvhp" path="res://Scenes/interactable_item.tscn" id="35_8s2jf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
-texture = ExtResource("5_8sc1s")
+texture = ExtResource("4_ogii7")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.375, 8, -3.375, 8, 8, -8, 8)
 1:0/0 = 0
@@ -47,7 +48,7 @@ texture = ExtResource("5_8sc1s")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0.125, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rv4mp"]
-texture = ExtResource("6_t6oiu")
+texture = ExtResource("5_sd5b3")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -85,10 +86,10 @@ texture = ExtResource("6_t6oiu")
 3:3/0 = 0
 4:3/0 = 0
 0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.125, -0.625, 4.25, -0.375, 4.5, 8, -5.875, 8)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.375, -1.5, 4.625, -1.25, 4.375, -1.125, 5.375, 8, -5.375, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufl42"]
-texture = ExtResource("7_sxqfk")
+texture = ExtResource("6_c85sy")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -123,7 +124,7 @@ sources/1 = SubResource("TileSetAtlasSource_rv4mp")
 sources/2 = SubResource("TileSetAtlasSource_ufl42")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a457n"]
-texture = ExtResource("6_t6oiu")
+texture = ExtResource("5_sd5b3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -147,7 +148,7 @@ texture = ExtResource("6_t6oiu")
 0:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h0hyg"]
-texture = ExtResource("7_00vn1")
+texture = ExtResource("7_isnlv")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -188,7 +189,7 @@ sources/0 = SubResource("TileSetAtlasSource_a457n")
 sources/1 = SubResource("TileSetAtlasSource_h0hyg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tsxp"]
-texture = ExtResource("8_cwpxc")
+texture = ExtResource("8_saec0")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -258,7 +259,7 @@ texture = ExtResource("8_cwpxc")
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pavw2"]
-texture = ExtResource("9_l5odo")
+texture = ExtResource("9_a71k5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -269,7 +270,7 @@ texture = ExtResource("9_l5odo")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_amcu5"]
-texture = ExtResource("10_r3wxn")
+texture = ExtResource("10_rnmo3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -312,7 +313,7 @@ texture = ExtResource("10_r3wxn")
 1:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gk7ve"]
-texture = ExtResource("6_t6oiu")
+texture = ExtResource("5_sd5b3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -334,6 +335,7 @@ texture = ExtResource("6_t6oiu")
 3:3/0 = 0
 4:3/0 = 0
 0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -0.375, 3.25, -0.25, 3.75, 1.125, 4.75, 8, -4.75, 8)
 
 [sub_resource type="TileSet" id="TileSet_ql21g"]
 physics_layer_0/collision_layer = 12
@@ -346,18 +348,18 @@ sources/1 = SubResource("TileSetAtlasSource_pavw2")
 sources/3 = SubResource("TileSetAtlasSource_amcu5")
 sources/4 = SubResource("TileSetAtlasSource_gk7ve")
 
-[node name="Main6" type="Node2D"]
+[node name="Main7" type="Node2D"]
 y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("1_p76s7")
+script = ExtResource("1_40uu8")
 
-[node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("2_2a3jg")]
+[node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("2_tj4pk")]
 offset_left = -400.0
 offset_bottom = 318.0
 
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("3_qi072")]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("3_vd7dn")]
 visible = false
 custom_minimum_size = Vector2(78, 78)
 anchors_preset = 8
@@ -377,7 +379,7 @@ pivot_offset = Vector2(64.5, 39)
 [node name="things that go above map" type="TileMapLayer" parent="."]
 z_index = 1
 position = Vector2(-100, -407)
-tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAAZAP3/AQAEAAAAAAAZAP7/AQAAAAIAAAAZAP//AQAAAAIAAAAZAAAAAQAAAAIAAAAZAAIAAQAAAAEAAAAaAAIAAQAEAAEAAAAbAAIAAQAEAAEAAAAcAAIAAQAEAAEAAAAdAAIAAQAEAAEAAAAeAAIAAQAEAAEAAAAfAAIAAQAEAAEAAAAgAAIAAQAEAAEAAAAZAAEAAQAAAAIAAAASAAYAAQAEAAEAAAATAAYAAQAEAAEAAAAUAAYAAQAEAAEAAAAVAAYAAQAEAAEAAAAWAAYAAQAEAAEAAAAXAAYAAQADAAAAAAAaAAYAAQABAAAAAAAbAAYAAQAEAAEAAAAcAAYAAQAEAAEAAAAdAAYAAQAEAAEAAAAeAAYAAQAEAAEAAAAfAAYAAQAEAAEAAAAgAAYAAQAEAAEAAAATAAsAAQAAAAQAAAAVABEAAQAAAAQAAAAdAAoAAQAAAAQAAAAWAAkAAQAAAAQAAAAeABAAAQAAAAQAAAAbAA4AAQAAAAQAAAD///r/AgADAAIAAAD///n/AgADAAIAAAA=")
+tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAAZAP3/AQAEAAAAAAAZAP7/AQAAAAIAAAAZAP//AQAAAAIAAAAZAAAAAQAAAAIAAAAZAAIAAQAAAAEAAAAaAAIAAQAEAAEAAAAbAAIAAQAEAAEAAAAcAAIAAQAEAAEAAAAdAAIAAQAEAAEAAAAeAAIAAQAEAAEAAAAfAAIAAQAEAAEAAAAgAAIAAQAEAAEAAAAZAAEAAQAAAAIAAAASAAYAAQAEAAEAAAATAAYAAQAEAAEAAAAUAAYAAQAEAAEAAAAVAAYAAQAEAAEAAAAWAAYAAQAEAAEAAAAXAAYAAQADAAAAAAAaAAYAAQABAAAAAAAbAAYAAQAEAAEAAAAcAAYAAQAEAAEAAAAdAAYAAQAEAAEAAAAeAAYAAQAEAAEAAAAfAAYAAQAEAAEAAAAgAAYAAQAEAAEAAAATAAsAAQAAAAQAAAAVABEAAQAAAAQAAAAdAAoAAQAAAAQAAAAWAAkAAQAAAAQAAAAeABAAAQAAAAQAAAAbAA4AAQAAAAQAAAD///r/AgADAAIAAAD///n/AgADAAIAAAASAAMAAQAAAAQAAAA=")
 tile_set = SubResource("TileSet_bs6ou")
 
 [node name="caps2" type="TileMapLayer" parent="."]
@@ -401,9 +403,9 @@ limit_right = 800
 limit_bottom = 100
 position_smoothing_speed = 2.0
 editor_draw_limits = true
-script = ExtResource("11_tbwew")
+script = ExtResource("11_p22m4")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("12_lxt0w")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("12_xe0n8")]
 position = Vector2(-285, -312)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -413,123 +415,121 @@ remote_path = NodePath("../../Camera2D")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-109, -410)
-script = ExtResource("13_g7qgv")
+script = ExtResource("13_tof74")
 
-[node name="apple_crate" parent="Produce_Crates" instance=ExtResource("14_bbe7l")]
+[node name="apple_crate" parent="Produce_Crates" instance=ExtResource("14_8q46y")]
 position = Vector2(-128, 91)
 item_amount = 3
 
-[node name="apple_crate2" parent="Produce_Crates" instance=ExtResource("14_bbe7l")]
+[node name="apple_crate2" parent="Produce_Crates" instance=ExtResource("14_8q46y")]
 position = Vector2(-128, 75)
 item_amount = 3
 
-[node name="orange_crate" parent="Produce_Crates" instance=ExtResource("15_nxyji")]
+[node name="orange_crate" parent="Produce_Crates" instance=ExtResource("15_omua5")]
 position = Vector2(-112, 75)
 item_amount = 5
 
-[node name="orange_crate2" parent="Produce_Crates" instance=ExtResource("15_nxyji")]
+[node name="orange_crate2" parent="Produce_Crates" instance=ExtResource("15_omua5")]
 position = Vector2(-112, 91)
 
-[node name="pears_crate" parent="Produce_Crates" instance=ExtResource("16_25dp6")]
+[node name="pears_crate" parent="Produce_Crates" instance=ExtResource("16_7d5n3")]
 position = Vector2(-80, 75)
 
-[node name="pears_crate2" parent="Produce_Crates" instance=ExtResource("16_25dp6")]
+[node name="pears_crate2" parent="Produce_Crates" instance=ExtResource("16_7d5n3")]
 position = Vector2(-80, 91)
 
-[node name="corn_crate" parent="Produce_Crates" instance=ExtResource("17_3jnol")]
+[node name="corn_crate" parent="Produce_Crates" instance=ExtResource("17_xpj1y")]
 position = Vector2(-64, 91)
 
-[node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("17_3jnol")]
+[node name="corn_crate2" parent="Produce_Crates" instance=ExtResource("17_xpj1y")]
 position = Vector2(-64, 75)
 
 [node name="Freezers" type="Node2D" parent="."]
 position = Vector2(-124, -410)
-script = ExtResource("13_g7qgv")
+script = ExtResource("13_tof74")
 
-[node name="Butter_Freezer_L" parent="Freezers" instance=ExtResource("18_yb0pq")]
+[node name="Butter_Freezer_L" parent="Freezers" instance=ExtResource("18_l4r16")]
 position = Vector2(-128, -141)
 
-[node name="Butter_Freezer_R" parent="Freezers" instance=ExtResource("19_w0eit")]
+[node name="Butter_Freezer_R" parent="Freezers" instance=ExtResource("19_anq6s")]
 position = Vector2(-112, -141)
 
-[node name="Cheese_Freezer_L" parent="Freezers" instance=ExtResource("20_2wt60")]
+[node name="Cheese_Freezer_L" parent="Freezers" instance=ExtResource("20_mp4o5")]
 position = Vector2(-96, -141)
 
-[node name="Cheese_Freezer_R" parent="Freezers" instance=ExtResource("21_tho8q")]
+[node name="Cheese_Freezer_R" parent="Freezers" instance=ExtResource("21_c2k0g")]
 position = Vector2(-80, -141)
 
-[node name="Drink_Freezer_L" parent="Freezers" instance=ExtResource("22_ryure")]
+[node name="Drink_Freezer_L" parent="Freezers" instance=ExtResource("22_k1xp1")]
 position = Vector2(-64, -141)
 
-[node name="Drink_Freezer_R" parent="Freezers" instance=ExtResource("23_sksop")]
+[node name="Drink_Freezer_R" parent="Freezers" instance=ExtResource("23_ijstt")]
 position = Vector2(-48, -141)
 
-[node name="Milk_Freezer_L" parent="Freezers" instance=ExtResource("24_m3g0g")]
+[node name="Milk_Freezer_L" parent="Freezers" instance=ExtResource("24_edeji")]
 position = Vector2(-32, -141)
 
-[node name="Milk_Freezer_R" parent="Freezers" instance=ExtResource("25_t1db4")]
+[node name="Milk_Freezer_R" parent="Freezers" instance=ExtResource("25_ukioc")]
 position = Vector2(-16, -141)
 
 [node name="shelves" type="Node2D" parent="."]
 position = Vector2(-124, -362)
-script = ExtResource("13_g7qgv")
+script = ExtResource("13_tof74")
 
-[node name="shelves1" parent="shelves" instance=ExtResource("26_mem58")]
+[node name="shelves1" parent="shelves" instance=ExtResource("26_d1d0y")]
 position = Vector2(-48, -29)
 
-[node name="shelves2" parent="shelves" instance=ExtResource("26_mem58")]
+[node name="shelves2" parent="shelves" instance=ExtResource("26_d1d0y")]
 position = Vector2(-48, -77)
 type = 20
 
-[node name="shelves3" parent="shelves" instance=ExtResource("26_mem58")]
+[node name="shelves3" parent="shelves" instance=ExtResource("26_d1d0y")]
 position = Vector2(-96, -77)
 type = 11
 item_amount = 3
 
-[node name="shelves4" parent="shelves" instance=ExtResource("26_mem58")]
+[node name="shelves4" parent="shelves" instance=ExtResource("26_d1d0y")]
 position = Vector2(-96, -29)
-type = 12
+type = 29
+item_needed = true
 
 [node name="Clerk" type="Node2D" parent="."]
 position = Vector2(-100, -407)
 
-[node name="NPC clerk" parent="Clerk" instance=ExtResource("27_k3r6v")]
+[node name="NPC clerk" parent="Clerk" instance=ExtResource("27_m0xnn")]
 position = Vector2(-200, -8)
-dialog = ["Thank you, come again! 
- Please exit to your left or right", "Lil Bro! We ran out of beef, but I don't want to deal with those cows anymore.", "You can do it for me right?", "It's dangerous to go alone. Take this", "Press K to attack!"]
-dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
 position = Vector2(-100, -407)
 
-[node name="Exits2" parent="Exits_Group" instance=ExtResource("28_f1ctc")]
+[node name="Exits2" parent="Exits_Group" instance=ExtResource("28_xjwju")]
 position = Vector2(-204, 103)
 
-[node name="Exits" parent="Exits_Group" instance=ExtResource("28_f1ctc")]
+[node name="Exits" parent="Exits_Group" instance=ExtResource("28_xjwju")]
 position = Vector2(-204, 90)
 
-[node name="Exits3" parent="Exits_Group" instance=ExtResource("28_f1ctc")]
+[node name="Exits3" parent="Exits_Group" instance=ExtResource("28_xjwju")]
 position = Vector2(-204, -88)
 
-[node name="Exits4" parent="Exits_Group" instance=ExtResource("28_f1ctc")]
+[node name="Exits4" parent="Exits_Group" instance=ExtResource("28_xjwju")]
 position = Vector2(-204, -102)
 
 [node name="Door_Group" type="Node2D" parent="."]
 position = Vector2(-100, -407)
 
-[node name="door_tp" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_hxrno")]
+[node name="door_tp" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_b3x36")]
 position = Vector2(-8, 88)
 destination = NodePath("../../Outdoor area Destination")
 
-[node name="door_tp2" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_hxrno")]
+[node name="door_tp2" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_b3x36")]
 position = Vector2(-8, 72)
 destination = NodePath("../../Outdoor area Destination")
 
-[node name="door_tp3" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_hxrno")]
+[node name="door_tp3" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_b3x36")]
 position = Vector2(296, 9)
 destination = NodePath("../../Store Destination")
 
-[node name="door_tp4" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_hxrno")]
+[node name="door_tp4" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_b3x36")]
 position = Vector2(296, 25)
 destination = NodePath("../../Store Destination")
 
@@ -541,57 +541,80 @@ position = Vector2(-133, -327)
 
 [node name="ChickenPen1" type="Node2D" parent="."]
 position = Vector2(270, -479)
-script = ExtResource("30_p130x")
+script = ExtResource("30_sq87g")
 
 [node name="Chickens" type="Node2D" parent="ChickenPen1"]
 position = Vector2(94, 63)
 
-[node name="Chicken" parent="ChickenPen1/Chickens" instance=ExtResource("31_o2ygb")]
+[node name="Chicken" parent="ChickenPen1/Chickens" instance=ExtResource("31_4ee2j")]
 position = Vector2(-40, -12)
 roam_dist = 96
 
-[node name="Chicken2" parent="ChickenPen1/Chickens" instance=ExtResource("31_o2ygb")]
+[node name="Chicken2" parent="ChickenPen1/Chickens" instance=ExtResource("31_4ee2j")]
 position = Vector2(-22, 24)
 roam_dist = 96
 
-[node name="Chicken3" parent="ChickenPen1/Chickens" instance=ExtResource("31_o2ygb")]
+[node name="Chicken3" parent="ChickenPen1/Chickens" instance=ExtResource("31_4ee2j")]
 position = Vector2(55, 15)
 roam_dist = 96
 
-[node name="Interaction_Area" parent="ChickenPen1" instance=ExtResource("32_c55gs")]
+[node name="Interaction_Area" parent="ChickenPen1" instance=ExtResource("32_82bmo")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChickenPen1/Interaction_Area"]
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
 disabled = true
 
-[node name="item crate" parent="." instance=ExtResource("33_b8u0b")]
+[node name="item crate" parent="." instance=ExtResource("33_gj3l6")]
 position = Vector2(-451, -503)
 type = 14
-item_needed = true
-item_amount = 5
+item_amount = 3
 
 [node name="Node" type="Node" parent="."]
 
-[node name="Cow" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+[node name="Cow" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_or8aw")]
 position = Vector2(230, -184)
 target = NodePath("../../Player")
 
-[node name="Cow2" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+[node name="Cow2" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_or8aw")]
 position = Vector2(327, -138)
 target = NodePath("../../Player")
 
-[node name="Cow3" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+[node name="Cow3" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_or8aw")]
 position = Vector2(341, -201)
 target = NodePath("../../Player")
 
-[node name="Cow4" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+[node name="Cow4" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_or8aw")]
 position = Vector2(240, -226)
 target = NodePath("../../Player")
 
-[node name="Cow5" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
+[node name="Cow5" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_or8aw")]
 position = Vector2(364, -238)
 target = NodePath("../../Player")
+
+[node name="garden_items" type="Node2D" parent="."]
+
+[node name="Interactable_item" parent="garden_items" instance=ExtResource("35_8s2jf")]
+position = Vector2(417, -281)
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+type = 19
+item_needed = true
+
+[node name="Interactable_item2" parent="garden_items" instance=ExtResource("35_8s2jf")]
+z_index = 1
+position = Vector2(196, -353)
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+type = 27
+item_needed = true
+
+[node name="Interactable_item3" parent="garden_items" instance=ExtResource("35_8s2jf")]
+position = Vector2(201, -113)
+region_enabled = true
+region_rect = Rect2(64, 48, 16, 16)
+type = 28
+item_needed = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

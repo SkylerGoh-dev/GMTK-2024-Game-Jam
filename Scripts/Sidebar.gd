@@ -67,7 +67,6 @@ func resize_menu():
 		inner_menu.custom_minimum_size = Vector2i(0,400)
 	else:
 		inner_menu.custom_minimum_size = Vector2i(0,250)
-	#print(inner_menu.custom_minimum_size)
 
 func clear_list():
 	total_items = 0

@@ -5,14 +5,18 @@ extends CharacterBody2D
 var direction = Vector2.ZERO
 var animatedDirection: String = "Down"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var got_hit: Timer = $Hitbox/GotHit
+@onready var got_hit: Timer = $Player_Hitbox/GotHit
 @onready var knife: Area2D = $Weapon/Knife
+@onready var knife_collision: CollisionShape2D = $Weapon/Knife/CollisionShape2D
 
 @export var inventoryResource: InventoryResource
 
+var knife_disabled: bool = true
+var hurt: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Interaction_Manager.player = self
+	knife_collision.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,24 +38,27 @@ func _physics_process(_delta):
 	elif velocity.x < 0:
 		sprite.flip_h = true
 		
-	if velocity == Vector2.ZERO:
-		sprite.play("Idle")
-	else:
-		sprite.play("Run")
+	if not hurt:
+		if velocity == Vector2.ZERO:
+			sprite.play("Idle")
+		else:
+			sprite.play("Run")
 		
 	move_and_slide()
 	swingWeapon()
 
 func swingWeapon():
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and not knife_disabled:
+		knife_collision.disabled = false
 		animation_player.play("attack" + animatedDirection)
-
+		
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventoryResource)
 	else:
-
+		sprite.play("hurt")
+		hurt = true
 		#$Weapon/Knife.hide()
 		knife.set_deferred("monitorable", false)
 		speed = 25
@@ -60,8 +67,10 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	
 func _on_got_hit_timeout() -> void:
 	speed = 100
+	hurt = false
 	knife.set_deferred("monitorable", true)
-	knife.show()
+	if not knife_disabled:
+		knife.show()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/cow_level.tscn")
@@ -72,3 +81,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func reset_inventory():
 	if Input.is_action_just_pressed("reset inventory"):
 		inventoryResource.clearAll()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	knife_collision.disabled = true
+	
+func set_knife_disabled(value: bool):
+	knife_disabled = value

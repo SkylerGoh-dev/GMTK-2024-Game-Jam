@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6ao7rxkswy6e"]
+
+[ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="1_8aejs"]
+[ext_resource type="Script" path="res://Scripts/depot.gd" id="1_i7rhv"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="3_da4wv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_124xp"]
+size = Vector2(16, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n0ve"]
+radius = 16.0
+
+[node name="item crate" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_i7rhv")
+
+[node name="crate" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_8aejs")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_124xp")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 3
+script = ExtResource("3_da4wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_7n0ve")
