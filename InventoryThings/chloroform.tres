@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://lsu54rg4mof6"]
+
+[ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_f3y4s"]
+[ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="2_h5qny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig0o6"]
+atlas = ExtResource("2_h5qny")
+region = Rect2(32, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_f3y4s")
+name = "chloroform"
+texture = SubResource("AtlasTexture_ig0o6")

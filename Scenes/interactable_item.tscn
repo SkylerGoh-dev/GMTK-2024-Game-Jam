@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy7g4j7t4uvhp"]
+
+[ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="1_wwhub"]
+[ext_resource type="Script" path="res://Scripts/interactable_item.gd" id="2_3vbm2"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="2_k4r6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pp7am"]
+radius = 16.0
+
+[node name="Interactable_item" type="Sprite2D"]
+position = Vector2(-1, 0)
+texture = ExtResource("1_wwhub")
+script = ExtResource("2_3vbm2")
+
+[node name="Interaction_Area" parent="." instance=ExtResource("2_k4r6m")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_pp7am")

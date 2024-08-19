@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dtrwyh5l3hrof"]
+[gd_scene load_steps=21 format=4 uid="uid://cjo06lovs8bss"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="6_wawov"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_0gkfl"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_38gya"]
-[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
+[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
 [ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="13_xtfbb"]
-[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
 

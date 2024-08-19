@@ -1,9 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://csav56ab8g0ds"]
+[gd_scene load_steps=22 format=3 uid="uid://csav56ab8g0ds"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6slxj"]
 [ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="2_8xqms"]
 [ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="2_oaci5"]
 [ext_resource type="PackedScene" uid="uid://bpmo6bnngyj0c" path="res://Scenes/knife.tscn" id="3_wqi5o"]
+[ext_resource type="Texture2D" uid="uid://bt87vdywsxlp0" path="res://Sprites/Little kid hurt.png" id="4_78uxs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rsv01"]
+radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbetl"]
 atlas = ExtResource("2_8xqms")
@@ -16,6 +20,22 @@ region = Rect2(0, 0, 12, 12)
 [sub_resource type="AtlasTexture" id="AtlasTexture_itt8y"]
 atlas = ExtResource("2_8xqms")
 region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vih2m"]
+atlas = ExtResource("4_78uxs")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udu2l"]
+atlas = ExtResource("4_78uxs")
+region = Rect2(12, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1lsw"]
+atlas = ExtResource("4_78uxs")
+region = Rect2(0, 24, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckcu3"]
+atlas = ExtResource("4_78uxs")
+region = Rect2(12, 24, 12, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0h5b"]
 animations = [{
@@ -37,6 +57,23 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vih2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udu2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1lsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckcu3")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7otw3"]
@@ -194,20 +231,30 @@ _data = {
 "attackup": SubResource("Animation_1ar5j")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rsv01"]
-radius = 4.0
-
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 5
 script = ExtResource("1_6slxj")
 inventoryResource = ExtResource("2_oaci5")
 
+[node name="Player_Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 36
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Hitbox"]
+shape = SubResource("CircleShape2D_rsv01")
+
+[node name="GotHit" type="Timer" parent="Player_Hitbox"]
+wait_time = 1.5
+one_shot = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_l0h5b")
-animation = &"Idle"
+animation = &"hurt"
 autoplay = "Run"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7otw3")
@@ -226,16 +273,6 @@ libraries = {
 }
 autoplay = "attackleft"
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 36
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_rsv01")
-
-[node name="GotHit" type="Timer" parent="Hitbox"]
-wait_time = 1.5
-one_shot = true
-
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="timeout" from="Hitbox/GotHit" to="." method="_on_got_hit_timeout"]
+[connection signal="area_entered" from="Player_Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Player_Hitbox/GotHit" to="." method="_on_got_hit_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
