@@ -3,7 +3,7 @@ extends Node
 var pause_menu
 
 # Gameplay Flags
-@export var current_week: int = 1
+@export var current_week: int = 0
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
@@ -39,9 +39,9 @@ var grandma_dialog = [
 	"Oh no sweetie! The toaster fell into the bath. Could you be a dear and buy me a new one? 
 	And get me some spare rope for outside while you’re there!",
 	"Let’s go on a picnic today! Grab those pretty Oleanders, eggs, and your favorite food to eat.",
-	"Grandma needs to restock on new cleaning supplies.",
+	"Grandma needs to restock on new cleaning supplies. She had some troublesome stains to take care of.",
 	"Grab all the meat you can get from the store <3",
-	"Grandma is spending a lot of time in the garden. Can you grab some extra tools?",
+	"Grandma is thinking of improving the garden. Can you grab some extra tools? Especially, one that can dig",
 	"Grab everything we are moving",
 	"Grandma made a mistake",
 	"You know too much"
@@ -61,8 +61,9 @@ func _input(event: InputEvent) -> void:
 		if inventory_open:
 			inventory_open = false
 		else:
-			create_pause()
-			print('esc clicked pause')
+			if current_week != 0:
+				create_pause()
+				print('esc clicked pause')
 		
 	elif Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") != null:
 		print('esc clicked resume')
@@ -125,6 +126,7 @@ func next_level_path() -> String:
 	#scene_changing = false
 	print("currentweek: ", current_week)
 	if current_week > max_weeks:
+		current_week = 0
 		return "res://Scenes/levels/beginning_scene.tscn"
 	return "res://Scenes/levels/main" + str(current_week) + ".tscn"
 	#return "res://Scenes/levels/main.tscn"

@@ -42,6 +42,7 @@ func _process(_delta) -> void:
 			successful_dig()
 		elif started and (arrow.position.x < left or arrow.position.x > right):
 			animation.play("fail")
+			SoundManager.play_sound(self, "24-Cant_Dig_Dirt")
 
 func update_bar():
 	under.custom_minimum_size.x = 30 + level * randi_range(5, 10)
@@ -63,6 +64,7 @@ func reset_game():
 	reset_arrow()
 
 func successful_dig():
+	SoundManager.play_sound(self, "06-PickUp_Item")
 	animation.play("dig")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -79,6 +81,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			elif level == 3:
 				manure.visible = true
 				animation.play("reveal")
+			SoundManager.play_sound(self, "26-Dirt_Dig")
 		"charge":
 			direction *= -1
 			if direction == 1:
@@ -102,6 +105,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_button_pressed() -> void:
 	visible = false
 	if not animation.current_animation == "reveal":
+		SoundManager.play_sound(self, "01-ButtonClick")
 		get_parent().show_ui()
 		animation.stop()
 		reset_game()

@@ -20,6 +20,7 @@ func _ready():
 
 func _on_button_pressed() -> void:
 	visible = false
+	SoundManager.play_sound(self, "01-ButtonClick")
 	chicken_game_closed.emit()
 	walls.set_deferred("disabled", true)
 

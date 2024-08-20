@@ -24,10 +24,12 @@ func _on_interact():
 			shovel_game.position = Vector2(576, 324)
 			canvas_layer.call_deferred("add_child", shovel_game)
 		else:
+			SoundManager.play_sound(self, "02-ButtonHover")
 			shovel_game.visible = true
 			
 	else:
 		animation.play("emit_text")
+		SoundManager.play_sound(self, "24-Cant_Dig_Dirt")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

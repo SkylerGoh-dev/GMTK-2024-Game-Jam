@@ -5,11 +5,11 @@ var level_path : String
 @onready var dialog: Label = $CanvasLayer/Dialog
 
 func _ready() -> void:
+	SoundManager.play_sound(self, "12-End_Of_The_Day")
 	dialog.text = Gameplay_Manager.get_transition_dialog()
 	level_path = Gameplay_Manager.next_level_path()
 	load_done = false
 	ResourceLoader.load_threaded_request(level_path)
-	SoundManager.play_sound(self, "12-End_Of_The_Day")
 
 func _process(delta):
 	var progress = []

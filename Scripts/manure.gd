@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if clickable and Input.is_action_just_pressed("press"):
+		$AudioStreamPlayer2D.play()
 		clicker = min(2, clicker + 1)
 		if clicker == 1:
 			clicker += 1
@@ -17,6 +18,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			collect(get_parent().inventoryResource)
 
 func collect(inventoryResource: InventoryResource):
+	print("Just Collected Manure")
+	
 	inventoryResource.insert(get_parent().itemResource)
 	queue_free()
 

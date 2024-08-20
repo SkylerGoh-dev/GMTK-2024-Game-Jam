@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("press"):
 			direction = curr_mouse_pos - global_position
 			Interaction_Manager.is_dragging = true
+			SoundManager.play_sound(self, "16-Chicken_PickUp")
 		if Input.is_action_pressed("press"):
 			direction = curr_mouse_pos - global_position
 			velocity = direction * DRAG_SPEED
@@ -118,6 +119,7 @@ func spawn_egg():
 	egg.position = position + egg_spawner.position
 	egg.velocity = velocity / 7.5
 	get_parent().call_deferred("add_child", egg)
+	SoundManager.play_sound(self, "15-Chicken_EggDrop")
 
 func register_clickable():
 	draggable = true
