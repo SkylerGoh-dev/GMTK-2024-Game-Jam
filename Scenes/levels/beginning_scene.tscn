@@ -305,8 +305,8 @@ script = ExtResource("1_4nf43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(250, -312.5)
-scale = Vector2(2.1875, 1.30625)
+position = Vector2(245, -172)
+scale = Vector2(2.2125, 1.40833)
 texture = ExtResource("2_06kum")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -418,14 +418,14 @@ vertical_alignment = 1
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2(279, -148)
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(2, 2)
 limit_left = -100
 limit_right = 600
 editor_draw_limits = true
 
 [node name="Camera1" type="Camera2D" parent="."]
 position = Vector2(279, -148)
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(2, 2)
 
 [node name="Camera2" type="Camera2D" parent="."]
 position = Vector2(118, -3)

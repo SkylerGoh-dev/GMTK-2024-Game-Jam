@@ -23,8 +23,9 @@ Resource_Name="*res://Scripts/Resource_Name.gd"
 
 [display]
 
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [global_group]
 
