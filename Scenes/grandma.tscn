@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btrvrwjkqsqwc"]
+[gd_scene load_steps=11 format=3 uid="uid://btrvrwjkqsqwc"]
 
 [ext_resource type="Script" path="res://Scripts/grandma.gd" id="1_kf5f8"]
 [ext_resource type="Texture2D" uid="uid://pooe5gwff3ew" path="res://Sprites/grandma.png" id="2_jrll8"]
@@ -15,6 +15,14 @@ region = Rect2(24, 0, 24, 24)
 atlas = ExtResource("2_jrll8")
 region = Rect2(0, 24, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqbth"]
+atlas = ExtResource("2_jrll8")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1g7i"]
+atlas = ExtResource("2_jrll8")
+region = Rect2(0, 48, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cb38s"]
 animations = [{
 "frames": [{
@@ -29,6 +37,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqbth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1g7i")
+}],
+"loop": true,
+"name": &"Rage",
 "speed": 8.0
 }]
 
@@ -47,7 +66,7 @@ script = ExtResource("1_kf5f8")
 sprite_frames = SubResource("SpriteFrames_cb38s")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.372406
+frame_progress = 0.0542889
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1.5)
