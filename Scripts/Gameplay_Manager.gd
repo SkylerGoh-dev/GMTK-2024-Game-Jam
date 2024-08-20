@@ -35,7 +35,7 @@ var transition_dialog : Array = [
 # Shopping List explanation
 var grandma_dialog = [
 	"Grandma ran out of Cheese. Can you please pick some up?",
-	"Grandma misplaced her kitchen knife. Please get me one from the store along with some fruits, and napkins.",
+	"Grandma misplaced her kitchen knife. Please get me one from the store along with some fruits.",
 	"Oh no sweetie! The toaster fell into the bath. Could you be a dear and buy me a new one? 
 	And get me some spare rope for outside while you’re there!",
 	"Let’s go on a picnic today! Grab those pretty Oleanders, eggs, and your favorite food to eat.",

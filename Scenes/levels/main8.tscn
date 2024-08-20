@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://cbswibm311pe7"]
+[gd_scene load_steps=92 format=4 uid="uid://ukrgcjl16cf3"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_kxjno"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_nlx6l"]
@@ -58,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://o81ruhsmhgah" path="res://Sprites/Npc adults.png" id="54_us47k"]
 [ext_resource type="Texture2D" uid="uid://dahi243oxqvqe" path="res://Sprites/refined materials.png" id="55_wm651"]
 [ext_resource type="Texture2D" uid="uid://b3but0hr0h3o" path="res://Sprites/glock.png" id="56_scp68"]
+[ext_resource type="PackedScene" uid="uid://bsx41fnspe7m7" path="res://Scenes/mound.tscn" id="59_iynyx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwjcb"]
 texture = ExtResource("8_xatbb")
@@ -1212,35 +1213,35 @@ region_rect = Rect2(0, 32, 16, 16)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 position = Vector2(-142, -969)
-tile_map_data = PackedByteArray("AAD1/wcAAQAAAAEAAAD1/wYAAQAAAAAAAAD2/wUAAQAAAAAAAGD3/wUAAQAAAAEAAGD4/wcAAQAAAAEAAAD4/wYAAQAAAAAAAAD9/wcAAQAAAAEAAAD9/wYAAQAAAAAAAAD//wUAAQAAAAEAAGD+/wUAAQAAAAAAAGD//wAAAQAAAAEAAGD+/wAAAQAAAAAAAGD///3/AQAAAAEAAGD+//3/AQAAAAAAAGD///j/AQAAAAEAAAD///f/AQAAAAAAAAD8//f/AQAAAAAAAAD8//j/AQAAAAEAAAD9//n/AQAAAAAAAGD+//n/AQAAAAEAAGD6//f/AQAAAAAAAAD6//j/AQAAAAEAAAD3//f/AQAAAAAAAAD3//j/AQAAAAEAAAD4//n/AQAAAAAAAGD5//n/AQAAAAEAAGD1//f/AQAAAAAAAAD1//j/AQAAAAEAAADz//n/AQAAAAAAAGD0//n/AQAAAAEAAGD5//3/AQAAAAEAAGD5/wAAAQAAAAEAAGD3//7/AQAAAAAAAAD3////AQAAAAEAAAD4//3/AQAAAAAAAGD4/wAAAQAAAAAAAGD6//7/AQAAAAAAAAD6////AQAAAAEAAAD9//7/AQAAAAAAAAD9////AQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD1/wcAAQAAAAEAAAD1/wYAAQAAAAAAAAD2/wUAAQAAAAAAAGD3/wUAAQAAAAEAAGD4/wcAAQAAAAEAAAD4/wYAAQAAAAAAAAD9/wcAAQAAAAEAAAD9/wYAAQAAAAAAAAD//wUAAQAAAAEAAGD+/wUAAQAAAAAAAGD//wAAAQAAAAEAAGD+/wAAAQAAAAAAAGD///3/AQAAAAEAAGD+//3/AQAAAAAAAGD5//3/AQAAAAEAAGD5/wAAAQAAAAEAAGD3//7/AQAAAAAAAAD3////AQAAAAEAAAD4//3/AQAAAAAAAGD4/wAAAQAAAAAAAGD6//7/AQAAAAAAAAD6////AQAAAAEAAAD9//7/AQAAAAAAAAD9////AQAAAAEAAAD0//v/AQAAAAAAAFDz//v/AQAAAAEAAFD2//v/AQAAAAAAAFD1//v/AQAAAAEAAFD4//v/AQAAAAAAAFD3//v/AQAAAAEAAFD+//v/AQAAAAAAAGD///v/AQAAAAEAAGD8//v/AQAAAAAAAGD9//v/AQAAAAEAAGD6//v/AQAAAAAAAGD7//v/AQAAAAEAAGD5//r/AQAAAAAAAAD5//v/AQAAAAEAAAD0//n/AQAAAAAAAAD0//r/AQAAAAEAAAD2//n/AQAAAAAAAAD2//r/AQAAAAEAAAD8//n/AQAAAAAAAAD8//r/AQAAAAEAAAD+//n/AQAAAAAAAAD+//r/AQAAAAEAAAD1/wMAAQAAAAEAAFD3//3/AQAAAAEAAAD3//z/AQAAAAAAAAD6/wEAAQAAAAEAAAD6/wAAAQAAAAAAAAD7/wIAAQAAAAEAAAD7/wEAAQAAAAAAAAD8/wMAAQAAAAEAAAD8/wIAAQAAAAAAAAD8//7/AQAAAAEAAAD8//3/AQAAAAAAAAD4/wEAAQAAAAAAAFD3/wEAAQAAAAEAAFD3/wIAAQAAAAAAAFD2/wIAAQAAAAEAAFD2/wMAAQAAAAAAAFA=")
 tile_set = SubResource("TileSet_m3mtt")
 
 [node name="toast" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-158, -857)
+position = Vector2(-156, -856)
 item_amount = 7
 
 [node name="toast2" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-254, -1097)
+position = Vector2(-198, -1086)
 item_amount = 7
 
 [node name="toast3" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-287, -855)
+position = Vector2(-294, -1086)
 item_amount = 7
 
 [node name="toast4" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-334, -1097)
+position = Vector2(-326, -1086)
 item_amount = 7
 
 [node name="toast5" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-173, -1097)
+position = Vector2(-166, -1086)
 item_amount = 7
 
 [node name="toast6" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-158, -984)
+position = Vector2(-253, -985)
 item_amount = 7
 
 [node name="toast7" parent="." instance=ExtResource("42_08cqc")]
-position = Vector2(-254, -984)
+position = Vector2(-244, -1092)
 item_amount = 7
 
 [node name="shelves2" parent="." instance=ExtResource("26_xghwp")]
@@ -1444,6 +1445,50 @@ color = Color(0.215686, 0.215686, 0.0156863, 0.623529)
 stream = ExtResource("53_gpaih")
 autoplay = true
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(238, -161)
+
+[node name="mound" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 2
+
+[node name="mound2" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+position = Vector2(77, 9)
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 2
+
+[node name="mound3" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+position = Vector2(44, -33)
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 2
+
+[node name="mound4" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+position = Vector2(31, -8)
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 2
+
+[node name="mound5" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+position = Vector2(150, 5)
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 3
+
+[node name="mound6" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+position = Vector2(141, 17)
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 2
+
+[node name="mound7" parent="Node2D" node_paths=PackedStringArray("canvas_layer") instance=ExtResource("59_iynyx")]
+position = Vector2(56, 3)
+canvas_layer = NodePath("../../CanvasLayer")
+collectables = 5
+speed = 2
+
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
 [connection signal="chicken_game_closed" from="CanvasLayer/ChickenGame" to="CanvasLayer" method="_on_chicken_game_chicken_game_closed"]
@@ -1455,5 +1500,12 @@ autoplay = true
 [connection signal="hooked" from="Player/Pivot/ropeLine" to="toast6" method="_on_rope_line_hooked"]
 [connection signal="hooked" from="Player/Pivot/ropeLine" to="toast7" method="_on_rope_line_hooked"]
 [connection signal="chicken_game_opened" from="chicken_pen" to="CanvasLayer" method="_on_chicken_pen_chicken_game_opened"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound" method="_on_interactable_item_shovel"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound2" method="_on_interactable_item_shovel"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound3" method="_on_interactable_item_shovel"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound4" method="_on_interactable_item_shovel"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound5" method="_on_interactable_item_shovel"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound6" method="_on_interactable_item_shovel"]
+[connection signal="shovel" from="garden_items/Interactable_item" to="Node2D/mound7" method="_on_interactable_item_shovel"]
 
 [editable path="CanvasLayer/ChickenGame"]

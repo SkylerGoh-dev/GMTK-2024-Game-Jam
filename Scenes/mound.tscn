@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsx41fnspe7m7"]
+[gd_scene load_steps=15 format=3 uid="uid://bsx41fnspe7m7"]
 
 [ext_resource type="Script" path="res://Scripts/mound.gd" id="1_fuvuv"]
 [ext_resource type="Texture2D" uid="uid://bhqoyagrapy84" path="res://Sprites/hole.png" id="2_ngeje"]
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="3_njsn3"]
 [ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="4_ps57m"]
+[ext_resource type="PackedScene" uid="uid://cqcux08ittdg5" path="res://Scenes/Item_Indicator.tscn" id="5_rcopg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mlip"]
 atlas = ExtResource("2_ngeje")
@@ -145,5 +146,9 @@ visible_ratio = 0.0
 libraries = {
 "": SubResource("AnimationLibrary_pouqr")
 }
+
+[node name="Item_Indicator" parent="." instance=ExtResource("5_rcopg")]
+position = Vector2(0, -18)
+autoplay = "default"
 
 [connection signal="body_exited" from="Interaction_Area" to="." method="_on_interaction_area_body_exited"]
