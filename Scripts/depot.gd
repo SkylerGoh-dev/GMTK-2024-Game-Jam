@@ -32,6 +32,7 @@ func _on_interact():
 		var itemResource: InventoryItem = load(fullPath)
 		if itemResource:
 			inventoryResource.insert(itemResource)
+			SoundManager.play_sound(self, "06-PickUp_Item")
 		else:
 			printerr("No Item resource for", stringNameOfType)
 		
@@ -39,13 +40,15 @@ func _on_interact():
 			indicator.hide()
 			item_needed = false
 			type_done.emit(type)
-			
+	else:
+		SoundManager.play_sound(self, "05-Nothing_To_Interact")
 func hide_indicator():
 	if indicator:
 		indicator.hide()
 
 func _on_rope_line_hooked(hookedObject, hooked_position: Variant) -> void:
 	if(get_instance_id() == hookedObject):
+		SoundManager.play_sound(self, "13-Throw_Rope")
 		await get_tree().create_timer(0.2).timeout
 		var tween = get_tree().create_tween()	
 		#print(get_instance_id())
@@ -53,4 +56,6 @@ func _on_rope_line_hooked(hookedObject, hooked_position: Variant) -> void:
 		var grabbed = await interaction_area.collectHooked(hookedObject)
 		if grabbed == true:
 			_on_interact()
+			print("Collected Item")
+			SoundManager.play_sound(self, "06-PickUp_Item")
 			queue_free()

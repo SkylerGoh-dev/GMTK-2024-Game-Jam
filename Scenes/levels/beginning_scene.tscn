@@ -1,0 +1,486 @@
+[gd_scene load_steps=27 format=4 uid="uid://bu0wehnu2rud8"]
+
+[ext_resource type="Script" path="res://Scripts/beginning_scene.gd" id="1_4nf43"]
+[ext_resource type="Texture2D" uid="uid://1ssurg0aqbs" path="res://Sprites/tiles/MainMenu_Background.png" id="2_06kum"]
+[ext_resource type="Texture2D" uid="uid://cw2xbwc0vco24" path="res://Sprites/beginning_scene_tiles.png" id="2_ldkbk"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="3_jv2wg"]
+[ext_resource type="Theme" uid="uid://j26h7k3csn3j" path="res://Shaders/pause_menu.tres" id="4_6a8e5"]
+[ext_resource type="FontFile" uid="uid://cjo7ruxa3exmq" path="res://Fonts/PeaberryMono.ttf" id="5_guolt"]
+[ext_resource type="Script" path="res://Scripts/Main_Menu_Player.gd" id="6_81mw3"]
+[ext_resource type="Texture2D" uid="uid://do8bd0s140fdw" path="res://Sprites/Little_kid.png" id="6_bmgwq"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="9_44qnj"]
+[ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="10_1pqwt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etk7o"]
+texture = ExtResource("2_ldkbk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+12:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+13:0/0 = 0
+13:1/0 = 0
+12:3/0 = 0
+12:4/0 = 0
+12:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qaddt"]
+sources/1 = SubResource("TileSetAtlasSource_etk7o")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2s43b"]
+texture = ExtResource("2_ldkbk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+11:4/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:2/0 = 0
+12:1/0 = 0
+12:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ayywq"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_2s43b")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6jxh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cy6n1"]
+normal = Vector2(1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_064e5"]
+atlas = ExtResource("6_bmgwq")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go0ij"]
+atlas = ExtResource("6_bmgwq")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if11e"]
+atlas = ExtResource("6_bmgwq")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lasxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_064e5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go0ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if11e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa352"]
+radius = 3.04631
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpf2s"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wff7p"]
+atlas = ExtResource("10_1pqwt")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udojy"]
+atlas = ExtResource("10_1pqwt")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mtdf"]
+atlas = ExtResource("10_1pqwt")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5113"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wff7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udojy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mtdf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Beginning_Scene" type="Node2D"]
+script = ExtResource("1_4nf43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(250, -312.5)
+scale = Vector2(2.1875, 1.30625)
+texture = ExtResource("2_06kum")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQANAAAAAAAAAAEAAQANAAEAAAABAAAAAQANAAAAAAABAAEAAQANAAEAAAACAAAAAQANAAAAAAACAAEAAQANAAEAAAADAAAAAQANAAAAAAADAAEAAQANAAEAAAAEAAAAAQANAAAAAAAEAAEAAQANAAEAAAAFAAAAAQANAAAAAAAFAAEAAQANAAEAAAAGAAAAAQANAAAAAAAGAAEAAQANAAEAAAAHAAAAAQANAAAAAAAHAAEAAQANAAEAAAAIAAAAAQANAAAAAAAIAAEAAQANAAEAAAAJAAAAAQANAAAAAAAJAAEAAQANAAEAAAAKAAAAAQANAAAAAAAKAAEAAQANAAEAAAALAAAAAQANAAAAAAALAAEAAQANAAEAAAAMAAAAAQANAAAAAAAMAAEAAQANAAEAAAANAAAAAQANAAAAAAANAAEAAQANAAEAAAAOAAAAAQANAAAAAAAOAAEAAQANAAEAAAAPAAAAAQANAAAAAAAPAAEAAQANAAEAAAAQAAAAAQANAAAAAAAQAAEAAQANAAEAAAARAAAAAQANAAAAAAARAAEAAQANAAEAAAASAAAAAQANAAAAAAASAAEAAQANAAEAAAATAAAAAQANAAAAAAATAAEAAQANAAEAAAAUAAAAAQANAAAAAAAUAAEAAQANAAEAAAAVAAAAAQANAAAAAAAVAAEAAQANAAEAAAAWAAAAAQANAAAAAAAWAAEAAQANAAEAAAAXAAAAAQANAAAAAAAXAAEAAQANAAEAAAAYAAAAAQANAAAAAAAYAAEAAQANAAEAAAAZAAAAAQANAAAAAAAZAAEAAQANAAEAAAAaAAAAAQANAAAAAAAaAAEAAQANAAEAAAAbAAEAAQANAAEAAAAdAAAAAQANAAAAAAAdAAEAAQANAAEAAAAeAAAAAQANAAAAAAAeAAEAAQANAAEAAAAfAAAAAQANAAAAAAAfAAEAAQANAAEAAAAgAAAAAQANAAAAAAAgAAEAAQANAAEAAAAhAAAAAQANAAAAAAAhAAEAAQANAAEAAAAiAAAAAQANAAAAAAAiAAEAAQANAAEAAAAjAAAAAQANAAAAAAAjAAEAAQANAAEAAAAkAAAAAQANAAAAAAAkAAEAAQANAAEAAAAlAAAAAQANAAAAAAAlAAEAAQANAAEAAAAEAPv/AQAAAAAAAAAEAPz/AQAAAAEAAAAEAP3/AQAAAAIAAAAEAP7/AQAAAAMAAAAEAP//AQAAAAQAAAAFAPv/AQABAAAAAAAFAPz/AQABAAEAAAAFAP3/AQABAAIAAAAFAP7/AQABAAMAAAAFAP//AQABAAQAAAAGAPv/AQACAAAAAAAGAPz/AQACAAEAAAAGAP3/AQACAAIAAAAGAP7/AQACAAMAAAAGAP//AQACAAQAAAAHAPv/AQADAAAAAAAHAPz/AQADAAEAAAAHAP3/AQADAAIAAAAHAP7/AQADAAMAAAAHAP//AQADAAQAAAAIAPv/AQAEAAAAAAAIAPz/AQAEAAEAAAAIAP3/AQAEAAIAAAAIAP7/AQAEAAMAAAAIAP//AQAEAAQAAAAJAPv/AQAFAAAAAAAJAPz/AQAFAAEAAAAJAP3/AQAFAAIAAAAJAP7/AQAFAAMAAAAJAP//AQAFAAQAAAAKAPv/AQAGAAAAAAAKAPz/AQAGAAEAAAAKAP3/AQAGAAIAAAAKAP7/AQAGAAMAAAAKAP//AQAGAAQAAAAMAPz/AQAHAAEAAAAMAP3/AQAHAAIAAAAMAP7/AQAHAAMAAAANAP3/AQAKAAIAAAANAP7/AQAKAAMAAAAQAPz/AQAKAAEAAAAQAP3/AQAKAAIAAAAQAP7/AQAKAAMAAAAQAP//AQAKAAQAAAARAPz/AQALAAEAAAARAP3/AQALAAIAAAARAP7/AQALAAMAAAARAP//AQALAAQAAAASAPz/AQAHAAEAAAASAP3/AQAHAAIAAAASAP7/AQAHAAMAAAASAP//AQAHAAQAAAATAP3/AQAHAAcAAAATAP7/AQAHAAgAAAAVAPz/AQAMAAEAAAAVAP3/AQAJAAcAAAAVAP//AQAJAAkAAAAYAPz/AQAHAAEAAAAYAP3/AQAHAAIAAAAYAP7/AQAHAAMAAAAYAP//AQAHAAQAAAAZAP3/AQAIAAIAAAAZAP7/AQAIAAMAAAAdAPz/AQAMAAEAAAAdAP//AQAMAAQAAAACAPv/AQAHAAAAAAACAPz/AQAHAAEAAAACAP3/AQAHAAIAAAACAP7/AQAHAAMAAAACAP//AQAHAAQAAAADAPv/AQAIAAAAAAADAP3/AQAIAAIAAAADAP7/AQAIAAMAAAASAPv/AQAHAAAAAAATAPv/AQAIAAAAAAAZAPv/AQAIAAAAAAAaAP3/AQAIAAIAAAAaAP7/AQAIAAMAAAAgAP3/AQAIAAIAAAAgAP7/AQAIAAMAAAAMAPv/AQAHAAAAAAANAPv/AQAIAAAAAAAMAP//AQAHAAQAAAAYAPv/AQAHAAAAAAAbAAAAAQANAAAAAAAcAAAAAQANAAAAAAAcAAEAAQANAAEAAAATAP//AQAHAAkAAAAUAP3/AQAIAAcAAAAUAP7/AQAIAAgAAAAUAP//AQAIAAkAAAAVAP7/AQAJAAgAAAAWAP3/AQAKAAcAAAAWAP7/AQAKAAgAAAAWAP//AQAKAAkAAAD//wAAAQANAAAAAAD//wEAAQANAAEAAAD+/wAAAQANAAAAAAD+/wEAAQANAAEAAAD9/wAAAQANAAAAAAD9/wEAAQANAAEAAAD8/wAAAQANAAAAAAD8/wEAAQANAAEAAAD7/wAAAQANAAAAAAD7/wEAAQANAAEAAAD6/wAAAQANAAAAAAD6/wEAAQANAAEAAAD5/wAAAQANAAAAAAD5/wEAAQANAAEAAAD4/wAAAQANAAAAAAD4/wEAAQANAAEAAAD///z/AQAKAAEAAAD///3/AQAKAAIAAAD///7/AQAKAAMAAAD/////AQAKAAQAAAAAAPz/AQALAAEAAAAAAP3/AQALAAIAAAAAAP7/AQALAAMAAAAAAP//AQALAAQAAAABAPz/AQAMAAEAAAABAP3/AQAMAAIAAAABAP7/AQAMAAMAAAABAP//AQAMAAQAAAD8//z/AQALAAEAAAD8//3/AQALAAIAAAD8//7/AQALAAMAAAD8////AQALAAQAAAD9//z/AQAKAAEAAAD9//3/AQAKAAIAAAD9//7/AQAKAAMAAAD9////AQAKAAQAAAD+//z/AQALAAEAAAD+//3/AQALAAIAAAD+//7/AQALAAMAAAD+////AQALAAQAAAD7//z/AQAKAAEAAAD7//3/AQAKAAIAAAD7//7/AQAKAAMAAAD7////AQAKAAQAAAANAPz/AQAKAAEAAAANAP//AQAKAAQAAAAOAPz/AQALAAEAAAAOAP3/AQALAAIAAAAOAP7/AQALAAMAAAAOAP//AQALAAQAAAAPAP7/AQAMAAMAAAA=")
+tile_set = SubResource("TileSet_qaddt")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAPz/AgAKAAEAAAADAP3/AgAKAAIAAAADAP7/AgAKAAMAAAADAP//AgAKAAQAAAAEAPz/AgALAAEAAAAEAP3/AgALAAIAAAAEAP7/AgALAAMAAAAEAP//AgALAAQAAAAFAPz/AgAMAAEAAAAFAP3/AgAMAAIAAAAFAP7/AgAMAAMAAAAFAP//AgAMAAQAAAAKAPz/AgAKAAEAAAAKAP3/AgAKAAIAAAAKAP7/AgAKAAMAAAAKAP//AgAKAAQAAAALAPz/AgALAAEAAAALAP3/AgALAAIAAAALAP7/AgALAAMAAAALAP//AgALAAQAAAARAPz/AgAMAAEAAAARAP3/AgAMAAIAAAARAP//AgAMAAQAAAAOAPz/AgAMAAEAAAAOAP3/AgAMAAIAAAAOAP//AgAMAAQAAAAXAPz/AgALAAEAAAAXAP3/AgALAAIAAAAXAP//AgALAAQAAAAcAPz/AgACAAYAAAAcAP3/AgACAAcAAAAcAP//AgACAAkAAAAfAPz/AgAFAAYAAAAfAP3/AgAFAAcAAAAfAP//AgAFAAkAAAASAPz/AgAKAAEAAAASAP3/AgAKAAIAAAASAP7/AgAKAAMAAAASAP//AgAKAAQAAAATAPz/AgALAAEAAAATAP3/AgALAAIAAAATAP7/AgALAAMAAAATAP//AgALAAQAAAAUAPz/AgAMAAEAAAAUAP3/AgAMAAIAAAAUAP7/AgAMAAMAAAAUAP//AgAMAAQAAAAWAPz/AgAKAAEAAAAWAP3/AgAKAAIAAAAWAP7/AgAKAAMAAAAWAP//AgAKAAQAAAAXAP7/AgALAAMAAAAYAPz/AgAMAAEAAAAYAP3/AgAMAAIAAAAYAP7/AgAMAAMAAAAYAP//AgAMAAQAAAAaAPz/AgAAAAYAAAAaAP3/AgAAAAcAAAAaAP7/AgAAAAgAAAAaAP//AgAAAAkAAAAbAPz/AgABAAYAAAAbAP3/AgABAAcAAAAbAP7/AgABAAgAAAAbAP//AgABAAkAAAAcAP7/AgACAAgAAAAdAPz/AgADAAYAAAAdAP3/AgADAAcAAAAdAP7/AgADAAgAAAAdAP//AgADAAkAAAAeAPz/AgAEAAYAAAAeAP3/AgAEAAcAAAAeAP7/AgAEAAgAAAAeAP//AgAEAAkAAAAfAP7/AgAFAAgAAAAgAPz/AgAGAAYAAAAgAP3/AgAGAAcAAAAgAP7/AgAGAAgAAAAgAP//AgAGAAkAAAAiAP3/AgAJAAIAAAAiAP7/AgAJAAMAAAAiAP//AgAJAAQAAAD7//3/AgAJAAIAAAD7//7/AgAJAAMAAAD7////AgAJAAQAAAAAAPz/AgAKAAEAAAAAAP3/AgAKAAIAAAAAAP7/AgAKAAMAAAAAAP//AgAKAAQAAAABAPz/AgALAAEAAAABAP3/AgALAAIAAAABAP7/AgALAAMAAAABAP//AgALAAQAAAACAPz/AgAMAAEAAAACAP3/AgAMAAIAAAACAP7/AgAMAAMAAAACAP//AgAMAAQAAAD+//z/AgAKAAEAAAD+//3/AgAKAAIAAAD+//7/AgAKAAMAAAD+////AgAKAAQAAAD///z/AgALAAEAAAD///3/AgALAAIAAAD///7/AgALAAMAAAD/////AgALAAQAAAAMAPz/AgAMAAEAAAAMAP3/AgAMAAIAAAAMAP7/AgAMAAMAAAAMAP//AgAMAAQAAAA=")
+tile_set = SubResource("TileSet_ayywq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenuButtons" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -148.5
+offset_bottom = 148.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Play" type="Button" parent="CanvasLayer/MainMenuButtons/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_6a8e5")
+theme_override_fonts/font = ExtResource("5_guolt")
+keep_pressed_outside = true
+
+[node name="PlayLabel" type="Label" parent="CanvasLayer/MainMenuButtons/VBoxContainer2/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(150, 62)
+theme_override_fonts/font = ExtResource("5_guolt")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="CanvasLayer/MainMenuButtons/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_6a8e5")
+theme_override_fonts/font = ExtResource("5_guolt")
+
+[node name="QuitLabel" type="Label" parent="CanvasLayer/MainMenuButtons/VBoxContainer2/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(150, 64)
+theme_override_fonts/font = ExtResource("5_guolt")
+text = "Quit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = -182.0
+offset_right = 105.0
+offset_bottom = -182.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="main menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -111.0
+offset_right = 60.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jv2wg")
+text = "Grandma's Peculiar
+Shopping List"
+vertical_alignment = 1
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(279, -148)
+zoom = Vector2(1.8, 1.8)
+limit_left = -100
+limit_right = 600
+editor_draw_limits = true
+
+[node name="Camera1" type="Camera2D" parent="."]
+position = Vector2(279, -148)
+zoom = Vector2(1.8, 1.8)
+
+[node name="Camera2" type="Camera2D" parent="."]
+position = Vector2(118, -3)
+zoom = Vector2(4, 4)
+limit_left = -100
+limit_right = 600
+
+[node name="Floor Boundary" type="StaticBody2D" parent="."]
+position = Vector2(-1, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor Boundary"]
+shape = SubResource("WorldBoundaryShape2D_q6jxh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-99, -3)
+shape = SubResource("WorldBoundaryShape2D_cy6n1")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(118, -3)
+collision_mask = 3
+script = ExtResource("6_81mw3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_lasxp")
+frame_progress = 0.197134
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 2.8)
+shape = SubResource("CircleShape2D_wa352")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+position = Vector2(397, -94)
+collision_layer = 2
+script = ExtResource("9_44qnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+position = Vector2(47, 85)
+shape = SubResource("RectangleShape2D_kpf2s")
+
+[node name="Item_Indicator" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(442, -31)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_r5113")
+autoplay = "default"
+frame_progress = 0.740018
+
+[connection signal="button_down" from="CanvasLayer/MainMenuButtons/VBoxContainer2/Play" to="." method="_on_play_button_down"]
+[connection signal="button_up" from="CanvasLayer/MainMenuButtons/VBoxContainer2/Play" to="." method="_on_play_button_up"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/VBoxContainer2/Play" to="." method="_on_play_pressed"]
+[connection signal="button_down" from="CanvasLayer/MainMenuButtons/VBoxContainer2/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="CanvasLayer/MainMenuButtons/VBoxContainer2/Quit" to="." method="_on_quit_button_up"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

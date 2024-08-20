@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://r6o6cjbio5jc"]
+[gd_scene load_steps=54 format=4 uid="uid://cako7jvyt06yo"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_p76s7"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_2a3jg"]
@@ -28,12 +28,17 @@
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="26_mem58"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="27_k3r6v"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="28_f1ctc"]
-[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="29_hxrno"]
+[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="29_hxrno"]
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="30_p130x"]
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_o2ygb"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_c55gs"]
-[ext_resource type="PackedScene" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_b8u0b"]
+[ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_b8u0b"]
 [ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="34_8rhhg"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="35_s2k01"]
+[ext_resource type="Texture2D" uid="uid://dyne31sc55xa4" path="res://Sprites/npc kids.png" id="36_lskk4"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="37_g60m6"]
+[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="38_exwx4"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="39_hvrbg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("5_8sc1s")
@@ -354,6 +359,12 @@ sources/1 = SubResource("TileSetAtlasSource_pavw2")
 sources/3 = SubResource("TileSetAtlasSource_amcu5")
 sources/4 = SubResource("TileSetAtlasSource_gk7ve")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
+radius = 16.0
+
 [node name="Main6" type="Node2D"]
 y_sort_enabled = true
 
@@ -604,6 +615,58 @@ target = NodePath("../../Player")
 [node name="Cow5" parent="Node" node_paths=PackedStringArray("target") instance=ExtResource("34_8rhhg")]
 position = Vector2(364, -238)
 target = NodePath("../../Player")
+
+[node name="npc" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-221, -285)
+collision_layer = 4
+script = ExtResource("35_s2k01")
+dialog = ["My sister went missing a few days ago. ", "I hope she is okay."]
+
+[node name="Sprite2D" type="Sprite2D" parent="npc"]
+texture = ExtResource("36_lskk4")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="npc"]
+script = ExtResource("37_g60m6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="npc"]
+z_index = 1
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("38_exwx4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="npc/panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("39_hvrbg")
+text = "I don't get paid enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

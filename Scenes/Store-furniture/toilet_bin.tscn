@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://3dvflc7iq85i"]
+
+[ext_resource type="Script" path="res://Scripts/depot.gd" id="1_v7h3t"]
+[ext_resource type="Texture2D" uid="uid://bs516ejlrobyg" path="res://Sprites/Bathroom Tiles.png" id="2_7sqxu"]
+[ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="3_ietd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_547tp"]
+size = Vector2(14, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0ifi"]
+radius = 16.0
+
+[node name="toilet_bin" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_v7h3t")
+type = 31
+item_needed = true
+item_amount = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7sqxu")
+region_enabled = true
+region_rect = Rect2(32, 72, 16, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_547tp")
+
+[node name="Interaction_Area" parent="." instance=ExtResource("3_ietd7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_r0ifi")

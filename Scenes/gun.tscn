@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ftrf3ceo31f"]
+
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_h7p5r"]
+[ext_resource type="Texture2D" uid="uid://b3but0hr0h3o" path="res://Sprites/glock.png" id="2_y0av0"]
+
+[node name="gun" type="CharacterBody2D"]
+script = ExtResource("1_h7p5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y0av0")
+flip_h = true

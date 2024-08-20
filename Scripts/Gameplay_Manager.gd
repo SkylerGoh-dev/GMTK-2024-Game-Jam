@@ -7,9 +7,10 @@ var pause_menu
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
-var max_weeks: int = 9
+var max_weeks: int = 10
 var inventoryResource: InventoryResource 
 var inventory_open : bool = false
+var talked_to_clerk: bool = false
 
 #reference
 var npc_clerk : clerk = null
@@ -26,7 +27,8 @@ var transition_dialog : Array = [
 	"Hmm… dinner with Grandma was nice as usual, but the beef tasted a little funny this time.",	
 	"I tripped on a dirt pile in the backyard. Grandma looked really worried, but I’ll show her how healthy I still am!",
 	"I was sad we were moving, but the road trip was Grandma was fun!",
-	"..."
+	"...",
+	"Grandma went to jail. \n The end."
 ]
 # Shopping List explanation
 var grandma_dialog = [
@@ -39,7 +41,8 @@ var grandma_dialog = [
 	"Grab all the meat you can get from the store <3",
 	"Grandma is spending a lot of time in the garden. Can you grab some extra tools?",
 	"Grab everything we are moving",
-	"Grandma made a mistake"
+	"Grandma made a mistake",
+	"You know too much"
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -101,13 +104,14 @@ func are_items_collected():
 	return true
 
 func end_week():
-	if are_items_collected():
+	if are_items_collected() and talked_to_clerk:
 		if current_week < max_weeks:
 			current_week+= 1
 		clear_needed_items()
 		go_to_scene_transition()
 
 func clear_needed_items() ->void:
+	talked_to_clerk = false
 	inventoryResource.clearAll()
 	scene_items.clear()
 	completed_items.clear()
@@ -139,3 +143,6 @@ func item_finished(item: String) -> bool:
 	if item in completed_items.keys():
 		return completed_items[item]
 	return false
+
+func set_clerk_flag():
+	talked_to_clerk = true

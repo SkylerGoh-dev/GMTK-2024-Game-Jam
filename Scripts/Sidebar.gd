@@ -31,10 +31,12 @@ func _set_menu(menu):
 	if wasClosed:
 		arrow_up.visible = true
 		arrow_down.visible = false
+		SoundManager.play_sound(self, "07-NewCardSound")
 		#Closed
 	else:
 		arrow_down.visible = true
 		arrow_up.visible = false
+		SoundManager.play_sound(self, "07-NewCardSound")
 		#Open
 
 func _on_open_list_menu_pressed():
@@ -58,6 +60,7 @@ func update_ui_item(item: String, amount: int):
 func cross_ui_item(item: String):
 	var item_node : Item = item_list[item]
 	item_node.h_separator.show()
+	SoundManager.play_sound(self, "08-Complete")
 
 func resize_menu():
 	print(total_items)

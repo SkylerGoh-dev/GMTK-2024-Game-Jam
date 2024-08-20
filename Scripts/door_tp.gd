@@ -8,3 +8,4 @@ func _ready():
 	
 func _on_interact():
 	Interaction_Manager.player.global_position = destination.global_position
+	SoundManager.play_sound(self, "11-Door_Close")

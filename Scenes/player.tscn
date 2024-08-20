@@ -274,5 +274,6 @@ libraries = {
 autoplay = "attackleft"
 
 [connection signal="area_entered" from="Player_Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Player_Hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="timeout" from="Player_Hitbox/GotHit" to="." method="_on_got_hit_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
