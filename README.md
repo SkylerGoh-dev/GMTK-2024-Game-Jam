@@ -1,4 +1,5 @@
 **GMTK Game Jam 2024 Submission**
+Link: https://skynemu.itch.io/gpsl
 
 **A game whose story is built to scale in absurdity, as your grandma asks you to get more and more peculiar items each week!**
 
