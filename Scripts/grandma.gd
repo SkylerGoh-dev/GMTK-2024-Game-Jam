@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 30
+var health = 210
 @export var target: CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var speed = 1.5
@@ -20,6 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	print(animated_sprite_2d.animation)
 	if wonGame == false:
 		var motion = Vector2()
 		var player = get_parent().get_node("Player")
@@ -36,7 +37,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if wonGame == false:
 		if "bullet" in body.name:
 			health -= 10
-			animated_sprite_2d.play("hurt")
+			if godMode == false:
+				animated_sprite_2d.play("hurt")
+			else:
+				animated_sprite_2d.play("godmodehurt")
 			timer.start()
 			print(health)
 			body.queue_free()
@@ -56,7 +60,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_player_hit_by_grandma() -> void:
 	if wonGame == false:
-		animated_sprite_2d.play("Rage")
+		if godMode == false:
+			animated_sprite_2d.play("Rage")
+		else:
+			animated_sprite_2d.play("godmode")
 		var player = get_parent().get_node("Player")
 		speed = 0
 		#if global_position.x > player.position.x:
@@ -106,7 +113,11 @@ func _on_player_hit_by_grandma() -> void:
 		elif godMode == true:
 			await get_tree().create_timer(3).timeout
 			speed = 10
-		animated_sprite_2d.play("Idle")
+		if (animated_sprite_2d.animation != "Death"):
+			if godMode == false:
+				animated_sprite_2d.play("Idle")
+			else:
+				animated_sprite_2d.play("godmode")
 		grandma.set_collision_layer_value(3, true)
 
 func tweenLeft(tweenie, player, distance):
@@ -138,13 +149,16 @@ func tweenRight(tweenie, player, distance):
 func turnOnGodMode():
 	if wonGame == false:
 		if godMode == false:
-			health = 30
+			health = 200
 			speed = 10
 			godMode = true
 
 func _on_timer_timeout() -> void:
 	if wonGame == false:
-		animated_sprite_2d.play("Idle")
+		if godMode == false:
+			animated_sprite_2d.play("Idle")
+		else:
+			animated_sprite_2d.play("godmode")
 		print("bruh")
 
 
