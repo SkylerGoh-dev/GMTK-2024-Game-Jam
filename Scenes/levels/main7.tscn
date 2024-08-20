@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bngh4hb7gpv5u"]
+[gd_scene load_steps=56 format=4 uid="uid://bngh4hb7gpv5u"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_40uu8"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_tj4pk"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_4ee2j"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_82bmo"]
 [ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_gj3l6"]
+[ext_resource type="PackedScene" uid="uid://cqcux08ittdg5" path="res://Scenes/Item_Indicator.tscn" id="33_iijnh"]
 [ext_resource type="PackedScene" uid="uid://cy7g4j7t4uvhp" path="res://Scenes/interactable_item.tscn" id="35_8s2jf"]
 [ext_resource type="PackedScene" uid="uid://bsx41fnspe7m7" path="res://Scenes/mound.tscn" id="35_bthhl"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="36_ugi4t"]
@@ -579,6 +580,9 @@ roam_dist = 96
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
 disabled = true
+
+[node name="Item_Indicator" parent="ChickenPen1" instance=ExtResource("33_iijnh")]
+visible = false
 
 [node name="item crate" parent="." instance=ExtResource("33_gj3l6")]
 position = Vector2(-451, -503)
