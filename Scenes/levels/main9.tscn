@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cp7gpmk4u1o11"]
+[gd_scene load_steps=33 format=4 uid="uid://cp7gpmk4u1o11"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_7hp74"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_r0otm"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://5o5s35eyfyfj" path="res://Scenes/Store-furniture/toilet.tscn" id="20_0gbov"]
 [ext_resource type="PackedScene" uid="uid://3dvflc7iq85i" path="res://Scenes/Store-furniture/toilet_bin.tscn" id="21_hre41"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="22_0bsax"]
+[ext_resource type="AudioStream" uid="uid://exu3oo6j6jgc" path="res://Sounds/10-Enter_Bell.wav" id="22_14j17"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_q5voh"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_ww763"]
 
@@ -496,6 +497,10 @@ position = Vector2(-73, -613)
 
 [node name="toilet_bin" parent="bathroom depots" instance=ExtResource("21_hre41")]
 position = Vector2(-119, -531)
+
+[node name="Start_Bell_Ring" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_14j17")
+autoplay = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

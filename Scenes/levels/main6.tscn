@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cako7jvyt06yo"]
+[gd_scene load_steps=56 format=4 uid="uid://cako7jvyt06yo"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_p76s7"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_2a3jg"]
@@ -40,6 +40,7 @@
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="37_g60m6"]
 [ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="38_exwx4"]
 [ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="39_hvrbg"]
+[ext_resource type="AudioStream" uid="uid://exu3oo6j6jgc" path="res://Sounds/10-Enter_Bell.wav" id="41_jw6av"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("5_8sc1s")
@@ -671,6 +672,10 @@ text = "I don't get paid enough"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Start_Bell_Ring" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("41_jw6av")
+autoplay = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

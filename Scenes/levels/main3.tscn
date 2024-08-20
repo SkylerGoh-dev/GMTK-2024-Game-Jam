@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cldxx6bgbti6r"]
+[gd_scene load_steps=27 format=4 uid="uid://cldxx6bgbti6r"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_lx14h"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_sfwif"]
@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://dfdva2nedesu6" path="res://Sprites/tiles/Mart Doors.png" id="6_wawov"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_0gkfl"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_38gya"]
-[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
+[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="11_7t4sd"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="11_udw6o"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="12_bv7lk"]
 [ext_resource type="Script" path="res://Scripts/ropeMain3.gd" id="13_cvikw"]
-[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
+[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="14_jutif"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="16_3ccf7"]
+[ext_resource type="AudioStream" uid="uid://exu3oo6j6jgc" path="res://Sounds/10-Enter_Bell.wav" id="18_eysg6"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_7wrdx"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_7ncuv"]
 
@@ -278,6 +279,10 @@ item_needed = true
 position = Vector2(-200, 56)
 type = 10
 item_needed = true
+
+[node name="Start_Bell_Ring" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_eysg6")
+autoplay = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

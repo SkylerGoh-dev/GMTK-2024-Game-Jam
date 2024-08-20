@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func collect(inventoryResource: InventoryResource):
 	inventoryResource.insert(itemResource)
+	$PickUpItem.play()
 	queue_free()
 
 func register_clickable():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bmuajsdu0w638"]
+[gd_scene load_steps=38 format=4 uid="uid://bmuajsdu0w638"]
 
 [ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_2w7sy"]
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_jbp2l"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="26_jir3x"]
 [ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="27_c245g"]
 [ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="28_hhllv"]
+[ext_resource type="AudioStream" uid="uid://exu3oo6j6jgc" path="res://Sounds/10-Enter_Bell.wav" id="30_jbpaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("1_2w7sy")
@@ -352,6 +353,10 @@ position = Vector2(-204, -88)
 
 [node name="Exits4" parent="Exits_Group" instance=ExtResource("24_omq3g")]
 position = Vector2(-204, -102)
+
+[node name="Start_Bell_Ring" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_jbpaw")
+autoplay = true
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

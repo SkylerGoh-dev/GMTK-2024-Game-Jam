@@ -1,12 +1,13 @@
-[gd_scene load_steps=31 format=4 uid="uid://dd7m5ktoqmnbv"]
+[gd_scene load_steps=32 format=4 uid="uid://dd7m5ktoqmnbv"]
 
 [ext_resource type="Script" path="res://Scripts/shovel_game.gd" id="1_1a6m3"]
 [ext_resource type="Texture2D" uid="uid://dhxh8u3vaperl" path="res://Sprites/dig_bg.png" id="2_8tcl3"]
-[ext_resource type="Resource" uid="uid://bwyekvheoo72f" path="res://InventoryThings/manure.tres" id="2_wklek"]
+[ext_resource type="Resource" uid="uid://c68r71qj0r6rs" path="res://InventoryThings/manure.tres" id="2_wklek"]
 [ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="3_1uysj"]
 [ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="3_pxumd"]
 [ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="4_t7nlw"]
 [ext_resource type="Script" path="res://Scripts/manure.gd" id="7_10vc7"]
+[ext_resource type="AudioStream" uid="uid://cnug8nsnrabbj" path="res://Sounds/06-PickUp_Item.wav" id="8_0y681"]
 [ext_resource type="Texture2D" uid="uid://cltuikx1a4kb5" path="res://Sprites/Close_Button.png" id="8_jkpmx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adpyb"]
@@ -1583,6 +1584,9 @@ region_rect = Rect2(17, 66, 13, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manure/Area2D"]
 shape = SubResource("RectangleShape2D_hegjr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Manure"]
+stream = ExtResource("8_0y681")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bscbhheprbir4"]
+[gd_scene load_steps=8 format=3 uid="uid://bscbhheprbir4"]
 
 [ext_resource type="Script" path="res://Scripts/egg.gd" id="1_iem40"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="2_qhdgu"]
 [ext_resource type="Resource" uid="uid://cim8aigiwtqox" path="res://InventoryThings/egg.tres" id="2_s6bpi"]
 [ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="3_hxr2k"]
+[ext_resource type="AudioStream" uid="uid://cnug8nsnrabbj" path="res://Sounds/06-PickUp_Item.wav" id="5_ea48l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwod"]
 radius = 2.0
@@ -41,6 +42,9 @@ shape = SubResource("CapsuleShape2D_txwod")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_na2oj")
+
+[node name="PickUpItem" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ea48l")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
