@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=10 format=4 uid="uid://j26h7k3csn3j"]
 
-[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="1_sunkk"]
+[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="1_fvhbe"]
 
 [sub_resource type="Image" id="Image_w2iio"]
 data = {
@@ -1230,15 +1230,15 @@ corner_detail = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6euwj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew26n"]
-texture = ExtResource("1_sunkk")
+texture = ExtResource("1_fvhbe")
 region_rect = Rect2(0, 0, 64, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_suacg"]
-texture = ExtResource("1_sunkk")
+texture = ExtResource("1_fvhbe")
 region_rect = Rect2(0, 32, 64, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0opc1"]
-texture = ExtResource("1_sunkk")
+texture = ExtResource("1_fvhbe")
 region_rect = Rect2(0, 64, 64, 32)
 
 [resource]
