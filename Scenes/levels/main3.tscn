@@ -225,7 +225,8 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("23_7wrdx")]
 position = Vector2(-200, -8)
-dialog = ["Thank you, come again! Please exit to your left", "Oh no! Our shelves got knocked over and trapped toast behind them.", "Please pickup a rope and grab them!", "Use your left mouse button to use the rope!"]
+dialog = ["Thank you, come again! 
+Please exit to your left", "Oh no! Our shelves got knocked over and trapped toast behind them.", "Please pickup a rope and grab them!", "Use your left mouse button to use the rope!", "And be sure to stand still! Lassoing is hard."]
 dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]

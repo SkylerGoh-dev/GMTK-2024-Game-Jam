@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bu0wehnu2rud8"]
+[gd_scene load_steps=27 format=4 uid="uid://cyij7llr1xlwm"]
 
 [ext_resource type="Script" path="res://Scripts/beginning_scene.gd" id="1_4nf43"]
 [ext_resource type="Texture2D" uid="uid://1ssurg0aqbs" path="res://Sprites/tiles/MainMenu_Background.png" id="2_06kum"]

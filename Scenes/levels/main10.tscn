@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bln5e7mu7gvr6"]
+[gd_scene load_steps=35 format=4 uid="uid://cl8mjaubmlyo0"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_ram1a"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_qtuqm"]
@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_mt1l4"]
 [ext_resource type="Texture2D" uid="uid://cbiy86leth6u6" path="res://Sprites/shopping list/updownbutton.png" id="7_s7oof"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_w6q2m"]
-[ext_resource type="PackedScene" uid="uid://b3ftrf3ceo31f" path="res://Scenes/gun.tscn" id="13_5ouhg"]
-[ext_resource type="PackedScene" uid="uid://btrvrwjkqsqwc" path="res://Scenes/grandma.tscn" id="16_5nlw7"]
+[ext_resource type="PackedScene" path="res://Scenes/gun.tscn" id="13_5ouhg"]
+[ext_resource type="PackedScene" uid="uid://dtete1d0au0d8" path="res://Scenes/grandma.tscn" id="16_5nlw7"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_pu5wf"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_socij"]
 

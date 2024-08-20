@@ -557,25 +557,22 @@ position = Vector2(219, -390)
 position = Vector2(-133, -327)
 
 [node name="ChickenPen1" type="Node2D" parent="."]
-position = Vector2(270, -479)
+position = Vector2(365, -417)
 script = ExtResource("30_sq87g")
 
 [node name="Chickens" type="Node2D" parent="ChickenPen1"]
-position = Vector2(94, 63)
 
 [node name="Chicken" parent="ChickenPen1/Chickens" instance=ExtResource("31_4ee2j")]
 position = Vector2(-40, -12)
-roam_dist = 96
 
 [node name="Chicken2" parent="ChickenPen1/Chickens" instance=ExtResource("31_4ee2j")]
 position = Vector2(-22, 24)
-roam_dist = 96
 
 [node name="Chicken3" parent="ChickenPen1/Chickens" instance=ExtResource("31_4ee2j")]
 position = Vector2(55, 15)
-roam_dist = 96
 
 [node name="Interaction_Area" parent="ChickenPen1" instance=ExtResource("32_82bmo")]
+position = Vector2(-94, -62)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChickenPen1/Interaction_Area"]
 position = Vector2(26, 25)
