@@ -233,7 +233,7 @@ script = ExtResource("6_81mw3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_lasxp")
-frame_progress = 0.616174
+frame_progress = 0.197134
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 2.8)
