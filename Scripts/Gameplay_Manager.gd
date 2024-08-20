@@ -7,7 +7,7 @@ var pause_menu
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
-var max_weeks: int = 8
+var max_weeks: int = 9
 var inventoryResource: InventoryResource 
 var inventory_open : bool = false
 
@@ -25,7 +25,8 @@ var transition_dialog : Array = [
 	"I cleaned the entire kitchen! Grandma was so proud when she finished cleaning the the basement.",
 	"Hmm… dinner with Grandma was nice as usual, but the beef tasted a little funny this time.",	
 	"I tripped on a dirt pile in the backyard. Grandma looked really worried, but I’ll show her how healthy I still am!",
-	"I was sad we were moving, but the road trip was Grandma was fun!"
+	"I was sad we were moving, but the road trip was Grandma was fun!",
+	"..."
 ]
 # Shopping List explanation
 var grandma_dialog = [
@@ -38,6 +39,7 @@ var grandma_dialog = [
 	"Grab all the meat you can get from the store <3",
 	"Grandma is spending a lot of time in the garden. Can you grab some extra tools?",
 	"Grab everything we are moving",
+	"Grandma made a mistake"
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -48,16 +50,18 @@ func _ready():
 	if current_scene_num <= max_weeks and current_scene_num != current_week:
 		print("changed current week to scene week to", current_scene_num)
 		current_week = current_scene_num
-		
-func _process(_delta) -> void:
-	if Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") == null and not inventory_open:
-		create_pause()
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") == null:
+		if inventory_open:
+			inventory_open = false
+		else:
+			create_pause()
+			print('esc clicked pause')
 		
 	elif Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") != null:
-		if not inventory_open:
-			create_resume()
-		else:
-			inventory_open = false
+		print('esc clicked resume')
+		create_resume()
 
 func create_pause():
 	pause_menu = preload("res://Scenes/pause_menu.tscn").instantiate()

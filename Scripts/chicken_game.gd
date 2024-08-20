@@ -2,6 +2,8 @@ extends Control
 
 @onready var walls = $StaticBody2D/CollisionPolygon2D
 
+signal chicken_game_closed
+
 func _ready():
 	set_deferred("visible", false)
 	walls.set_deferred("disabled", true)
@@ -10,6 +12,7 @@ func _ready():
 
 func _on_button_pressed() -> void:
 	visible = false
+	chicken_game_closed.emit()
 	walls.set_deferred("disabled", true)
 
 func _on_button_mouse_entered() -> void:

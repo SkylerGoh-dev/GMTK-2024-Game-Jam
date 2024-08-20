@@ -18,10 +18,11 @@ func _ready() -> void:
 
 func _on_interact():
 	if has_shovel:
+		canvas_layer.hide_ui()
 		if not shovel_game:
 			shovel_game = preload("res://Scenes/shovel_game.tscn").instantiate()
 			shovel_game.position = Vector2(576, 324)
-			get_tree().root.get_node(get_tree().root.get_path_to(canvas_layer)).call_deferred("add_child", shovel_game)
+			canvas_layer.call_deferred("add_child", shovel_game)
 		else:
 			shovel_game.visible = true
 			
@@ -46,6 +47,7 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 	print('exited')
 	if shovel_game and body.name == 'Player':
 		shovel_game.visible = false
+		canvas_layer.show_ui()
 		if not shovel_game.animation.current_animation == "reveal":
 			shovel_game.animation.stop()
 			shovel_game.reset_game()

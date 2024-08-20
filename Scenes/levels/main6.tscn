@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cako7jvyt06yo"]
+[gd_scene load_steps=47 format=4 uid="uid://r6o6cjbio5jc"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_p76s7"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_2a3jg"]

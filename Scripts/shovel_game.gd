@@ -25,13 +25,16 @@ func _ready() -> void:
 	#Gameplay_Manager._register_item(Resource_Name.type["MANURE"],1)
 	#visible = false
 	manure.visible = false
+	manure.position = Vector2(4, 25)
+	manure.scale = Vector2(1,1)
 	background.frame = 0
 	reset_arrow()
 	update_bar()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta) -> void:
+	if animation.is_playing() and animation.current_animation != 'charge':
+		return
+	
 	if Input.is_action_just_pressed("interact") and level < 3:
 		if not started:
 			start_game()
@@ -39,7 +42,6 @@ func _process(delta: float) -> void:
 			successful_dig()
 		elif started and (arrow.position.x < left or arrow.position.x > right):
 			animation.play("fail")
-			
 
 func update_bar():
 	under.custom_minimum_size.x = 30 + level * randi_range(5, 10)
@@ -65,14 +67,15 @@ func successful_dig():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
+		"rest":
+			start_game()
 		"dig":
 			level += 1
 			background.set_deferred("frame", level)
 			reset_arrow()
 			if level < 3:
 				update_bar()
-				await get_tree().create_timer(0.5).timeout
-				start_game()
+				animation.play("rest")
 			elif level == 3:
 				manure.visible = true
 				animation.play("reveal")
@@ -85,16 +88,23 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		"reveal":
 			manure.clickable = true
 			done_diggin = true
+			manure.position = Vector2(40, -4)
+			manure.scale = Vector2(1.75, 1.75)
+			animation.play("RESET")
 		"fail":
-			await get_tree().create_timer(1).timeout
 			reset_arrow()
 			animation.play("RESET")
 		"RESET":
-			start_game()
+			if not done_diggin:
+				start_game()
 
 
 func _on_button_pressed() -> void:
 	visible = false
+	if not animation.current_animation == "reveal":
+		get_parent().show_ui()
+		animation.stop()
+		reset_game()
 
 func _on_button_mouse_entered() -> void:
 	$Button.set_default_cursor_shape(Control.CURSOR_POINTING_HAND)
