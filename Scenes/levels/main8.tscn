@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=4 uid="uid://cbswibm311pe7"]
+[gd_scene load_steps=83 format=4 uid="uid://cbswibm311pe7"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_kxjno"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_nlx6l"]
@@ -46,7 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="39_1ryfa"]
 [ext_resource type="AudioStream" uid="uid://dd7bkdlm1ndot" path="res://Sounds/11-Door_Close.wav" id="39_cnf6l"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="40_hrnd3"]
-[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
+[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
+[ext_resource type="PackedScene" uid="uid://cqcux08ittdg5" path="res://Scenes/Item_Indicator.tscn" id="43_0y3ct"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="47_08vsr"]
 [ext_resource type="Texture2D" uid="uid://dyne31sc55xa4" path="res://Sprites/npc kids.png" id="48_8bgnu"]
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="49_4ewba"]
@@ -992,6 +993,10 @@ roam_dist = 96
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChickenPen1/Interaction_Area"]
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
+
+[node name="Item_Indicator" parent="ChickenPen1" instance=ExtResource("43_0y3ct")]
+z_index = 2
+position = Vector2(38, 80)
 
 [node name="item crate" parent="." instance=ExtResource("33_o2ntb")]
 position = Vector2(-451, -503)
