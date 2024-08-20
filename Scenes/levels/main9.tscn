@@ -331,7 +331,7 @@ tile_set = SubResource("TileSet_ql21g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
-position = Vector2(-161, 91)
+position = Vector2(-171, 89)
 zoom = Vector2(4, 4)
 limit_left = -350
 limit_top = -800
@@ -342,7 +342,7 @@ editor_draw_limits = true
 script = ExtResource("7_tm6ye")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("8_ei1qo")]
-position = Vector2(-161, 91)
+position = Vector2(-171, 89)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

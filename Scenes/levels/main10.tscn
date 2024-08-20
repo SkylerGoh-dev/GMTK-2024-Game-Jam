@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bln5e7mu7gvr6"]
+[gd_scene load_steps=35 format=4 uid="uid://kd30ksqmyc8c"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_ram1a"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_qtuqm"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_mt1l4"]
 [ext_resource type="Texture2D" uid="uid://cbiy86leth6u6" path="res://Sprites/shopping list/updownbutton.png" id="7_s7oof"]
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_w6q2m"]
+[ext_resource type="PackedScene" uid="uid://b3ftrf3ceo31f" path="res://Scenes/gun.tscn" id="13_5ouhg"]
+[ext_resource type="PackedScene" uid="uid://btrvrwjkqsqwc" path="res://Scenes/grandma.tscn" id="16_5nlw7"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="23_pu5wf"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_socij"]
 
@@ -76,7 +78,7 @@ texture = ExtResource("4_d06c4")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0.125, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_bs6ou"]
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 5
 sources/0 = SubResource("TileSetAtlasSource_ndokc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t8g5"]
@@ -583,6 +585,16 @@ position = Vector2(-161, 91)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
+[node name="gun" parent="Player" instance=ExtResource("13_5ouhg")]
+z_index = 1
+position = Vector2(9, 3)
+
+[node name="Left" type="RayCast2D" parent="Player"]
+target_position = Vector2(-50, 0)
+
+[node name="Right" type="RayCast2D" parent="Player"]
+target_position = Vector2(50, 0)
+
 [node name="Clerk" type="Node2D" parent="."]
 
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("23_pu5wf")]
@@ -602,6 +614,10 @@ position = Vector2(-204, -88)
 [node name="Exits4" parent="Exits_Group" instance=ExtResource("24_socij")]
 position = Vector2(-204, -102)
 
+[node name="grandma" parent="." instance=ExtResource("16_5nlw7")]
+position = Vector2(-25, 8)
+
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
 [connection signal="pressed" from="CanvasLayer/Shopping_List/MarginContainer/Menu/Tab/PullDownTab/OpenListMenu" to="CanvasLayer/Shopping_List" method="_on_open_list_menu_pressed"]
+[connection signal="hitByGrandma" from="Player" to="grandma" method="_on_player_hit_by_grandma"]

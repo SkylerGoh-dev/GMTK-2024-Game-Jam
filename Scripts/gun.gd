@@ -4,7 +4,8 @@ var bullet = preload("res://Scenes/bullet.tscn")
 var fire_rate = 0.4
 var gun_cooldown = 0
 @onready var sprite: Sprite2D = $Sprite2D
-
+@onready var player: CharacterBody2D = $".."
+@onready var node_2d: Node2D = $Sprite2D/Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,8 +33,8 @@ func _physics_process(delta: float) -> void:
 
 func fire_gun():
 	var new_bullet = bullet.instantiate()
-	new_bullet.rotation = global_rotation + 1.55
-	new_bullet.global_position = global_position
+	new_bullet.global_position = node_2d.global_position
+	new_bullet.rotation = global_rotation + PI / 2
 	new_bullet.visible = true;
 	get_tree().root.add_child(new_bullet)
 
