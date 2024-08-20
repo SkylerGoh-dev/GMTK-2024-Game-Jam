@@ -41,6 +41,7 @@ func transition_camera():
 
 func _on_play_pressed() -> void:
 	transition_camera()
+	SoundManager.play_sound(self, "01-ButtonClick")
 	main_menu_buttons.hide()
 
 func _on_play_button_up() -> void:

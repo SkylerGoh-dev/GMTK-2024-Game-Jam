@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://cbswibm311pe7"]
+[gd_scene load_steps=91 format=4 uid="uid://cbswibm311pe7"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_kxjno"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_nlx6l"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="17_8chc5"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="18_0h5mj"]
 [ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="18_2gc5i"]
-[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
+[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
 [ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="19_nt7n6"]
 [ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="20_cma03"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="20_r53et"]
@@ -33,20 +33,20 @@
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="26_xghwp"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="27_26m0h"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="28_7227b"]
-[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="29_ahro8"]
+[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="29_ahro8"]
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="30_5g8oe"]
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_d4byx"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_dkbe5"]
-[ext_resource type="PackedScene" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_o2ntb"]
+[ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_o2ntb"]
 [ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="34_q1cbh"]
-[ext_resource type="PackedScene" path="res://Scenes/interactable_item.tscn" id="35_gtsdm"]
+[ext_resource type="PackedScene" uid="uid://cy7g4j7t4uvhp" path="res://Scenes/interactable_item.tscn" id="35_gtsdm"]
 [ext_resource type="Texture2D" uid="uid://dtui5fe0hxr1a" path="res://Sprites/Freezer.png" id="36_ay67c"]
 [ext_resource type="Texture2D" uid="uid://dtvwx6c70rpp7" path="res://Sprites/ShelvesNew.png" id="37_7ktjy"]
 [ext_resource type="Texture2D" uid="uid://bul16xwa7inp6" path="res://Sprites/tiles/New Piskel.png" id="38_a6x1n"]
 [ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="39_1ryfa"]
 [ext_resource type="AudioStream" uid="uid://dd7bkdlm1ndot" path="res://Sounds/11-Door_Close.wav" id="39_cnf6l"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="40_hrnd3"]
-[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
+[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
 [ext_resource type="PackedScene" uid="uid://cqcux08ittdg5" path="res://Scenes/Item_Indicator.tscn" id="43_0y3ct"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="47_08vsr"]
 [ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="47_24rkm"]
@@ -54,10 +54,10 @@
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="49_4ewba"]
 [ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="50_rrrlq"]
 [ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="51_6shjj"]
+[ext_resource type="AudioStream" uid="uid://exu3oo6j6jgc" path="res://Sounds/10-Enter_Bell.wav" id="53_gpaih"]
 [ext_resource type="Texture2D" uid="uid://o81ruhsmhgah" path="res://Sprites/Npc adults.png" id="54_us47k"]
 [ext_resource type="Texture2D" uid="uid://dahi243oxqvqe" path="res://Sprites/refined materials.png" id="55_wm651"]
 [ext_resource type="Texture2D" uid="uid://b3but0hr0h3o" path="res://Sprites/glock.png" id="56_scp68"]
-[ext_resource type="AudioStream" uid="uid://exu3oo6j6jgc" path="res://Sounds/10-Enter_Bell.wav" id="53_gpaih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwjcb"]
 texture = ExtResource("8_xatbb")
@@ -1061,7 +1061,7 @@ position = Vector2(-96, -72)
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
 
-[node name="Item_Indicator" parent="ChickenPen1" instance=ExtResource("43_0y3ct")]
+[node name="ChickenPen1#Item_Indicator" parent="." instance=ExtResource("43_0y3ct")]
 z_index = 2
 position = Vector2(38, 80)
 
