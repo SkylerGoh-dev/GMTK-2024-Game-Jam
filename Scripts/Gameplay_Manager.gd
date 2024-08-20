@@ -28,7 +28,7 @@ var transition_dialog : Array = [
 	"I tripped on a dirt pile in the backyard. Grandma looked really worried, but I’ll show her how healthy I still am!",
 	"I was sad we were moving, but the road trip was Grandma was fun!",
 	"...",
-	"Grandma went to jail. \n The end."
+	"I..I Grandma...",
 ]
 # Shopping List explanation
 var grandma_dialog = [
@@ -103,7 +103,7 @@ func are_items_collected():
 
 func end_week():
 	if are_items_collected() and talked_to_clerk:
-		if current_week < max_weeks:
+		if current_week <= max_weeks:
 			current_week+= 1
 		clear_needed_items()
 		go_to_scene_transition()
@@ -117,6 +117,8 @@ func clear_needed_items() ->void:
 
 func next_level_path() -> String:
 	#scene_changing = false
+	if current_week > max_weeks:
+		return "res://Scenes/levels/beginning_scene.tscn"
 	return "res://Scenes/levels/main" + str(current_week) + ".tscn"
 	#return "res://Scenes/levels/main.tscn"
 
@@ -124,11 +126,9 @@ func go_to_scene_transition():
 	get_tree().change_scene_to_file("res://Scenes/scene_transition.tscn")
 
 func get_transition_dialog() -> String:
-	if current_week == max_weeks:
-		return transition_dialog[current_week-1]
 	if current_week-2 < transition_dialog.size():
 		return transition_dialog[current_week-2]
-	return ""
+	return transition_dialog[current_week-1]
 
 func get_shopping_list_dialog() -> String:
 	if current_week-1 < grandma_dialog.size():
