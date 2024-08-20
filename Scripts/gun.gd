@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 
 func fire_gun():
 	var new_bullet = bullet.instantiate()
+	SoundManager.play_sound(self, "GunShot")
 	new_bullet.global_position = node_2d.global_position
 	new_bullet.rotation = global_rotation + PI / 2
 	new_bullet.visible = true;
