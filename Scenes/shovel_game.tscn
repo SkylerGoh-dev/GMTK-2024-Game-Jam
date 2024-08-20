@@ -1,8 +1,8 @@
-[gd_scene load_steps=30 format=4 uid="uid://4gkk62lwxj3f"]
+[gd_scene load_steps=31 format=4 uid="uid://dd7m5ktoqmnbv"]
 
 [ext_resource type="Script" path="res://Scripts/shovel_game.gd" id="1_1a6m3"]
 [ext_resource type="Texture2D" uid="uid://dhxh8u3vaperl" path="res://Sprites/dig_bg.png" id="2_8tcl3"]
-[ext_resource type="Resource" uid="uid://c68r71qj0r6rs" path="res://InventoryThings/manure.tres" id="2_wklek"]
+[ext_resource type="Resource" uid="uid://bwyekvheoo72f" path="res://InventoryThings/manure.tres" id="2_wklek"]
 [ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="3_1uysj"]
 [ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="3_pxumd"]
 [ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="4_t7nlw"]
@@ -44,34 +44,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_56xjn"]
-resource_name = "dig"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shovel:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.733333, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [-1.5708, -0.523599, 0.0, 0.0, -0.785398, -1.5708]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Shovel:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.733333, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-30, 3), Vector2(-35, -3), Vector2(-45, -15), Vector2(-34, -5), Vector2(-34, 0.999999), Vector2(-30, 3)]
-}
 
 [sub_resource type="Animation" id="Animation_6m145"]
 length = 0.001
@@ -121,7 +93,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, 25)]
+"values": [Vector2(40, -4)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -133,7 +105,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(1.75, 1.75)]
 }
 
 [sub_resource type="Animation" id="Animation_0krxd"]
@@ -164,6 +136,62 @@ tracks/1/keys = {
 "values": [-1.5708, 0.785398]
 }
 
+[sub_resource type="Animation" id="Animation_56xjn"]
+resource_name = "dig"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shovel:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.733333, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, -0.523599, 0.0, 0.0, -0.785398, -1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.733333, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-30, 3), Vector2(-35, -3), Vector2(-45, -15), Vector2(-34, -5), Vector2(-34, 0.999999), Vector2(-30, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_dff0k"]
+resource_name = "fail"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shovel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-30, 3), Vector2(-16, -17), Vector2(5, -31), Vector2(15, -23), Vector2(23, -23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, 1.309, 3.66519, 6.28319]
+}
+
 [sub_resource type="Animation" id="Animation_3f4af"]
 resource_name = "reveal"
 tracks/0/type = "value"
@@ -191,32 +219,9 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(2, 2), Vector2(1.75, 1.75)]
 }
 
-[sub_resource type="Animation" id="Animation_dff0k"]
-resource_name = "fail"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shovel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-30, 3), Vector2(-16, -17), Vector2(5, -31), Vector2(15, -23), Vector2(23, -23)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Shovel:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-1.5708, 1.309, 3.66519, 6.28319]
-}
+[sub_resource type="Animation" id="Animation_c4nsr"]
+resource_name = "rest"
+length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dd4lq"]
 _data = {
@@ -224,6 +229,7 @@ _data = {
 "charge": SubResource("Animation_0krxd"),
 "dig": SubResource("Animation_56xjn"),
 "fail": SubResource("Animation_dff0k"),
+"rest": SubResource("Animation_c4nsr"),
 "reveal": SubResource("Animation_3f4af")
 }
 
@@ -1576,6 +1582,7 @@ region_rect = Rect2(17, 66, 13, 14)
 shape = SubResource("RectangleShape2D_hegjr")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 40.0
 offset_top = -75.0
 offset_right = 56.0

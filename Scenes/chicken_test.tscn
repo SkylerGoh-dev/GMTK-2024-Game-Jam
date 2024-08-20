@@ -39,6 +39,8 @@ scale = Vector2(8, 8)
 pivot_offset = Vector2(64.5, 39)
 
 [node name="Shopping_List" parent="CanvasLayer" instance=ExtResource("3_5kwks")]
+offset_left = -350.0
+offset_bottom = 318.0
 
 [node name="ChickenGame" parent="CanvasLayer" instance=ExtResource("4_ae6rr")]
 
@@ -68,6 +70,8 @@ position = Vector2(124, 86)
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
+[connection signal="chicken_game_closed" from="CanvasLayer/ChickenGame" to="CanvasLayer" method="_on_chicken_game_chicken_game_closed"]
+[connection signal="chicken_game_opened" from="ChickenPen" to="CanvasLayer" method="_on_chicken_pen_chicken_game_opened"]
 
 [editable path="ChickenPen"]
 [editable path="Player"]

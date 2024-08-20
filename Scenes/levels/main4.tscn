@@ -606,29 +606,29 @@ position = Vector2(219, -390)
 [node name="Store Destination" type="Marker2D" parent="."]
 position = Vector2(-133, -327)
 
-[node name="ChickenPen1" type="Node2D" parent="." node_paths=PackedStringArray("chicken_game")]
+[node name="chicken_pen" type="Node2D" parent="." node_paths=PackedStringArray("chicken_game")]
 position = Vector2(270, -479)
 script = ExtResource("27_ohb85")
 chicken_game = NodePath("../CanvasLayer/ChickenGame")
 
-[node name="Chickens" type="Node2D" parent="ChickenPen1"]
+[node name="Chickens" type="Node2D" parent="chicken_pen"]
 position = Vector2(94, 63)
 
-[node name="Chicken" parent="ChickenPen1/Chickens" instance=ExtResource("27_bmvg8")]
+[node name="Chicken" parent="chicken_pen/Chickens" instance=ExtResource("27_bmvg8")]
 position = Vector2(-40, -12)
 roam_dist = 96
 
-[node name="Chicken2" parent="ChickenPen1/Chickens" instance=ExtResource("27_bmvg8")]
+[node name="Chicken2" parent="chicken_pen/Chickens" instance=ExtResource("27_bmvg8")]
 position = Vector2(-22, 24)
 roam_dist = 96
 
-[node name="Chicken3" parent="ChickenPen1/Chickens" instance=ExtResource("27_bmvg8")]
+[node name="Chicken3" parent="chicken_pen/Chickens" instance=ExtResource("27_bmvg8")]
 position = Vector2(55, 15)
 roam_dist = 96
 
-[node name="Interaction_Area" parent="ChickenPen1" instance=ExtResource("29_8tfc1")]
+[node name="Interaction_Area" parent="chicken_pen" instance=ExtResource("29_8tfc1")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChickenPen1/Interaction_Area"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chicken_pen/Interaction_Area"]
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
 
@@ -791,3 +791,5 @@ autowrap_mode = 2
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
+[connection signal="chicken_game_closed" from="CanvasLayer/ChickenGame" to="CanvasLayer" method="_on_chicken_game_chicken_game_closed"]
+[connection signal="chicken_game_opened" from="chicken_pen" to="CanvasLayer" method="_on_chicken_pen_chicken_game_opened"]

@@ -53,16 +53,18 @@ func _ready():
 	if current_scene_num <= max_weeks and current_scene_num != current_week:
 		print("changed current week to scene week to", current_scene_num)
 		current_week = current_scene_num
-		
-func _process(_delta) -> void:
-	if Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") == null and not inventory_open:
-		create_pause()
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") == null:
+		if inventory_open:
+			inventory_open = false
+		else:
+			create_pause()
+			print('esc clicked pause')
 		
 	elif Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") != null:
-		if not inventory_open:
-			create_resume()
-		else:
-			inventory_open = false
+		print('esc clicked resume')
+		create_resume()
 
 func create_pause():
 	pause_menu = preload("res://Scenes/pause_menu.tscn").instantiate()
