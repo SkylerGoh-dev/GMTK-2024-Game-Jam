@@ -3,7 +3,7 @@ extends Node
 var pause_menu
 
 # Gameplay Flags
-@export var current_week: int = 1
+@export var current_week: int = 0
 var scene_items: Dictionary = {}
 var completed_items: Dictionary = {}
 var scene_changing: bool = false
@@ -61,8 +61,9 @@ func _input(event: InputEvent) -> void:
 		if inventory_open:
 			inventory_open = false
 		else:
-			create_pause()
-			print('esc clicked pause')
+			if current_week != 0:
+				create_pause()
+				print('esc clicked pause')
 		
 	elif Input.is_action_just_pressed("esc") and get_tree().root.get_node_or_null("Pause_Menu") != null:
 		print('esc clicked resume')
@@ -125,6 +126,7 @@ func next_level_path() -> String:
 	#scene_changing = false
 	print("currentweek: ", current_week)
 	if current_week > max_weeks:
+		current_week = 0
 		return "res://Scenes/levels/beginning_scene.tscn"
 	return "res://Scenes/levels/main" + str(current_week) + ".tscn"
 	#return "res://Scenes/levels/main.tscn"

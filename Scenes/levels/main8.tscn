@@ -877,7 +877,7 @@ position = Vector2(-100, -407)
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("27_26m0h")]
 position = Vector2(-200, -8)
 dialog = ["Thank you, come again! 
- Please exit to your left", "How are you paying for all those items?", "Whatever, just take them. I don't get paid enough.", "Oh yeah killing cows again. Here ya go."]
+ Please exit to your left", "How are you paying for all those items?", "Whatever, just take them. I don't get paid enough.", "Oh yeah killing cows again. Here ya go. Remember to press K"]
 dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
@@ -1116,7 +1116,7 @@ region_rect = Rect2(48, 80, 16, 16)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 position = Vector2(-142, -969)
-tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAD1/wcAAQAAAAEAAAD1/wYAAQAAAAAAAAD2/wUAAQAAAAAAAGD3/wUAAQAAAAEAAGD4/wcAAQAAAAEAAAD4/wYAAQAAAAAAAAD9/wcAAQAAAAEAAAD9/wYAAQAAAAAAAAD//wUAAQAAAAEAAGD+/wUAAQAAAAAAAGD//wAAAQAAAAEAAGD+/wAAAQAAAAAAAGD///3/AQAAAAEAAGD+//3/AQAAAAAAAGD///j/AQAAAAEAAAD///f/AQAAAAAAAAD8//f/AQAAAAAAAAD8//j/AQAAAAEAAAD9//n/AQAAAAAAAGD+//n/AQAAAAEAAGD6//f/AQAAAAAAAAD6//j/AQAAAAEAAAD3//f/AQAAAAAAAAD3//j/AQAAAAEAAAD4//n/AQAAAAAAAGD5//n/AQAAAAEAAGD1//f/AQAAAAAAAAD1//j/AQAAAAEAAADz//n/AQAAAAAAAGD0//n/AQAAAAEAAGD5//3/AQAAAAEAAGD5/wAAAQAAAAEAAGD3//7/AQAAAAAAAAD3////AQAAAAEAAAD4//3/AQAAAAAAAGD4/wAAAQAAAAAAAGD6//7/AQAAAAAAAAD6////AQAAAAEAAAD9//7/AQAAAAAAAAD9////AQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD1/wcAAQAAAAEAAAD1/wYAAQAAAAAAAAD2/wUAAQAAAAAAAGD3/wUAAQAAAAEAAGD4/wcAAQAAAAEAAAD4/wYAAQAAAAAAAAD9/wcAAQAAAAEAAAD9/wYAAQAAAAAAAAD//wUAAQAAAAEAAGD+/wUAAQAAAAAAAGD//wAAAQAAAAEAAGD+/wAAAQAAAAAAAGD///3/AQAAAAEAAGD+//3/AQAAAAAAAGD///j/AQAAAAEAAAD///f/AQAAAAAAAAD8//f/AQAAAAAAAAD8//j/AQAAAAEAAAD9//n/AQAAAAAAAGD+//n/AQAAAAEAAGD6//f/AQAAAAAAAAD6//j/AQAAAAEAAAD3//f/AQAAAAAAAAD3//j/AQAAAAEAAAD4//n/AQAAAAAAAGD5//n/AQAAAAEAAGD1//f/AQAAAAAAAAD1//j/AQAAAAEAAADz//n/AQAAAAAAAGD0//n/AQAAAAEAAGD5//3/AQAAAAEAAGD5/wAAAQAAAAEAAGD3//7/AQAAAAAAAAD3////AQAAAAEAAAD4//3/AQAAAAAAAGD4/wAAAQAAAAAAAGD6//7/AQAAAAAAAAD6////AQAAAAEAAAD9//7/AQAAAAAAAAD9////AQAAAAEAAAA=")
 tile_set = SubResource("TileSet_m3mtt")
 
 [node name="toast" parent="." instance=ExtResource("42_08cqc")]
@@ -1168,7 +1168,7 @@ z_index = 1
 position = Vector2(-188, -495)
 collision_layer = 4
 script = ExtResource("47_08vsr")
-dialog = ["Yooo, you stealing too?", "You mean you're buying all of that?", "What a lier! You know liers get taken away like david's sister."]
+dialog = ["Yooo, you stealing too?", "You mean you're buying all of that?", "What a liar! You know liars get taken away like david's sister."]
 
 [node name="Sprite2D" type="Sprite2D" parent="npc"]
 texture = ExtResource("48_8bgnu")

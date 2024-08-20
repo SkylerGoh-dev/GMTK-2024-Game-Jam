@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://b1y4xtrw6but5"]
+[gd_scene load_steps=60 format=4 uid="uid://b1y4xtrw6but5"]
 
 [ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_jcg3u"]
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="2_5b8j2"]
@@ -32,7 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="27_bmvg8"]
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="27_ohb85"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="29_8tfc1"]
-[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
+[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
+[ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="34_lc4n7"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="34_wxse6"]
 [ext_resource type="Texture2D" uid="uid://kd4hn1to718c" path="res://Sprites/Store_NPC.png" id="35_aqobe"]
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="36_m5xl4"]
@@ -397,6 +398,35 @@ sources/3 = SubResource("TileSetAtlasSource_amcu5")
 sources/4 = SubResource("TileSetAtlasSource_gk7ve")
 sources/2 = SubResource("TileSetAtlasSource_fp3qb")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wff7p"]
+atlas = ExtResource("34_lc4n7")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udojy"]
+atlas = ExtResource("34_lc4n7")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mtdf"]
+atlas = ExtResource("34_lc4n7")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5113"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wff7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udojy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mtdf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
 radius = 5.0
 
@@ -631,6 +661,13 @@ roam_dist = 96
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chicken_pen/Interaction_Area"]
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
+
+[node name="Item_Indicator" type="AnimatedSprite2D" parent="chicken_pen"]
+z_index = 3
+position = Vector2(38, 68)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_r5113")
+frame_progress = 0.740018
 
 [node name="npc" type="StaticBody2D" parent="."]
 z_index = 1

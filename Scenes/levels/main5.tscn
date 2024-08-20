@@ -503,6 +503,12 @@ position = Vector2(-96, -77)
 [node name="shelves4" parent="shelves" instance=ExtResource("31_p11v0")]
 position = Vector2(-96, -29)
 
+[node name="shelves5" parent="shelves" instance=ExtResource("31_p11v0")]
+position = Vector2(399, -45)
+
+[node name="shelves6" parent="shelves" instance=ExtResource("31_p11v0")]
+position = Vector2(415, -45)
+
 [node name="Clerk2" type="Node2D" parent="."]
 position = Vector2(-575, -1)
 
