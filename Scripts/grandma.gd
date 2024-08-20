@@ -8,6 +8,7 @@ var motion = Vector2()
 @onready var grandma: CharacterBody2D = $"."
 @onready var left: RayCast2D = $"../Player/Left"
 @onready var right: RayCast2D = $"../Player/Right"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,6 +39,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		queue_free()
 
 func _on_player_hit_by_grandma() -> void:
+	animated_sprite_2d.play("Rage")
 	var player = get_parent().get_node("Player")
 	speed = 0
 	#if global_position.x > player.position.x:
@@ -82,6 +84,7 @@ func _on_player_hit_by_grandma() -> void:
 			tweenRight(tweenie, player, 50)
 	grandma.set_collision_layer_value(3, false)
 	await get_tree().create_timer(1.5).timeout
+	animated_sprite_2d.play("Idle")
 	grandma.set_collision_layer_value(3, true)
 	speed = 1.5
 
