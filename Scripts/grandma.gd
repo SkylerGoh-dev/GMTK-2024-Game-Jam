@@ -20,10 +20,28 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	print(animated_sprite_2d.animation)
+	var player = get_parent().get_node("Player")
+	if player.position.x <= -209:
+		player.position.x = -103
+		player.position.y = 6
+	elif player.position.x >= 1:
+		player.position.x = -103
+		player.position.y = 6
+	elif player.position.y <= -145:
+		player.position.x = -103
+		player.position.y = 6
+	elif player.position.y >= 129:
+		player.position.x = -103
+		player.position.y = 6
+	
+	if player.position.x >= -205 and player.position.x <= -179 and player.position.y <= 13 and player.position.y >= -22:
+		player.position.x = -103
+		player.position.y = 6
+	
+	#print(animated_sprite_2d.animation)
 	if wonGame == false:
 		var motion = Vector2()
-		var player = get_parent().get_node("Player")
+		player = get_parent().get_node("Player")
 		motion += (Vector2(player.position) - position)
 		#look_at(player.position)
 		if global_position[0] - player.position[0] > 0:
@@ -48,12 +66,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if godMode == false and health <= 10:
 			turnOnGodMode()
 	if health == 0 and wonGame == false:
-		print("DIED")
+		#print("DIED")
 		animated_sprite_2d.pause()
 		wonGame = true
 		animated_sprite_2d.play("Death")
 		timer_2.start()
-		print("Deathplay")
+		#print("Deathplay")
 		#_on_animated_sprite_2d_animation_finished()
 		#Gameplay_Manager.win_game = true
 		#queue_free()
@@ -122,7 +140,7 @@ func _on_player_hit_by_grandma() -> void:
 
 func tweenLeft(tweenie, player, distance):
 	if wonGame == false:
-		print("left", distance)
+		#print("left", distance)
 		tweenie = get_tree().create_tween()
 		tweenie.set_trans(Tween.TRANS_EXPO)
 		var pushBack = Vector2(player.position.x - distance, player.position.y)
@@ -135,7 +153,7 @@ func tweenLeft(tweenie, player, distance):
 
 func tweenRight(tweenie, player, distance):
 	if wonGame == false:
-		print("right", distance)
+		#print("right", distance)
 		tweenie = get_tree().create_tween()
 		tweenie.set_trans(Tween.TRANS_EXPO)
 		var pushBack = Vector2(player.position.x + distance, player.position.y)
@@ -159,20 +177,20 @@ func _on_timer_timeout() -> void:
 			animated_sprite_2d.play("Idle")
 		else:
 			animated_sprite_2d.play("godmode")
-		print("bruh")
+		#print("bruh")
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	print("ASGIASGMASIJGNASIJGN")
-	print("wonGame", wonGame)
+	#print("ASGIASGMASIJGNASIJGN")
+	#print("wonGame", wonGame)
 	if wonGame == true:
 		Gameplay_Manager.win_game = true
 		queue_free()
-		print("testsssd")
+		#print("testsssd")
 
 
 func _on_timer_2_timeout() -> void:
 	if wonGame == true:
 		Gameplay_Manager.win_game = true
 		queue_free()
-		print("testsssd")
+		#print("testsssd")

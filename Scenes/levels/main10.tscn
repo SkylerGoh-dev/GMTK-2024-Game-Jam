@@ -618,6 +618,30 @@ position = Vector2(-204, -88)
 [node name="Exits4" parent="Exits_Group" instance=ExtResource("24_socij")]
 position = Vector2(-204, -102)
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-209, 129)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(-209, -145)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(0, -145)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(1, 129)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(-205, 13)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(-180, 12)
+
+[node name="Marker2D7" type="Marker2D" parent="."]
+position = Vector2(-179, -27)
+
+[node name="Marker2D8" type="Marker2D" parent="."]
+position = Vector2(-205, -22)
+
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
 [connection signal="pressed" from="CanvasLayer/Shopping_List/MarginContainer/Menu/Tab/PullDownTab/OpenListMenu" to="CanvasLayer/Shopping_List" method="_on_open_list_menu_pressed"]
