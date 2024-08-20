@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-var direction: Vector2
+const SPEED = 100.0
+var direction: float
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var playable: bool = false
 
-func _physics_process(_delta):
-	direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * SPEED
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		
+	direction = Input.get_axis("left", "right")
+	velocity.x = direction * SPEED
 	if playable:		
 		if velocity.x > 0:
 			sprite.flip_h = false

@@ -25,7 +25,8 @@ func move_label(label: Label, direction):
 	if direction == "UP":
 		label.position.y = -15
 	elif direction == "DOWN":
-		label.position.y = -3
+		label.position.y = 15
+		
 
 func transition_camera():
 	var tween : Tween = get_tree().create_tween()
