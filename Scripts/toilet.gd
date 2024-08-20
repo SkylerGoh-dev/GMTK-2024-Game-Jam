@@ -32,6 +32,7 @@ func _on_interact():
 		var itemResource: InventoryItem = load(fullPath)
 		if itemResource:
 			inventoryResource.insert(itemResource)
+			SoundManager.play_sound(self, "18-Weapon_Equiped")
 		else:
 			printerr("No Item resource for", stringNameOfType)
 		

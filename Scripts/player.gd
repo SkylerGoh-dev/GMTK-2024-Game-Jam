@@ -53,6 +53,8 @@ func swingWeapon():
 	if Input.is_action_just_pressed("attack") and not knife_disabled:
 		knife_collision.disabled = false
 		animation_player.play("attack" + animatedDirection)
+		if not knife_disabled:
+			SoundManager.play_sound(self, "19-Swing_Knife")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
@@ -65,6 +67,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		speed = 25
 		got_hit.start()
 		knife.hide()
+		SoundManager.play_sound(self, "20-Human_Hurt")
 	
 func _on_got_hit_timeout() -> void:
 	speed = 100

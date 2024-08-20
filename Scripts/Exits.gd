@@ -8,3 +8,4 @@ func _ready():
 	
 func _on_interact():
 	Gameplay_Manager.end_week()
+	

@@ -38,6 +38,7 @@ func _on_interact():
 		Gameplay_Manager.set_clerk_flag()
 		panel.get_child(0).text = dialog[0]
 		item_indicator.hide()
+		SoundManager.play_sound(self, "09-Cash_Register")
 	elif current_dialog < dialog.size():
 		open_panel()
 		panel.get_child(0).text = dialog[current_dialog]
@@ -47,6 +48,7 @@ func _on_interact():
 			# hard code event omegalul
 			if get_tree().current_scene.name == "Main6" or get_tree().current_scene.name == "Main8" :
 				Interaction_Manager.player.knife.show()
+				SoundManager.play_sound(self, "18-Weapon_Equiped")
 				Interaction_Manager.player.set_knife_disabled(false)
 	elif dialog.size() > 1:
 		open_panel()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://cbswibm311pe7"]
+[gd_scene load_steps=82 format=4 uid="uid://cbswibm311pe7"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_kxjno"]
 [ext_resource type="PackedScene" uid="uid://81f0sipsuncf" path="res://Scenes/shopping list UI/shopping_list.tscn" id="2_nlx6l"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="17_8chc5"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="18_0h5mj"]
 [ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="18_2gc5i"]
-[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
+[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
 [ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="19_nt7n6"]
 [ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="20_cma03"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="20_r53et"]
@@ -44,8 +44,9 @@
 [ext_resource type="Texture2D" uid="uid://dtvwx6c70rpp7" path="res://Sprites/ShelvesNew.png" id="37_7ktjy"]
 [ext_resource type="Texture2D" uid="uid://bul16xwa7inp6" path="res://Sprites/tiles/New Piskel.png" id="38_a6x1n"]
 [ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="39_1ryfa"]
+[ext_resource type="AudioStream" uid="uid://dd7bkdlm1ndot" path="res://Sounds/11-Door_Close.wav" id="39_cnf6l"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="40_hrnd3"]
-[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
+[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="47_08vsr"]
 [ext_resource type="Texture2D" uid="uid://dyne31sc55xa4" path="res://Sprites/npc kids.png" id="48_8bgnu"]
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="49_4ewba"]
@@ -944,6 +945,9 @@ destination = NodePath("../../Store Destination mid")
 [node name="door_tp7" parent="Door_Group" node_paths=PackedStringArray("destination") instance=ExtResource("29_ahro8")]
 position = Vector2(298, -467)
 destination = NodePath("../../Store Destination top")
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="Door_Group"]
+stream = ExtResource("39_cnf6l")
 
 [node name="Outdoor area Destination" type="Marker2D" parent="."]
 position = Vector2(219, -390)
