@@ -10,6 +10,7 @@ var scene_changing: bool = false
 var max_weeks: int = 9
 var inventoryResource: InventoryResource 
 var inventory_open : bool = false
+var talked_to_clerk: bool = false
 
 #reference
 var npc_clerk : clerk = null
@@ -99,13 +100,14 @@ func are_items_collected():
 	return true
 
 func end_week():
-	if are_items_collected():
+	if are_items_collected() and talked_to_clerk:
 		if current_week < max_weeks:
 			current_week+= 1
 		clear_needed_items()
 		go_to_scene_transition()
 
 func clear_needed_items() ->void:
+	talked_to_clerk = false
 	inventoryResource.clearAll()
 	scene_items.clear()
 	completed_items.clear()
@@ -137,3 +139,6 @@ func item_finished(item: String) -> bool:
 	if item in completed_items.keys():
 		return completed_items[item]
 	return false
+
+func set_clerk_flag():
+	talked_to_clerk = true

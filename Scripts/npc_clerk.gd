@@ -35,6 +35,7 @@ func _on_interact():
 		close_timer.start()
 	if Gameplay_Manager.are_items_collected():
 		open_panel()
+		Gameplay_Manager.set_clerk_flag()
 		panel.get_child(0).text = dialog[0]
 		item_indicator.hide()
 	elif current_dialog < dialog.size():
