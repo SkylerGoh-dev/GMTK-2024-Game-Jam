@@ -198,5 +198,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_timer_2_timeout() -> void:
 	if wonGame == true:
 		Gameplay_Manager.win_game = true
+		Gameplay_Manager.npc_clerk.item_indicator.show()
 		queue_free()
 		#print("testsssd")

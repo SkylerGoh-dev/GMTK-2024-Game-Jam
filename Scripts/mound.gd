@@ -21,7 +21,7 @@ func _on_interact():
 		canvas_layer.hide_ui()
 		if not shovel_game:
 			shovel_game = preload("res://Scenes/shovel_game.tscn").instantiate()
-			shovel_game.position = Vector2(576, 324)
+			shovel_game.position = Vector2(640, 360)
 			canvas_layer.call_deferred("add_child", shovel_game)
 		else:
 			SoundManager.play_sound(self, "02-ButtonHover")
