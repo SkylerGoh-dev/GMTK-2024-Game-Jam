@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="27_bmvg8"]
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="27_ohb85"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="29_8tfc1"]
-[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
+[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("1_jcg3u")

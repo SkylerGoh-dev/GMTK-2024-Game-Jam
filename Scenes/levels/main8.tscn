@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="17_8chc5"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="18_0h5mj"]
 [ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="18_2gc5i"]
-[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
+[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
 [ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="19_nt7n6"]
 [ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="20_cma03"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="20_r53et"]
@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://bul16xwa7inp6" path="res://Sprites/tiles/New Piskel.png" id="38_a6x1n"]
 [ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="39_1ryfa"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="40_hrnd3"]
-[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
+[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwjcb"]
 texture = ExtResource("8_xatbb")
@@ -839,7 +839,7 @@ script = ExtResource("13_xuaa3")
 
 [node name="shelves1" parent="shelves" instance=ExtResource("26_xghwp")]
 position = Vector2(-48, -29)
-type = 10
+type = 30
 item_needed = true
 
 [node name="shelves2" parent="shelves" instance=ExtResource("26_xghwp")]
@@ -855,7 +855,7 @@ item_amount = 3
 
 [node name="shelves4" parent="shelves" instance=ExtResource("26_xghwp")]
 position = Vector2(-96, -29)
-type = 29
+type = 21
 item_needed = true
 
 [node name="Clerk" type="Node2D" parent="."]
@@ -864,7 +864,7 @@ position = Vector2(-100, -407)
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("27_26m0h")]
 position = Vector2(-200, -8)
 dialog = ["Thank you, come again! 
- Please exit to your left", "Killing cows again. Here ya go."]
+ Please exit to your left", "How are you paying for all those items?", "Whatever, just take them. I don't get paid enough.", "Oh yeah killing cows again. Here ya go."]
 dialog_indicator = true
 
 [node name="Exits_Group" type="Node2D" parent="."]
@@ -1019,14 +1019,14 @@ z_index = 1
 position = Vector2(196, -353)
 region_enabled = true
 region_rect = Rect2(48, 32, 16, 16)
-type = 27
+type = 28
 item_needed = true
 
 [node name="Interactable_item3" parent="garden_items" instance=ExtResource("35_gtsdm")]
 position = Vector2(201, -113)
 region_enabled = true
 region_rect = Rect2(64, 48, 16, 16)
-type = 28
+type = 29
 item_needed = true
 
 [node name="Maze items" type="Node2D" parent="."]

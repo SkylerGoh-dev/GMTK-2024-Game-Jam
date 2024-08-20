@@ -9,5 +9,5 @@ region = Rect2(0, 32, 16, 16)
 
 [resource]
 script = ExtResource("1_6twc7")
-name = "hydrogen_peroxide"
+name = "h2o2"
 texture = SubResource("AtlasTexture_ig0o6")

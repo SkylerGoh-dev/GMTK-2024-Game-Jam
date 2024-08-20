@@ -18,7 +18,7 @@ enum type {
 	EGG,
 	BEEF,
 	BLEACH,
-	HYDROGEN_PEROXIDE,
+	H2O2,
 	CHAINSAW,
 	FISH,
 	SHOVEL,
@@ -32,6 +32,8 @@ enum type {
 	ROLLING_PIN,
 	SHEARS,
 	GASOLINE,
+	GUN,
+	AMMO,
 	MATCHES,
 	NONE,
 }
