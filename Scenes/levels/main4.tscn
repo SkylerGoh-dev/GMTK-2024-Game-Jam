@@ -607,26 +607,29 @@ position = Vector2(219, -390)
 position = Vector2(-133, -327)
 
 [node name="chicken_pen" type="Node2D" parent="." node_paths=PackedStringArray("chicken_game")]
-position = Vector2(270, -479)
+position = Vector2(364, -416)
 script = ExtResource("27_ohb85")
 chicken_game = NodePath("../CanvasLayer/ChickenGame")
 
 [node name="Chickens" type="Node2D" parent="chicken_pen"]
-position = Vector2(94, 63)
 
 [node name="Chicken" parent="chicken_pen/Chickens" instance=ExtResource("27_bmvg8")]
 position = Vector2(-40, -12)
-roam_dist = 96
+speed = 50
+roam_dist = Vector2(50, 40)
 
 [node name="Chicken2" parent="chicken_pen/Chickens" instance=ExtResource("27_bmvg8")]
 position = Vector2(-22, 24)
-roam_dist = 96
+speed = 50
+roam_dist = Vector2(50, 40)
 
 [node name="Chicken3" parent="chicken_pen/Chickens" instance=ExtResource("27_bmvg8")]
 position = Vector2(55, 15)
-roam_dist = 96
+speed = 50
+roam_dist = Vector2(50, 40)
 
 [node name="Interaction_Area" parent="chicken_pen" instance=ExtResource("29_8tfc1")]
+position = Vector2(-94, -64)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chicken_pen/Interaction_Area"]
 position = Vector2(26, 25)

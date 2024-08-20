@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
-const SPEED = 200
 const DRAG_SPEED = 20
 
+var will_rest = true
+@export var speed = 200
 var direction = Vector2.ZERO
 var hotspot = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 var draggable = false
 var laid_egg = false
 @export var clickable = false
-@export var roam_dist = 64
+@export var roam_dist = Vector2(48,48)
+var origin = Vector2.ZERO
 
 var previous_mouse_position : Vector2
 @export var shake_threshold : float = 40.0
@@ -22,8 +24,6 @@ var max_direction_changes : int = 20
 @onready var walk_timer = $Walk
 @onready var egg_spawner = $EggSpawner
 @onready var animation = $AnimationPlayer
-
-#@export var roam_dist = 8
 
 func _ready():
 	pass
@@ -73,21 +73,23 @@ func _physics_process(delta: float) -> void:
 		direction = position.direction_to(hotspot)
 		if direction and abs(position - hotspot) > Vector2(2, 2):
 			sprite.play("walk")
-			velocity = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.y = move_toward(velocity.y, 0, SPEED)
+			velocity = direction * speed
+		elif will_rest:
+			velocity.x = move_toward(velocity.x, 0, speed)
+			velocity.y = move_toward(velocity.y, 0, speed)
 			sprite.play("idle")
+		elif not will_rest:
+			roam()
 	
 	move_and_slide()
 
 func get_new_pos():
-	var neg_x = -roam_dist - position.x
-	var pos_x = roam_dist - position.x
-	var neg_y = -roam_dist - position.y
-	var pos_y = roam_dist - position.y
-	hotspot.x = rng.randf_range(neg_x, pos_x) + position.x
-	hotspot.y = rng.randf_range(neg_y, pos_y) + position.y
+	var neg_x = -roam_dist.x + origin.x
+	var pos_x = roam_dist.x + origin.x
+	var neg_y = -roam_dist.y + origin.y
+	var pos_y = roam_dist.y + origin.y
+	hotspot.x = rng.randf_range(neg_x, pos_x)
+	hotspot.y = rng.randf_range(neg_y, pos_y)
 
 func roam():
 	rest_timer.stop()
@@ -95,10 +97,14 @@ func roam():
 	walk_timer.start(rng.randf_range(1.0,3.0))
 
 func rest():
-	walk_timer.stop()
-	hotspot = position
-	direction = Vector2.ZERO
-	rest_timer.start(rng.randf_range(1.0,3.0))
+	if will_rest:
+		walk_timer.stop()
+		hotspot = position
+		direction = Vector2.ZERO
+		rest_timer.start(rng.randf_range(1.0,3.0))
+	else:
+		walk_timer.stop()
+		roam()
 
 func unhand_me():
 	if not Interaction_Manager.is_dragging:

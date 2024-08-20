@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btrvrwjkqsqwc"]
+[gd_scene load_steps=9 format=3 uid="uid://dtete1d0au0d8"]
 
 [ext_resource type="Script" path="res://Scripts/grandma.gd" id="1_kf5f8"]
 [ext_resource type="Texture2D" uid="uid://pooe5gwff3ew" path="res://Sprites/grandma.png" id="2_jrll8"]

@@ -8,10 +8,11 @@
 [node name="ChickenGame" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 576.0
-offset_top = 324.0
-offset_right = 576.0
-offset_bottom = 324.0
+offset_left = 640.0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 360.0
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_roq6h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

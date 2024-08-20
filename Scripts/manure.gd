@@ -12,6 +12,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if clickable and Input.is_action_just_pressed("press"):
 		clicker = min(2, clicker + 1)
 		if clicker == 1:
+			clicker += 1
 			Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 			collect(get_parent().inventoryResource)
 
