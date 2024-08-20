@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://kd30ksqmyc8c"]
+[gd_scene load_steps=35 format=4 uid="uid://bln5e7mu7gvr6"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_ram1a"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_qtuqm"]
@@ -599,6 +599,7 @@ target_position = Vector2(50, 0)
 
 [node name="NPC clerk" parent="Clerk" instance=ExtResource("23_pu5wf")]
 position = Vector2(-200, -8)
+dialog = ["That was awesome lil bro!", "AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!", "OH Hell Nah, that's the serial killer"]
 
 [node name="Exits_Group" type="Node2D" parent="."]
 

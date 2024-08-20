@@ -551,7 +551,7 @@ position = Vector2(-184, 104)
 
 [node name="item crate" parent="Maze items" instance=ExtResource("33_l12ss")]
 position = Vector2(-168, 40)
-type = 24
+type = 25
 item_needed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Maze items/item crate"]
@@ -590,7 +590,7 @@ region_rect = Rect2(80, 16, 16, 16)
 
 [node name="item crate4" parent="Maze items" instance=ExtResource("33_l12ss")]
 position = Vector2(-56, -104)
-type = 23
+type = 24
 item_needed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Maze items/item crate4"]
@@ -603,7 +603,7 @@ region_rect = Rect2(64, 80, 16, 16)
 
 [node name="item crate5" parent="Maze items" instance=ExtResource("33_l12ss")]
 position = Vector2(-200, -136)
-type = 25
+type = 26
 item_needed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Maze items/item crate5"]

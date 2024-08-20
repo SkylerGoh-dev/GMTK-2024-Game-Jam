@@ -34,6 +34,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	#print(health)
 	if health <= 0:
 		print("DIED")
+		Gameplay_Manager.win_game = true
 		queue_free()
 
 func _on_player_hit_by_grandma() -> void:
