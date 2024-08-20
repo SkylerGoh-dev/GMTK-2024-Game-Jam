@@ -11,6 +11,7 @@ var max_weeks: int = 10
 var inventoryResource: InventoryResource 
 var inventory_open : bool = false
 var talked_to_clerk: bool = false
+var hovered_items: Array = []
 
 #reference
 var npc_clerk : clerk = null
@@ -146,3 +147,8 @@ func item_finished(item: String) -> bool:
 
 func set_clerk_flag():
 	talked_to_clerk = true
+
+func add_hovered(object: CharacterBody2D):
+	hovered_items.push_front(object)
+	if hovered_items.size() > 1:
+		hovered_items.pop_back()

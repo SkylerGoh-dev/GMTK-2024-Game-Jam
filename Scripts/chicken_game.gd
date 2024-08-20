@@ -1,6 +1,7 @@
 extends Control
 
 @onready var walls = $StaticBody2D/CollisionPolygon2D
+@onready var chickens = $Chickens
 
 signal chicken_game_closed
 

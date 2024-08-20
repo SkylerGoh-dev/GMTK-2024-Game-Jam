@@ -31,6 +31,13 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if Gameplay_Manager.hovered_items.has(self) and not draggable:
+		register_clickable()
+		if not previous_mouse_position:
+			previous_mouse_position = get_global_mouse_position()
+	elif not Gameplay_Manager.hovered_items.has(self) and draggable:
+		unhand_me()
+	
 	if draggable:
 		var curr_mouse_pos = get_global_mouse_position()
 		var movement = curr_mouse_pos - previous_mouse_position
@@ -106,6 +113,11 @@ func spawn_egg():
 	egg.velocity = velocity / 7.5
 	get_parent().call_deferred("add_child", egg)
 
+func register_clickable():
+	draggable = true
+	scale = Vector2(1.2, 1.2)
+	previous_mouse_position = get_global_mouse_position()
+
 func _on_rest_timeout() -> void:
 	roam()
 
@@ -114,10 +126,9 @@ func _on_walk_timeout() -> void:
 
 func _on_area_2d_mouse_entered() -> void:
 	if not Interaction_Manager.is_dragging and clickable:
-		draggable = true
-		scale = Vector2(1.2, 1.2)
-		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-		previous_mouse_position = get_global_mouse_position()
+		Gameplay_Manager.add_hovered(self)
 
 func _on_area_2d_mouse_exited() -> void:
-	unhand_me()
+	if Gameplay_Manager.hovered_items.has(self):
+		Gameplay_Manager.hovered_items.pop_back()
+		unhand_me()
