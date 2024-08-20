@@ -68,6 +68,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_effa5")
 theme_override_fonts/font = ExtResource("2_gf6dw")
+keep_pressed_outside = true
 
 [node name="RestartLabel" type="Label" parent="Control/VBoxContainer/Restart"]
 layout_mode = 0
@@ -86,6 +87,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_effa5")
 theme_override_fonts/font = ExtResource("2_gf6dw")
+keep_pressed_outside = true
 
 [node name="QuitLabel" type="Label" parent="Control/VBoxContainer/Quit"]
 layout_mode = 0

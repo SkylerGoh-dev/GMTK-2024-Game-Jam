@@ -2,9 +2,6 @@ extends Node
 
 class_name SoundManager
 
-func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
-
 # Use: SoundManager.play_sound(self, "06-PickUp_Item")
 static func play_sound(parent: Node, sound_path: String):
 	var path = "res://Sounds/" + sound_path + ".wav"

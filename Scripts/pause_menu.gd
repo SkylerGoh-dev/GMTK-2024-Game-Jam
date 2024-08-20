@@ -16,7 +16,6 @@ func move_label(label: Label, direction):
 
 func _on_resume_pressed() -> void:
 	resume()
-	SoundManager.play_sound(self, "01-ButtonClick")
 
 func _on_restart_pressed() -> void:
 	resume()
@@ -28,10 +27,8 @@ func _on_restart_pressed() -> void:
 		var upperItem = item.to_upper()
 		var key = Resource_Name.type[upperItem]
 		await Gameplay_Manager._register_item(key, items[item])
-	SoundManager.play_sound(self, "01-ButtonClick")
 
 func _on_quit_pressed() -> void:
-	SoundManager.play_sound(self, "01-ButtonClick")
 	get_tree().quit()
 
 

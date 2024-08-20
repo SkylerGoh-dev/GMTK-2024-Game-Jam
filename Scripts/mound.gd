@@ -5,13 +5,17 @@ extends StaticBody2D
 @onready var interaction_area = $Interaction_Area
 @onready var hole_collision = $HoleCollision
 @onready var animation = $AnimationPlayer
+@onready var indicator = $Item_Indicator
+
 @export var canvas_layer : CanvasLayer
+@export var collectables : int = 4
+@export var speed = 1
 
 var shovel_game = null
 var has_shovel = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Gameplay_Manager._register_item(Resource_Name.type["MANURE"], 4)
+	Gameplay_Manager._register_item(Resource_Name.type["MANURE"], collectables)
 	interaction_area.interact = Callable(self, "_on_interact")
 	sprite.frame = 0
 	hole_collision.disabled = true
@@ -21,7 +25,8 @@ func _on_interact():
 		canvas_layer.hide_ui()
 		if not shovel_game:
 			shovel_game = preload("res://Scenes/shovel_game.tscn").instantiate()
-			shovel_game.position = Vector2(576, 324)
+			shovel_game.position = Vector2(640, 360)
+			shovel_game.speed = speed
 			canvas_layer.call_deferred("add_child", shovel_game)
 		else:
 			SoundManager.play_sound(self, "02-ButtonHover")
@@ -39,6 +44,7 @@ func _process(delta: float) -> void:
 			sprite.frame = 1
 			mound_collision.disabled = true
 			hole_collision.disabled = false
+			indicator.visible = false
 
 
 func _on_interactable_item_shovel() -> void:

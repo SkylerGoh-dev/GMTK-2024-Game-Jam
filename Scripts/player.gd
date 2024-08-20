@@ -97,6 +97,7 @@ func set_knife_disabled(value: bool):
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
 	if "grandma" in body.name:
 		sprite.play("hurt")
+		SoundManager.play_sound(self, "20-Human_Hurt")
 		hurt = true
 		speed = 25
 		got_hit.start()

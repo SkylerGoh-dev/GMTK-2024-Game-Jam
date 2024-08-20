@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/shovel_game.gd" id="1_1a6m3"]
 [ext_resource type="Texture2D" uid="uid://dhxh8u3vaperl" path="res://Sprites/dig_bg.png" id="2_8tcl3"]
-[ext_resource type="Resource" uid="uid://c68r71qj0r6rs" path="res://InventoryThings/manure.tres" id="2_wklek"]
+[ext_resource type="Resource" uid="uid://bwyekvheoo72f" path="res://InventoryThings/manure.tres" id="2_wklek"]
 [ext_resource type="Texture2D" uid="uid://b3tovgjgsiuy0" path="res://Sprites/item_sprites_small.png" id="3_1uysj"]
 [ext_resource type="Resource" uid="uid://bae8gman4gv7x" path="res://InventoryThings/playerInventory.tres" id="3_pxumd"]
 [ext_resource type="Texture2D" uid="uid://iea452vgp4r2" path="res://Sprites/UI_Icons.png" id="4_t7nlw"]

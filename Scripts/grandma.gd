@@ -57,8 +57,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			health -= 10
 			if godMode == false:
 				animated_sprite_2d.play("hurt")
+				#SoundManager.play_sound(self, "GrandmaHurt")
 			else:
 				animated_sprite_2d.play("godmodehurt")
+				#SoundManager.play_sound(self, "GrandmaHurt")
 			timer.start()
 			print(health)
 			body.queue_free()
@@ -70,6 +72,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		animated_sprite_2d.pause()
 		wonGame = true
 		animated_sprite_2d.play("Death")
+		SoundManager.play_sound(self, "GrandmaNewDeath")
 		timer_2.start()
 		#print("Deathplay")
 		#_on_animated_sprite_2d_animation_finished()
@@ -128,9 +131,11 @@ func _on_player_hit_by_grandma() -> void:
 		if godMode == false:
 			await get_tree().create_timer(1.5).timeout
 			speed = 1.5
+			SoundManager.play_sound(self, "GrandmaNewCharge")
 		elif godMode == true:
 			await get_tree().create_timer(3).timeout
 			speed = 10
+			SoundManager.play_sound(self, "GrandmaNewSuper")
 		if (animated_sprite_2d.animation != "Death"):
 			if godMode == false:
 				animated_sprite_2d.play("Idle")
@@ -167,6 +172,7 @@ func tweenRight(tweenie, player, distance):
 func turnOnGodMode():
 	if wonGame == false:
 		if godMode == false:
+			SoundManager.play_sound(self, "GrandmaNewSuper")
 			health = 200
 			speed = 10
 			godMode = true
@@ -192,5 +198,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_timer_2_timeout() -> void:
 	if wonGame == true:
 		Gameplay_Manager.win_game = true
+		Gameplay_Manager.npc_clerk.item_indicator.show()
 		queue_free()
 		#print("testsssd")

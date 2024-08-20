@@ -19,6 +19,7 @@ var started : bool = false
 var direction : int = 1
 var let_start : bool = true
 var done_diggin : bool = false
+var speed = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +34,10 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	if animation.is_playing() and animation.current_animation != 'charge':
+		animation.speed_scale = 1
 		return
+	elif animation.is_playing() and animation.current_animation == 'charge':
+		animation.speed_scale = speed
 	
 	if Input.is_action_just_pressed("interact") and level < 3:
 		if not started:
