@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh5m6mji3xq5q"]
+
+[ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="1_7e1f3"]
+[ext_resource type="PackedScene" uid="uid://b3ftrf3ceo31f" path="res://Scenes/gun.tscn" id="1_jmfdk"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_2mhr4"]
+[ext_resource type="PackedScene" uid="uid://btrvrwjkqsqwc" path="res://Scenes/grandma.tscn" id="3_dmrj5"]
+
+[node name="testlevel9" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_7e1f3")]
+position = Vector2(-504, 3)
+
+[node name="gun" parent="Player" instance=ExtResource("1_jmfdk")]
+z_index = 1
+position = Vector2(8, 2)
+
+[node name="grandma" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_dmrj5")]
+position = Vector2(-321, -1)
+target = NodePath("../Player/gun")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
+position = Vector2(-405, -14)
+zoom = Vector2(4, 4)
+limit_left = -1000
+limit_top = -200
+limit_right = 250
+limit_bottom = 250
+position_smoothing_speed = 2.0
+editor_draw_limits = true
+script = ExtResource("2_2mhr4")
