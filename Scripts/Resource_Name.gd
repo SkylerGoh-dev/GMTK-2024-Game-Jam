@@ -32,6 +32,8 @@ enum type {
 	ROLLING_PIN,
 	SHEARS,
 	GASOLINE,
+	GUN,
+	AMMO,
 	MATCHES,
 	NONE,
 }

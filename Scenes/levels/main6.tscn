@@ -28,11 +28,11 @@
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="26_mem58"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="27_k3r6v"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="28_f1ctc"]
-[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="29_hxrno"]
+[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="29_hxrno"]
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="30_p130x"]
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="31_o2ygb"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="32_c55gs"]
-[ext_resource type="PackedScene" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_b8u0b"]
+[ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_b8u0b"]
 [ext_resource type="PackedScene" uid="uid://d2261f15mn4w6" path="res://Scenes/cow.tscn" id="34_8rhhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://c538wf6mqp8kt"]
+
+[ext_resource type="Script" path="res://InventoryThings/inventory_item.gd" id="1_hhoud"]
+[ext_resource type="Texture2D" uid="uid://dahi243oxqvqe" path="res://Sprites/refined materials.png" id="2_qv1d5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wagdf"]
+atlas = ExtResource("2_qv1d5")
+region = Rect2(0, 12, 12, 12)
+
+[resource]
+script = ExtResource("1_hhoud")
+name = "ammo"
+texture = SubResource("AtlasTexture_wagdf")
