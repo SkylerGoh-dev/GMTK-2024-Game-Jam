@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 200
+var health = 210
 @export var target: CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var speed = 1.5
@@ -9,6 +9,7 @@ var motion = Vector2()
 @onready var left: RayCast2D = $"../Player/Left"
 @onready var right: RayCast2D = $"../Player/Right"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var godMode = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +34,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print(health)
 		body.queue_free()
 	#print(health)
+	if godMode == false and health <= 10:
+		turnOnGodMode()
 	if health <= 0:
 		print("DIED")
 		Gameplay_Manager.win_game = true
@@ -83,10 +86,14 @@ func _on_player_hit_by_grandma() -> void:
 		else:
 			tweenRight(tweenie, player, 50)
 	grandma.set_collision_layer_value(3, false)
-	await get_tree().create_timer(1.5).timeout
+	if godMode == false:
+		await get_tree().create_timer(1.5).timeout
+		speed = 1.5
+	elif godMode == true:
+		await get_tree().create_timer(3).timeout
+		speed = 10
 	animated_sprite_2d.play("Idle")
 	grandma.set_collision_layer_value(3, true)
-	speed = 1.5
 
 func tweenLeft(tweenie, player, distance):
 	print("left", distance)
@@ -95,7 +102,10 @@ func tweenLeft(tweenie, player, distance):
 	var pushBack = Vector2(player.position.x - distance, player.position.y)
 	tweenie.tween_property(player, "position", pushBack, 0.5)
 	if distance <= 4.2:
-		position.x = position.x + 8
+		if godMode == false:
+			position.x = position.x + 8
+		else:
+			position.x = position.x + 20
 
 func tweenRight(tweenie, player, distance):
 	print("right", distance)
@@ -104,4 +114,13 @@ func tweenRight(tweenie, player, distance):
 	var pushBack = Vector2(player.position.x + distance, player.position.y)
 	tweenie.tween_property(player, "position", pushBack, 0.5)
 	if distance <= 4.2:
-		position.x = position.x - 8
+		if godMode == false:
+			position.x = position.x - 8
+		else:
+			position.x = position.x - 20
+
+func turnOnGodMode():
+	if godMode == false:
+		health = 200
+		speed = 10
+		godMode = true
