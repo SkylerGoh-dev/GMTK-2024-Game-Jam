@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="17_8chc5"]
 [ext_resource type="Script" path="res://Scripts/pivot.gd" id="18_0h5mj"]
 [ext_resource type="PackedScene" uid="uid://h2hc6i3pxe32" path="res://Scenes/Store-furniture/butter_freezer_L.tscn" id="18_2gc5i"]
-[ext_resource type="PackedScene" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
+[ext_resource type="PackedScene" uid="uid://buntlrcjr4v2l" path="res://Scenes/rope_line.tscn" id="19_dcux7"]
 [ext_resource type="PackedScene" uid="uid://b6twq7bfkfyku" path="res://Scenes/Store-furniture/butter_freezer_R.tscn" id="19_nt7n6"]
 [ext_resource type="PackedScene" uid="uid://ditto3r7uf1x4" path="res://Scenes/Store-furniture/cheese_freezer_L.tscn" id="20_cma03"]
 [ext_resource type="Texture2D" uid="uid://dwavi5rnynvi" path="res://Sprites/Food_Items.png" id="20_r53et"]
