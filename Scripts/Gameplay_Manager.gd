@@ -39,9 +39,9 @@ var grandma_dialog = [
 	"Oh no sweetie! The toaster fell into the bath. Could you be a dear and buy me a new one? 
 	And get me some spare rope for outside while you’re there!",
 	"Let’s go on a picnic today! Grab those pretty Oleanders, eggs, and your favorite food to eat.",
-	"Grandma needs to restock on new cleaning supplies.",
+	"Grandma needs to restock on new cleaning supplies. She had some troublesome stains to take care of.",
 	"Grab all the meat you can get from the store <3",
-	"Grandma is spending a lot of time in the garden. Can you grab some extra tools?",
+	"Grandma is thinking of improving the garden. Can you grab some extra tools? Especially, one that can dig",
 	"Grab everything we are moving",
 	"Grandma made a mistake",
 	"You know too much"
