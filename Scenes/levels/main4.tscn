@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://c0gbwlfprsq6q"]
+[gd_scene load_steps=55 format=4 uid="uid://b1y4xtrw6but5"]
 
 [ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_jcg3u"]
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="2_5b8j2"]
@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://bajv4muhbjuf" path="res://Scenes/chicken.tscn" id="27_bmvg8"]
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="27_ohb85"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="29_8tfc1"]
-[ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
+[ext_resource type="PackedScene" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="34_wxse6"]
 [ext_resource type="Texture2D" uid="uid://kd4hn1to718c" path="res://Sprites/Store_NPC.png" id="35_aqobe"]
 [ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="36_m5xl4"]
