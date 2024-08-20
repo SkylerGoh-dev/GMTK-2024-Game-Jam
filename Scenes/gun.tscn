@@ -9,3 +9,6 @@ script = ExtResource("1_h7p5r")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_y0av0")
 flip_h = true
+
+[node name="Node2D" type="Node2D" parent="Sprite2D"]
+position = Vector2(3, -1.5)
