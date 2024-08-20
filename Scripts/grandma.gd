@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 100
+var health = 200
 @export var target: CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var speed = 1.5
@@ -27,6 +27,22 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "bullet" in body.name:
 		health -= 10
 		body.queue_free()
-	print(health)
+	#print(health)
 	if health <= 0:
 		queue_free()
+
+func _on_player_hit_by_grandma() -> void:
+	var player = get_parent().get_node("Player")
+	speed = 0
+	if global_position.x > player.position.x:
+		var tweenie = get_tree().create_tween()
+		tweenie.set_trans(Tween.TRANS_EXPO)
+		var pushBack = Vector2(player.position.x - 50, player.position.y)
+		tweenie.tween_property(player, "position", pushBack, 0.5)
+	else:
+		var tweenie = get_tree().create_tween()
+		tweenie.set_trans(Tween.TRANS_EXPO)
+		var pushBack = Vector2(player.position.x + 50, player.position.y)
+		tweenie.tween_property(player, "position", pushBack, 0.5)
+	await get_tree().create_timer(1.5).timeout
+	speed = 1.5

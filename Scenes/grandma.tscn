@@ -46,13 +46,13 @@ size = Vector2(8, 9)
 size = Vector2(8, 9)
 
 [node name="grandma" type="CharacterBody2D"]
-collision_layer = 256
-collision_mask = 256
+collision_layer = 262
+collision_mask = 264
 script = ExtResource("1_kf5f8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cb38s")
-frame_progress = 0.658873
+frame_progress = 0.597156
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

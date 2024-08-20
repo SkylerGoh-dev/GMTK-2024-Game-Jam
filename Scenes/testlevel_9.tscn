@@ -29,3 +29,5 @@ limit_bottom = 250
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 script = ExtResource("2_2mhr4")
+
+[connection signal="hitByGrandma" from="Player" to="grandma" method="_on_player_hit_by_grandma"]

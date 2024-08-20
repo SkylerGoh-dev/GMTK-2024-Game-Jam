@@ -14,14 +14,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
-	print(get_global_mouse_position())
+	#print(get_global_mouse_position())
 	var player = get_parent()
 	if (get_global_mouse_position().x < player.position.x):
 		sprite.flip_v = true
 		sprite.global_position = player.position - Vector2(8, 0)
-		print("2")
+		#print("2")
 	else:
-		print("1")
+		#print("1")
 		sprite.flip_v = false
 		sprite.global_position = player.position + Vector2(8, 0)
 	

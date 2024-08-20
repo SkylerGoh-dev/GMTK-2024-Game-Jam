@@ -11,6 +11,8 @@ var animatedDirection: String = "Down"
 
 @export var inventoryResource: InventoryResource
 
+signal hitByGrandma
+
 var knife_disabled: bool = true
 var hurt: bool = false
 # Called when the node enters the scene tree for the first time.
@@ -51,7 +53,6 @@ func swingWeapon():
 	if Input.is_action_just_pressed("attack") and not knife_disabled:
 		knife_collision.disabled = false
 		animation_player.play("attack" + animatedDirection)
-		
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
@@ -88,3 +89,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 func set_knife_disabled(value: bool):
 	knife_disabled = value
+
+
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if "grandma" in body.name:
+		sprite.play("hurt")
+		hurt = true
+		speed = 25
+		got_hit.start()
+		hitByGrandma.emit()
