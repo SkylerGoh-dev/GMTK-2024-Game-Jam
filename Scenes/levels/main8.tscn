@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://h0aya0nqivdf" path="res://Sprites/tiles/Produce crates.png" id="39_1ryfa"]
 [ext_resource type="AudioStream" uid="uid://dd7bkdlm1ndot" path="res://Sounds/11-Door_Close.wav" id="39_cnf6l"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="40_hrnd3"]
-[ext_resource type="PackedScene" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
+[ext_resource type="PackedScene" uid="uid://bsatkjesnt7op" path="res://Scenes/Level4Drops/toast.tscn" id="42_08cqc"]
 [ext_resource type="PackedScene" uid="uid://cqcux08ittdg5" path="res://Scenes/Item_Indicator.tscn" id="43_0y3ct"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="47_08vsr"]
 [ext_resource type="Texture2D" uid="uid://dyne31sc55xa4" path="res://Sprites/npc kids.png" id="48_8bgnu"]
