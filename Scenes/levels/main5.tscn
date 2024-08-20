@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://b1hpnsckxjhw5"]
+[gd_scene load_steps=55 format=4 uid="uid://b1hpnsckxjhw5"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_uihsr"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_yq134"]
@@ -30,8 +30,13 @@
 [ext_resource type="PackedScene" uid="uid://bd3id8s34yrs" path="res://Scenes/Store-furniture/drink_freezer_R.tscn" id="30_uu1k6"]
 [ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="31_1h5f3"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="31_p11v0"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="33_grmd6"]
 [ext_resource type="PackedScene" uid="uid://b6ao7rxkswy6e" path="res://Scenes/Store-furniture/item_crate.tscn" id="33_l12ss"]
+[ext_resource type="Texture2D" uid="uid://o81ruhsmhgah" path="res://Sprites/Npc adults.png" id="34_7ic85"]
 [ext_resource type="Texture2D" uid="uid://b12brn5tjsgx2" path="res://Sprites/cleaning supplies.png" id="34_w0e6i"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="35_c7h4g"]
+[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="36_sxb1c"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="37_2mm5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3tgj"]
 texture = ExtResource("4_cd2vf")
@@ -351,6 +356,12 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_4ronk")
 sources/1 = SubResource("TileSetAtlasSource_tnj1w")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
+radius = 16.0
+
 [node name="Main5" type="Node2D"]
 y_sort_enabled = true
 
@@ -613,6 +624,60 @@ item_needed = true
 [node name="Milk_Freezer_L" parent="Node2D" instance=ExtResource("19_q8fof")]
 position = Vector2(-56, 15)
 item_needed = true
+
+[node name="npc" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-7, -87)
+collision_layer = 4
+script = ExtResource("33_grmd6")
+dialog = ["Oh my god! Another person!", "I've been stuck here for 8 years!", "Wait don't go!"]
+
+[node name="Sprite2D" type="Sprite2D" parent="npc"]
+position = Vector2(-1, -1)
+texture = ExtResource("34_7ic85")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(24, 0, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="npc"]
+script = ExtResource("35_c7h4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="npc"]
+z_index = 1
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("36_sxb1c")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="npc/panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("37_2mm5n")
+text = "I don't get paid enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]

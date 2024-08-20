@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bmuajsdu0w638"]
+[gd_scene load_steps=37 format=4 uid="uid://bmuajsdu0w638"]
 
 [ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_2w7sy"]
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="1_jbp2l"]
@@ -23,7 +23,12 @@
 [ext_resource type="PackedScene" uid="uid://nnch1w3qubp5" path="res://Scenes/Store-furniture/milk_freezer_R.tscn" id="17_klkjx"]
 [ext_resource type="PackedScene" uid="uid://cfju6d4d041nd" path="res://Scenes/Store-furniture/shelves.tscn" id="19_mpfpl"]
 [ext_resource type="PackedScene" uid="uid://dk1h6f04vgse4" path="res://Scenes/npc_clerk.tscn" id="20_7mbmd"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="24_e55p5"]
 [ext_resource type="PackedScene" uid="uid://brohxksac1v51" path="res://Scenes/exits.tscn" id="24_omq3g"]
+[ext_resource type="Texture2D" uid="uid://kd4hn1to718c" path="res://Sprites/Store_NPC.png" id="25_uax63"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="26_jir3x"]
+[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="27_c245g"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="28_hhllv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("1_2w7sy")
@@ -128,6 +133,12 @@ terrain_set_0/terrain_0/name = "Floor and Walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_8tsxp")
 sources/1 = SubResource("TileSetAtlasSource_pavw2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
+radius = 16.0
 
 [node name="Main2" type="Node2D"]
 y_sort_enabled = true
@@ -270,10 +281,63 @@ type = 13
 [node name="shelves4" parent="shelves" instance=ExtResource("19_mpfpl")]
 position = Vector2(-96, -29)
 
-[node name="Clerk" type="Node2D" parent="."]
+[node name="npcs" type="Node2D" parent="."]
 
-[node name="NPC clerk" parent="Clerk" instance=ExtResource("20_7mbmd")]
+[node name="NPC clerk" parent="npcs" instance=ExtResource("20_7mbmd")]
 position = Vector2(-200, -8)
+
+[node name="npc" type="StaticBody2D" parent="npcs"]
+z_index = 1
+position = Vector2(-57, -55)
+collision_layer = 4
+script = ExtResource("24_e55p5")
+dialog = ["Getting groceries for your Grandma?", "What a good kid!"]
+
+[node name="Sprite2D" type="Sprite2D" parent="npcs/npc"]
+texture = ExtResource("25_uax63")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 24, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npcs/npc"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="npcs/npc"]
+script = ExtResource("26_jir3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npcs/npc/Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="npcs/npc"]
+z_index = 1
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("27_c245g")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="npcs/npc/panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("28_hhllv")
+text = "I don't get paid enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Exits_Group" type="Node2D" parent="."]
 

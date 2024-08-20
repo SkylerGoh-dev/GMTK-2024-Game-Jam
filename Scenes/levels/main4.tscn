@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://c0gbwlfprsq6q"]
+[gd_scene load_steps=55 format=4 uid="uid://c0gbwlfprsq6q"]
 
 [ext_resource type="Texture2D" uid="uid://dwhd6tcepwgvb" path="res://Sprites/tiles/clerk_counter.png" id="1_jcg3u"]
 [ext_resource type="Texture2D" uid="uid://wepy6n5g68b7" path="res://Sprites/tiles/Mart Tiles.png" id="2_5b8j2"]
@@ -33,6 +33,12 @@
 [ext_resource type="Script" path="res://Scripts/chicken_pen.gd" id="27_ohb85"]
 [ext_resource type="PackedScene" uid="uid://d2hnr70qhsp6n" path="res://Scenes/Interaction_Area.tscn" id="29_8tfc1"]
 [ext_resource type="PackedScene" uid="uid://bhugv8j8ru8ao" path="res://Scenes/door_tp.tscn" id="30_vc8c3"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="34_wxse6"]
+[ext_resource type="Texture2D" uid="uid://kd4hn1to718c" path="res://Sprites/Store_NPC.png" id="35_aqobe"]
+[ext_resource type="Script" path="res://Scripts/Interaction_Area.gd" id="36_m5xl4"]
+[ext_resource type="Texture2D" uid="uid://pm3sbsbfxntm" path="res://Sprites/UI_Panels.png" id="37_nmbeq"]
+[ext_resource type="FontFile" uid="uid://coud03toff36u" path="res://Fonts/PeaberryBase.ttf" id="38_pb0vu"]
+[ext_resource type="Texture2D" uid="uid://dyne31sc55xa4" path="res://Sprites/npc kids.png" id="39_rnclk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h13jq"]
 texture = ExtResource("1_jcg3u")
@@ -391,6 +397,12 @@ sources/3 = SubResource("TileSetAtlasSource_amcu5")
 sources/4 = SubResource("TileSetAtlasSource_gk7ve")
 sources/2 = SubResource("TileSetAtlasSource_fp3qb")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p237l"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex6jv"]
+radius = 16.0
+
 [node name="Main4" type="Node2D"]
 y_sort_enabled = true
 
@@ -423,6 +435,7 @@ pivot_offset = Vector2(64.5, 39)
 
 [node name="things that go above map" type="TileMapLayer" parent="."]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(-100, -407)
 tile_map_data = PackedByteArray("AAD0/wAAAAAAAAEAAAD0////AAABAAAAAAD0//7/AAAAAAAAAADz//7/AAABAAEAAADz/wAAAAABAAEAAAAZAP3/AQAEAAAAAAAZAP7/AQAAAAIAAAAZAP//AQAAAAIAAAAZAAAAAQAAAAIAAAAZAAIAAQAAAAEAAAAaAAIAAQAEAAEAAAAbAAIAAQAEAAEAAAAcAAIAAQAEAAEAAAAdAAIAAQAEAAEAAAAeAAIAAQAEAAEAAAAfAAIAAQAEAAEAAAAgAAIAAQAEAAEAAAAZAAEAAQAAAAIAAAASAAYAAQAEAAEAAAATAAYAAQAEAAEAAAAUAAYAAQAEAAEAAAAVAAYAAQAEAAEAAAAWAAYAAQAEAAEAAAAXAAYAAQADAAAAAAAaAAYAAQABAAAAAAAbAAYAAQAEAAEAAAAcAAYAAQAEAAEAAAAdAAYAAQAEAAEAAAAeAAYAAQAEAAEAAAAfAAYAAQAEAAEAAAAgAAYAAQAEAAEAAAATAAsAAQAAAAQAAAAVABEAAQAAAAQAAAAdAAoAAQAAAAQAAAAWAAkAAQAAAAQAAAAeABAAAQAAAAQAAAAbAA4AAQAAAAQAAAD///r/AgADAAIAAAD///n/AgADAAIAAAA=")
 tile_set = SubResource("TileSet_bs6ou")
@@ -618,6 +631,163 @@ roam_dist = 96
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChickenPen1/Interaction_Area"]
 position = Vector2(26, 25)
 polygon = PackedVector2Array(-10, 0, -11, 117, 134, 116, 135, 98, 6, 100, 6, 0)
+
+[node name="npc" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(227, -444)
+collision_layer = 4
+script = ExtResource("34_wxse6")
+dialog = ["Why do we have chickens in a store?", "Why the heck not!", "If you want eggs", "Just give those chickens a good shake."]
+
+[node name="Sprite2D" type="Sprite2D" parent="npc"]
+texture = ExtResource("35_aqobe")
+region_enabled = true
+region_rect = Rect2(24, 0, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="npc"]
+script = ExtResource("36_m5xl4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="npc"]
+z_index = 1
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("37_nmbeq")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="npc/panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("38_pb0vu")
+text = "I don't get paid enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="npc2" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-220, -285)
+collision_layer = 4
+script = ExtResource("34_wxse6")
+dialog = ["I wonder if mom will let us keep one"]
+
+[node name="Sprite2D" type="Sprite2D" parent="npc2"]
+texture = ExtResource("39_rnclk")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc2"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="npc2"]
+script = ExtResource("36_m5xl4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc2/Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="npc2"]
+z_index = 1
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("37_nmbeq")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="npc2/panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("38_pb0vu")
+text = "I don't get paid enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="npc3" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-190, -285)
+collision_layer = 4
+script = ExtResource("34_wxse6")
+dialog = ["I hope so!"]
+
+[node name="Sprite2D" type="Sprite2D" parent="npc3"]
+texture = ExtResource("39_rnclk")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 12, 12, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc3"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p237l")
+
+[node name="Interaction_Area" type="Area2D" parent="npc3"]
+script = ExtResource("36_m5xl4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc3/Interaction_Area"]
+shape = SubResource("CircleShape2D_ex6jv")
+
+[node name="panel" type="Sprite2D" parent="npc3"]
+z_index = 1
+position = Vector2(0, -29)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("37_nmbeq")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="Label" type="Label" parent="npc3/panel"]
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.062
+anchor_right = 0.969
+anchor_bottom = 0.812
+offset_left = -31.984
+offset_top = -15.984
+offset_right = 107.984
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("38_pb0vu")
+text = "I don't get paid enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
