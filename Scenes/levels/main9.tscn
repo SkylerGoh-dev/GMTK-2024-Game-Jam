@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cp7gpmk4u1o11"]
+[gd_scene load_steps=32 format=4 uid="uid://cp7gpmk4u1o11"]
 
 [ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_7hp74"]
 [ext_resource type="PackedScene" uid="uid://dopdjyw02iy8o" path="res://Scenes/inventory.tscn" id="2_r0otm"]
@@ -11,9 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="8_ei1qo"]
 [ext_resource type="Script" path="res://Scripts/ItemGroup.gd" id="9_fat85"]
 [ext_resource type="PackedScene" uid="uid://bwo6hdwlwtkt0" path="res://Scenes/Store-furniture/apple_crate.tscn" id="10_ekdky"]
-[ext_resource type="PackedScene" uid="uid://btrvrwjkqsqwc" path="res://Scenes/grandma.tscn" id="10_irxxb"]
 [ext_resource type="PackedScene" uid="uid://dfwcsq233ssle" path="res://Scenes/Store-furniture/orange_crate.tscn" id="11_1wsyj"]
-[ext_resource type="PackedScene" uid="uid://b3ftrf3ceo31f" path="res://Scenes/gun.tscn" id="12_e1t5h"]
 [ext_resource type="PackedScene" uid="uid://it7mjbu0q7km" path="res://Scenes/Store-furniture/pears_crate.tscn" id="12_i6xbn"]
 [ext_resource type="PackedScene" uid="uid://cilrgo1eek1va" path="res://Scenes/Store-furniture/corn_crate.tscn" id="13_hgdkj"]
 [ext_resource type="Texture2D" uid="uid://dulg3g6xdoitw" path="res://Sprites/Fish_crates.png" id="15_2vmhc"]
@@ -343,14 +341,8 @@ position_smoothing_speed = 2.0
 editor_draw_limits = true
 script = ExtResource("7_tm6ye")
 
-[node name="grandma" parent="." instance=ExtResource("10_irxxb")]
-
 [node name="Player" parent="." groups=["player"] instance=ExtResource("8_ei1qo")]
 position = Vector2(-171, 89)
-
-[node name="gun" parent="Player" instance=ExtResource("12_e1t5h")]
-z_index = 1
-position = Vector2(9, 3)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -507,4 +499,3 @@ position = Vector2(-119, -531)
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="CanvasLayer" method="_on_inventory_opened"]
-[connection signal="hitByGrandma" from="Player" to="grandma" method="_on_player_hit_by_grandma"]

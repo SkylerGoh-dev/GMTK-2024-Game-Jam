@@ -1,26 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh5m6mji3xq5q"]
+[gd_scene load_steps=7 format=3 uid="uid://bh5m6mji3xq5q"]
 
 [ext_resource type="PackedScene" uid="uid://csav56ab8g0ds" path="res://Scenes/player.tscn" id="1_7e1f3"]
 [ext_resource type="PackedScene" uid="uid://b3ftrf3ceo31f" path="res://Scenes/gun.tscn" id="1_jmfdk"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_2mhr4"]
 [ext_resource type="PackedScene" uid="uid://btrvrwjkqsqwc" path="res://Scenes/grandma.tscn" id="3_dmrj5"]
+[ext_resource type="Texture2D" uid="uid://b4ysusvxgu6dk" path="res://Sprites/Duct_Tape.png" id="5_f8oc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b826e"]
+size = Vector2(20, 170)
 
 [node name="testlevel9" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_7e1f3")]
-position = Vector2(-504, 3)
+position = Vector2(-497, 2)
 
 [node name="gun" parent="Player" instance=ExtResource("1_jmfdk")]
+visible = false
 z_index = 1
 position = Vector2(8, 2)
 
-[node name="grandma" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_dmrj5")]
-position = Vector2(-321, -1)
-target = NodePath("../Player/gun")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 process_mode = 3
-position = Vector2(-405, -14)
+position = Vector2(0, 1)
 zoom = Vector2(4, 4)
 limit_left = -1000
 limit_top = -200
@@ -29,5 +30,48 @@ limit_bottom = 250
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 script = ExtResource("2_2mhr4")
+
+[node name="Left" type="RayCast2D" parent="Player"]
+target_position = Vector2(-50, 0)
+
+[node name="Right" type="RayCast2D" parent="Player"]
+target_position = Vector2(50, 0)
+
+[node name="grandma" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_dmrj5")]
+position = Vector2(-412, 15)
+target = NodePath("../Player/gun")
+
+[node name="Area2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-639, -4)
+shape = SubResource("RectangleShape2D_b826e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-641, 3)
+scale = Vector2(1, 12.75)
+texture = ExtResource("5_f8oc0")
+
+[node name="Area2D2" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-365, 3)
+shape = SubResource("RectangleShape2D_b826e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(-365, 12)
+scale = Vector2(1, 12.75)
+texture = ExtResource("5_f8oc0")
+
+[node name="Area2D3" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(-560, -1)
+shape = SubResource("RectangleShape2D_b826e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
+position = Vector2(-561, 4)
+scale = Vector2(1, 12.75)
+texture = ExtResource("5_f8oc0")
 
 [connection signal="hitByGrandma" from="Player" to="grandma" method="_on_player_hit_by_grandma"]

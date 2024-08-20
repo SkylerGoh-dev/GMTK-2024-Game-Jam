@@ -46,8 +46,8 @@ size = Vector2(8, 9)
 size = Vector2(8, 9)
 
 [node name="grandma" type="CharacterBody2D"]
-collision_layer = 262
-collision_mask = 264
+collision_layer = 6
+collision_mask = 8
 script = ExtResource("1_kf5f8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
