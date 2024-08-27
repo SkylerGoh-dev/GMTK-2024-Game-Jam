@@ -2,7 +2,7 @@
 
 **GMTK Game Jam 2024 Submission** https://skynemu.itch.io/gpsl
 
-|| Created by: Skynemu, Addyng, Jamesd5, Fibynib, Bdoget
+|| Created by: [Skynemu](https://github.com/SkylerGoh-dev), [Addyng](https://github.com/addyng), [Jamesd5](https://github.com/jamesd5V5), [Fibynib](https://github.com/RyanLCh), [Bdoget](https://github.com/bdoget)
 
 - Score: Overall scored in the Top 4% of 7,463 entries
 
