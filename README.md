@@ -1,6 +1,6 @@
 # Grandma's Peculiar Shopping List
 
-**GMTK Game Jam 2024 Submission** https://skynemu.itch.io/gpsl
+**GMTK Game Jam 2024 Submission** [(Play Game On Itch)](https://skynemu.itch.io/gpsl)
 
 || Created by: [Skynemu](https://github.com/SkylerGoh-dev), [Addyng](https://github.com/addyng), [Jamesd5](https://github.com/jamesd5V5), [Fibynib](https://github.com/RyanLCh), [Bdoget](https://github.com/bdoget)
 
